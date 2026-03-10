@@ -1,0 +1,48 @@
+{% assign footer = site.data.footer %}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <section class="footer-col footer-brand">
+      <h2>{{ footer.company.title }}</h2>
+      <p>{{ footer.company.license }}</p>
+      <p>{{ footer.company.update }}</p>
+      <div class="footer-person">
+        <strong>{{ footer.company.representative }}</strong>
+        <span>{{ footer.company.role }}</span>
+      </div>
+    </section>
+
+    <section class="footer-col">
+      <h3>{{ footer.office.title }}</h3>
+      <p>{{ footer.office.city }}</p>
+      <p>{{ footer.office.address }}</p>
+      <p>{{ footer.office.contact }}</p>
+      <img class="footer-badge" src="{{ '/assets/images/badge-bct.svg' | relative_url }}" alt="Đã thông báo Bộ Công Thương">
+    </section>
+
+    <section class="footer-col">
+      <h3>{{ footer.support.title }}</h3>
+      <ul class="footer-list footer-list--contact">
+        {% for item in footer.support.items %}
+          <li>
+            <strong>{{ item.label }}</strong>
+            <span>{{ item.value }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="footer-social">
+        {% for item in footer.support.social %}
+          <a href="{{ item.url }}">{{ item.label }}</a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="footer-col">
+      <h3>{{ footer.policy.title }}</h3>
+      <ul class="footer-list">
+        {% for item in footer.policy.items %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</footer>

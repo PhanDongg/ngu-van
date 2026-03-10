@@ -1,0 +1,31 @@
+{% assign theme = site.data.theme %}
+<header class="site-header">
+  <div class="header-inner">
+    <nav class="header-nav" aria-label="Điều hướng chính">
+      {% for item in theme.header_nav %}
+        <a class="header-link{% if item.active %} is-active{% endif %}" href="{{ item.url }}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <div class="header-actions">
+      {% for item in theme.header_actions %}
+        <a class="header-pill{% if item.active %} is-active{% endif %}" href="{{ item.url }}">
+          <span class="header-pill__icon">{{ item.icon }}</span>
+          <span>{{ item.label }}</span>
+        </a>
+      {% endfor %}
+
+      <button class="icon-button" type="button" aria-label="Thông báo">
+        <span class="icon-dot"></span>
+      </button>
+
+      <div class="profile-chip">
+        <img src="{{ '/assets/images/avatar-student.svg' | relative_url }}" alt="Ảnh đại diện học sinh">
+        <div>
+          <strong>{{ theme.profile.name }}</strong>
+          <span>{{ theme.profile.meta }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+{% assign competition = site.data.competition %}
+<section class="cta-panel">
+  <div class="cta-copy">
+    <h2>{{ competition.cta.title }}</h2>
+    <a class="cta-button" href="{{ competition.cta.url }}">{{ competition.cta.button }}</a>
+  </div>
+
+  <div class="cta-book">
+    <img src="{{ '/assets/images/book-luyen-tieng-viet.svg' | relative_url }}" alt="Sách luyện tiếng Việt 365">
+  </div>
+</section>

@@ -1,0 +1,9 @@
+boards:
+  - title: Sân chơi Toán học Việt Nam (VNMF)
+    subtitle: ""
+  - title: Trạng Nguyên Tiếng Việt
+    round_count: 1 kỳ thi
+    highlight: true
+    children:
+      - Sân chơi Trạng Nguyên Tiếng Việt Khối 1 Năm học 2025 - 2026
+  - title: Trạng Nguyên Toàn Tài

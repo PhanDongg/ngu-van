@@ -1,0 +1,24 @@
+header_nav:
+  - label: Khen thưởng
+    url: "#"
+  - label: Tiến độ
+    url: "#"
+  - label: VNMF
+    url: "#"
+header_actions:
+  - label: Học giỏi
+    icon: HG
+    url: "#"
+  - label: Luyện thích
+    icon: LT
+    url: "#"
+  - label: Thi hay
+    icon: TH
+    url: "#"
+    active: true
+  - label: Chơi vui
+    icon: CV
+    url: "#"
+profile:
+  name: Phan Đông
+  meta: "SBD: 961090107"

@@ -1,0 +1,33 @@
+{% assign theme = site.data.theme %}
+<aside class="sidebar">
+  <a class="brand-card" href="#">
+    <img src="{{ '/assets/images/logo-trang-nguyen.svg' | relative_url }}" alt="Trang Nguyen Education">
+  </a>
+
+  <div class="sidebar-stack">
+    {% for item in site.data.sidebar.boards %}
+      <section class="board-card{% if item.highlight %} is-highlight{% endif %}">
+        <h3>{{ item.title }}</h3>
+        {% if item.subtitle %}
+          <p>{{ item.subtitle }}</p>
+        {% endif %}
+
+        {% if item.round_count %}
+          <span class="board-meta">{{ item.round_count }}</span>
+        {% endif %}
+
+        {% if item.children %}
+          <ul class="board-list">
+            {% for child in item.children %}
+              <li>{{ child }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </div>
+
+  <section class="promo-banner">
+    <img src="{{ '/assets/images/promo-tnmath.svg' | relative_url }}" alt="Hệ thống học Toán K-12 TNMath">
+  </section>
+</aside>

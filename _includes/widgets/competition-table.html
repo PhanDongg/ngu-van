@@ -1,0 +1,22 @@
+{% assign competition = site.data.competition %}
+<section class="table-panel">
+  <div class="round-table" role="table" aria-label="Danh sách vòng thi">
+    <div class="round-row round-row--head" role="row">
+      {% for heading in competition.table_headings %}
+        <span role="columnheader">{{ heading }}</span>
+      {% endfor %}
+    </div>
+
+    {% for round in competition.rounds %}
+      <div class="round-row{% if round.current %} is-current{% endif %}" role="row">
+        <span role="cell">{{ round.index }}</span>
+        <span role="cell">{{ round.label }}</span>
+        <span role="cell">{{ round.opens }}</span>
+        <span role="cell">{{ round.closes }}</span>
+        <span class="round-status" role="cell" aria-label="{% if round.complete %}Đã hoàn thành{% else %}Chưa hoàn thành{% endif %}">
+          <i>{% if round.complete %}✓{% else %}○{% endif %}</i>
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+</section>

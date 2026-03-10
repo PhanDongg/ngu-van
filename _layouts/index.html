@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body class="{{ page.body_class | default: 'page-competition' }}">
+  {% include header.html %}
+
+  <main class="site-main">
+    <div class="shell">
+      {% include sidebar.html %}
+
+      <section class="page-content">
+        {% include template-parts/content-page.html %}
+      </section>
+    </div>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
