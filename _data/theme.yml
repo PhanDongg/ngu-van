@@ -1,24 +1,66 @@
 header_nav:
   - label: Khen thưởng
     url: "#"
+    icon: /assets/icons/header/reward.87a97663.svg
   - label: Tiến độ
     url: "#"
+    icon: /assets/icons/header/inprocess.bde7f5e2.svg
+    chevron: true
+    children:
+      - label: Báo cáo học tập
+        url: "#"
+      - label: Lịch sử làm bài
+        url: "#"
+      - label: Lịch sử học tập
+        url: "#"
+      - label: Giấy chứng nhận
+        url: "#"
   - label: VNMF
     url: "#"
+    active: true
+
 header_actions:
   - label: Học giỏi
-    icon: HG
+    icon: /assets/icons/header/icon-hoc-gioi.201d7cb7.svg
     url: "#"
   - label: Luyện thích
-    icon: LT
+    icon: /assets/icons/header/icon-luyen.77700d7e.svg
     url: "#"
   - label: Thi hay
-    icon: TH
+    icon: /assets/icons/header/icon-thi-hay.da3ec4c5.svg
     url: "#"
     active: true
   - label: Chơi vui
-    icon: CV
+    icon: /assets/icons/header/icon-game.cb5607fb.svg
     url: "#"
+
+notify_icon: /assets/icons/header/icon-notify.3adb68d2.svg
+
 profile:
   name: Phan Đông
   meta: "SBD: 961090107"
+  avatar: /assets/icons/header/avatar.0103a42e.svg
+  menu:
+    - label: Thông tin cá nhân
+      url: "#"
+      icon_image: /assets/icons/header/avt_1.9e806156.svg
+    - label: Khóa học đang có
+      url: "#"
+      icon_image: /assets/icons/header/avt_2.4fbb9554.svg
+      active: true
+    - label: Giỏ hàng
+      url: "#"
+      icon_image: /assets/icons/header/avt_3.fb179eb0.svg
+    - label: Lịch sử mua hàng
+      url: "#"
+      icon_image: /assets/icons/header/avt_4.5a759e1b.svg
+    - label: Hỏi đáp
+      url: "#"
+      icon_image: /assets/icons/header/avt_5.2a8d73f4.svg
+    - label: Đổi mật khẩu
+      url: "#"
+      icon_image: /assets/icons/header/profile-lock.svg
+    - label: Đăng xuất
+      url: "#"
+      icon_image: /assets/icons/header/avt_6.5ef84696.svg
+      danger: true

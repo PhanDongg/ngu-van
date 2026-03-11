@@ -1,7 +1,11 @@
 {% assign competition = site.data.competition %}
-<section class="hero-panel">
+<section class="competition-page__hero d-flex align-items-center justify-content-between position-relative">
+  <img class="position-absolute top-0 start-0" src="{{ '/assets/images/body/yellow_l.036a7443.svg' | relative_url }}"
+    alt="Competition Hero Image">
+  <img class="position-absolute top-0 end-0" src="{{ '/assets/images/body/yellow_r.35e6e9e0.svg' | relative_url }}"
+    alt="Competition Hero Image">
   <div>
-    <h1>{{ competition.hero.title }}</h1>
+    <h1 class="competition-page__title">{{ competition.hero.title }}</h1>
   </div>
-  <span class="hero-meta">{{ competition.hero.meta }}</span>
+  <span class="competition-page__meta">{{ competition.hero.meta }}</span>
 </section>

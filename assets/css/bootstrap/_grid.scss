@@ -1,0 +1,37 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(v.$bs-grid-gutter-x * -0.5);
+  margin-left: calc(v.$bs-grid-gutter-x * -0.5);
+}
+
+.row > * {
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(v.$bs-grid-gutter-x * 0.5);
+  padding-left: calc(v.$bs-grid-gutter-x * 0.5);
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.col-xl-3,
+.col-xl-9 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+@include m.media-up(xl) {
+  .col-xl-3 {
+    width: 25%;
+  }
+
+  .col-xl-9 {
+    width: 75%;
+  }
+}

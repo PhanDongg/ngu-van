@@ -1,0 +1,171 @@
+@use "tokens" as t;
+
+.competition-page {
+
+  &__hero {
+    position: relative;
+    // border: 2px solid var(--line);
+    border: 2px solid rgb(255 222 168);
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: var(--shadow);
+  }
+
+  &__table,
+  &__cta {
+    position: relative;
+    border: 2px solid rgb(255 186 10);
+  }
+
+  &__hero {
+    gap: 1.25rem;
+    min-height: 7.45rem;
+    padding: 1.55rem 2rem;
+    background: #FFEED8;
+    border-radius: 40px 40px 24px 24px;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 62rem;
+    color: var(--gold);
+    font-size: 32px;
+    line-height: 1.16;
+    font-weight: 400;
+  }
+
+  &__meta {
+    white-space: nowrap;
+    color: t.$hero-meta;
+    font-weight: 900;
+    font-size: 1.05rem;
+    padding-left: 1rem;
+  }
+
+  &__table {
+    padding: 1rem 1.25rem 1.1rem;
+  }
+
+  &__round-table {
+    display: grid;
+  }
+
+  &__round-row {
+    display: grid;
+    grid-template-columns: 7rem minmax(16rem, 1.8fr) 1.2fr 1.2fr 10rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 0.8rem;
+
+    >span:nth-child(2) {
+      text-align: left;
+    }
+
+    >span:nth-child(3),
+    >span:nth-child(4) {
+      text-align: center;
+    }
+
+    &--head {
+      padding-top: 0.45rem;
+      padding-bottom: 0.95rem;
+
+      >span:nth-child(1) {
+        text-align: left;
+      }
+
+      span {
+        color: #060606;
+        font-size: 24px;
+        font-weight: 900;
+      }
+    }
+
+    &:not(.competition-page__round-row--head) span {
+      color: #b7b2ae;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &:not(.competition-page__round-row--head)>span:nth-child(1) {
+      text-align: center;
+    }
+
+    &--current span {
+      color: #0d0d0d;
+      font-weight: 900;
+    }
+  }
+
+  &__round-row:last-child {
+    span {
+      color: #0d0d0d;
+      font-weight: 900;
+    }
+  }
+
+  &__round-status {
+    justify-self: center;
+    text-align: center;
+
+    i {
+      width: 1.45rem;
+      height: 1.45rem;
+      border-radius: 50%;
+      background: t.$status-muted;
+      color: #fff;
+      font-style: normal;
+      font-size: 0.76rem;
+    }
+  }
+
+  &__round-row--current &__round-status i {
+    background: t.$status-current;
+  }
+
+  &__cta {
+    display: grid;
+    grid-template-columns: 1.4fr 18rem;
+    gap: 1rem;
+    padding: 21px 28px;
+    border-radius: 40px 40px 24px 24px;
+  }
+
+  &__cta-copy {
+    padding: 0.25rem 0.3rem 0.25rem 0.2rem;
+  }
+
+  &__cta-title {
+    margin: 0 0 1.35rem;
+    max-width: 29rem;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    font-family: "Paytone One", sans-serif;
+  }
+
+  &__cta-button {
+    min-width: 9.8rem;
+    min-height: 3.2rem;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    background: t.$cta-red;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.1rem;
+    box-shadow: 0 12px 24px rgba(207, 58, 63, 0.26);
+  }
+
+  &__cta-book {
+    place-items: center;
+
+    &-image {
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  &__cta-book-image {
+    width: 12.5rem;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.14));
+  }
+}

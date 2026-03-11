@@ -1,22 +1,25 @@
 {% assign competition = site.data.competition %}
-<section class="table-panel">
-  <div class="round-table" role="table" aria-label="Danh sách vòng thi">
-    <div class="round-row round-row--head" role="row">
+<section class="competition-page__table">
+  <div class="competition-page__round-table" role="table" aria-label="Danh sách vòng thi">
+    <div class="competition-page__round-row competition-page__round-row--head" role="row">
       {% for heading in competition.table_headings %}
-        <span role="columnheader">{{ heading }}</span>
+      <span role="columnheader">{{ heading }}</span>
       {% endfor %}
     </div>
 
     {% for round in competition.rounds %}
-      <div class="round-row{% if round.current %} is-current{% endif %}" role="row">
-        <span role="cell">{{ round.index }}</span>
-        <span role="cell">{{ round.label }}</span>
-        <span role="cell">{{ round.opens }}</span>
-        <span role="cell">{{ round.closes }}</span>
-        <span class="round-status" role="cell" aria-label="{% if round.complete %}Đã hoàn thành{% else %}Chưa hoàn thành{% endif %}">
-          <i>{% if round.complete %}✓{% else %}○{% endif %}</i>
-        </span>
-      </div>
+    <div class="competition-page__round-row{% if round.current %} competition-page__round-row--current{% endif %}"
+      role="row">
+      <span role="cell">{{ round.index }}</span>
+      <span role="cell">{{ round.label }}</span>
+      <span role="cell">{{ round.opens }}</span>
+      <span role="cell">{{ round.closes }}</span>
+      <span class="competition-page__round-status" role="cell"
+        aria-label="{% if round.complete %}Đã hoàn thành{% else %}Chưa hoàn thành{% endif %}">
+        <i class="d-inline-flex align-items-center justify-content-center">{% if round.complete %}✓{% else %}✓{% endif
+          %}</i>
+      </span>
+    </div>
     {% endfor %}
   </div>
 </section>

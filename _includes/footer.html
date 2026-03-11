@@ -1,46 +1,68 @@
 {% assign footer = site.data.footer %}
-<footer class="site-footer">
-  <div class="footer-inner">
-    <section class="footer-col footer-brand">
-      <h2>{{ footer.company.title }}</h2>
-      <p>{{ footer.company.license }}</p>
-      <p>{{ footer.company.update }}</p>
-      <div class="footer-person">
-        <strong>{{ footer.company.representative }}</strong>
-        <span>{{ footer.company.role }}</span>
+<footer class="footer">
+  <div class="footer__inner container-xxl">
+    <section class="footer__col footer__col--brand px-3">
+      <h2 class="footer__title footer__title--company mb-3">{{ footer.company.title }}</h2>
+      <p class="footer__text">{{ footer.company.license }}</p>
+      <p class="footer__text">{{ footer.company.update }}</p>
+      <div class="footer__person">
+        <div class="footer__person-representative footer__title mb-2">{{ footer.company.representative }}</div>
+        <div class="footer__person-name">{{ footer.company.representative-name }}</div>
+        <span class="footer__person-role">{{ footer.company.role }}</span>
       </div>
     </section>
 
-    <section class="footer-col">
-      <h3>{{ footer.office.title }}</h3>
-      <p>{{ footer.office.city }}</p>
-      <p>{{ footer.office.address }}</p>
-      <p>{{ footer.office.contact }}</p>
-      <img class="footer-badge" src="{{ '/assets/images/badge-bct.svg' | relative_url }}" alt="Đã thông báo Bộ Công Thương">
+    <section class="footer__col">
+      <h3 class="footer__title mb-4">{{ footer.office.title }}</h3>
+      <p class="footer__text fw-bold fs-6 mb-0">{{ footer.office.city }}</p>
+      <p class="footer__text">{{ footer.office.address }}</p>
+      <p class="footer__text">{{ footer.office.contact }}</p>
+      <img class="footer__badge" src="{{ '/assets/icons/footer/dakhaibao-bct-v-DtZ8GFLT.png' | relative_url }}"
+        alt="Đã thông báo Bộ Công Thương">
     </section>
 
-    <section class="footer-col">
-      <h3>{{ footer.support.title }}</h3>
-      <ul class="footer-list footer-list--contact">
+    <section class="footer__col">
+      <h3 class="footer__title mb-4">{{ footer.support.title }}</h3>
+      <ul class="footer__list footer__list--contact list-unstyled">
         {% for item in footer.support.items %}
-          <li>
-            <strong>{{ item.label }}</strong>
-            <span>{{ item.value }}</span>
-          </li>
+        <li class="d-flex align-items-start mb-3">
+          <span class="footer__contact-icon" aria-hidden="true">
+            {% if item.icon == 'email' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" viewBox="0 0 24 24">
+              <path fill="currentColor" fill-rule="evenodd"
+                d="m17.8 9.8-4 3.2c-.5.4-1.1.6-1.8.6-.6 0-1.2-.2-1.8-.6l-4-3.3c-.3-.3-.4-.7-.1-1.1.3-.4.7-.4 1.1-.1l4 3.2c.5.4 1.2.4 1.6 0l4-3.2c.3-.3.8-.2 1.1.1.3.4.2.9-.1 1.2Zm-1.4-6.4H7.6c-2.9 0-5.1 2.4-5.1 5.5v6.2c0 1.6.6 3.1 1.6 4.1.9.9 2.1 1.4 3.5 1.4h8.8c1.3 0 2.5-.5 3.5-1.4 1-1 1.6-2.5 1.6-4.1V8.9c0-3.1-2.2-5.5-5.1-5.5Z"
+                clip-rule="evenodd"></path>
+            </svg>
+            {% elsif item.icon == 'phone' %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" viewBox="0 0 24 24">
+              <path fill="currentColor" fill-rule="evenodd"
+                d="M20.308 16.895c-.012-.896-.684-1.535-1.615-2.42a35.372 35.372 0 0 1-.736-.714c-1.2-1.2-2.195-.812-3.072-.468-1.003.392-1.949.765-3.675-.962h-.001c-1.726-1.724-1.356-2.67-.964-3.673.344-.878.733-1.873-.466-3.075-.263-.263-.5-.513-.719-.743-.882-.928-1.52-1.6-2.415-1.61-.729-.012-1.587.482-2.802 1.697-.012.013-.075.075-.086.09-.268.262-.981.962-.988 2.323-.01 2.13 1.708 4.93 5.107 8.33 3.386 3.386 6.18 5.103 8.306 5.102h.03c1.36-.01 2.057-.725 2.319-.995l.085-.083c1.21-1.212 1.7-2.022 1.692-2.799Z"
+                clip-rule="evenodd"></path>
+            </svg>
+            {% endif %}
+          </span>
+          <div class="footer__contact-body">
+            <strong class="footer__contact-label">{{ item.label }}</strong>
+            <a class="footer__contact-link" href="{{ item.href }}">{{ item.value }}</a>
+          </div>
+        </li>
         {% endfor %}
       </ul>
-      <div class="footer-social">
+      <div class="footer__social d-flex flex-wrap mt-2">
         {% for item in footer.support.social %}
-          <a href="{{ item.url }}">{{ item.label }}</a>
+        <a class="footer__social-link d-inline-flex align-items-center justify-content-center" href="{{ item.url }}"
+          aria-label="{{ item.label }}">
+          <img class="footer__social-icon" src="{{ item.icon | relative_url }}" alt="{{ item.label }}">
+        </a>
         {% endfor %}
       </div>
     </section>
 
-    <section class="footer-col">
-      <h3>{{ footer.policy.title }}</h3>
-      <ul class="footer-list">
+    <section class="footer__col">
+      <h3 class="footer__title mb-4">{{ footer.policy.title }}</h3>
+      <ul class="footer__list list-unstyled policy">
         {% for item in footer.policy.items %}
-          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        <li class="mb-1"><a class="footer__policy-link" href="{{ item.url }}">{{ item.label }}</a></li>
         {% endfor %}
       </ul>
     </section>

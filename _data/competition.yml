@@ -55,6 +55,6 @@ rounds:
     complete: false
     current: true
 cta:
-  title: "Ôn luyện cấp tốc Chinh phục Kì thi Hội - cấp Tỉnh"
+  title: "Ôn luyện cấp tốc <br />Chinh phục <br /> Kì thi Hội - cấp Tỉnh"
   button: Đăng kí ngay
   url: "#"

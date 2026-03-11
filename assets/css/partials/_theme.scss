@@ -1,0 +1,51 @@
+@use "tokens" as t;
+
+:root {
+  --bg: #f3f3f3;
+  --surface: #ffffff;
+  --surface-soft: #f8ebea;
+  --surface-accent: #f5ecd8;
+  --surface-blue: #dff2ff;
+  --line: #f0b224;
+  --line-soft: #eadfc7;
+  --text: #1e1e1e;
+  --muted: #807d79;
+  --brand: #ad1e1f;
+  --brand-dark: #68000A;
+  --gold: #8b6500;
+  --green: #168a49;
+  --shadow: 0 12px 28px rgba(97, 62, 14, 0.1);
+  --radius-xl: 28px;
+  --radius-lg: 24px;
+  --radius-md: 18px;
+  --radius-sm: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+:where(.competition-page__title, .sidebar__board-title, .competition-page__round-row--head span, .footer__title, .footer__title--company) {
+  font-family: "Paytone One", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

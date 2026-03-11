@@ -1,0 +1,6 @@
+@use "tokens" as t;
+
+@mixin page-container {
+  max-width: t.$page-max-width;
+  margin: 0 auto;
+}

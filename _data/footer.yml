@@ -2,7 +2,8 @@ company:
   title: "Công ty TNHH đầu tư Giáo Dục Trạng Nguyên"
   license: "Giấy phép ĐKKD số 0108781729 do Sở Kế hoạch và Đầu tư TP Hà Nội cấp ngày 12/06/2019, thay đổi lần thứ 3 ngày 04/07/2022"
   update: ""
-  representative: "Bà Trịnh Thị Hương"
+  representative: "Người đại diện"
+  representative-name: "Bà Trịnh Thị Hương"
   role: "TỔNG GIÁM ĐỐC"
 office:
   title: "Thông tin trụ sở"
@@ -14,15 +15,22 @@ support:
   items:
     - label: Email
       value: info@trangnguyen.edu.vn
+      href: "mailto:info@trangnguyen.edu.vn"
+      icon: email
     - label: Hotline
-      value: 1900.633.330
+      value: "1900633330"
+      href: "tel:1900633330"
+      icon: phone
   social:
     - label: YouTube
       url: "#"
+      icon: /assets/icons/footer/youtobe.svg
     - label: Facebook
       url: "#"
+      icon: /assets/icons/footer/facebook.svg
     - label: Zalo
       url: "#"
+      icon: /assets/icons/footer/zalo.svg
 policy:
   title: "Chính sách bảo vệ thông tin cá nhân"
   items:

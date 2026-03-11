@@ -1,11 +1,17 @@
 {% assign competition = site.data.competition %}
-<section class="cta-panel">
-  <div class="cta-copy">
-    <h2>{{ competition.cta.title }}</h2>
-    <a class="cta-button" href="{{ competition.cta.url }}">{{ competition.cta.button }}</a>
+<section class="competition-page__cta position-relative mt-2">
+  <img class="position-absolute top-0 start-0" src="{{ '/assets/images/body/yellow_l.036a7443.svg' | relative_url }}"
+    alt="Competition Hero Image">
+  <img class="position-absolute top-0 end-0" src="{{ '/assets/images/body/yellow_r.35e6e9e0.svg' | relative_url }}"
+    alt="Competition Hero Image">
+  <div class="competition-page__cta-copy">
+    <h2 class="competition-page__cta-title">{{ competition.cta.title }}</h2>
+    <a class="competition-page__cta-button d-inline-flex align-items-center justify-content-center"
+      href="{{ competition.cta.url }}">{{ competition.cta.button }}</a>
   </div>
 
-  <div class="cta-book">
-    <img src="{{ '/assets/images/book-luyen-tieng-viet.svg' | relative_url }}" alt="Sách luyện tiếng Việt 365">
+  <div class="competition-page__cta-book d-grid">
+    <img class="competition-page__cta-book-image rounded-4" src="{{ '/assets/images/tntv.webp' | relative_url }}"
+      alt="Sách luyện tiếng Việt 365">
   </div>
 </section>

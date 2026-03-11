@@ -1,0 +1,14 @@
+@use "variables" as v;
+
+.container-xxl,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(v.$bs-grid-gutter-x * 0.5);
+  padding-left: calc(v.$bs-grid-gutter-x * 0.5);
+}
+
+.container-xxl {
+  max-width: v.$bs-container-max-width;
+}
