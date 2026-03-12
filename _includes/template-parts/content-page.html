@@ -1,4 +1,9 @@
 {% assign competition = site.data.competition %}
+{% assign current_board = site.data.sidebar.boards[1] %}
+<section class="competition-page__mobile-heading">
+  <a class="competition-page__mobile-back" href="#" aria-label="Quay lại">←</a>
+  <h2 class="competition-page__mobile-title">{{ current_board.title | upcase }}</h2>
+</section>
 <article class="competition-page">
   {% include widgets/competition-hero.html %}
   {% include widgets/competition-table.html %}

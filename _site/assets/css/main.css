@@ -574,6 +574,9 @@ a {
   border-radius: var(--radius-lg);
 }
 
+.competition-page__mobile-heading {
+  display: none;
+}
 .competition-page__hero {
   position: relative;
   border: 2px solid rgb(255, 222, 168);
@@ -643,6 +646,10 @@ a {
   font-size: 16px;
   font-weight: 700;
 }
+.competition-page__round-row:not(.competition-page__round-row--head):hover {
+  background: #f5f5f5;
+  border-radius: 12px;
+}
 .competition-page__round-row:not(.competition-page__round-row--head) > span:nth-child(1) {
   text-align: center;
 }
@@ -666,6 +673,9 @@ a {
   color: #fff;
   font-style: normal;
   font-size: 0.76rem;
+}
+.competition-page__round-status--complete i {
+  background: #45b649;
 }
 .competition-page__round-row--current .competition-page__round-status i {
   background: #bcbcbc;
@@ -698,6 +708,7 @@ a {
   font-weight: 900;
   font-size: 1.1rem;
   box-shadow: 0 12px 24px rgba(207, 58, 63, 0.26);
+  width: 180px;
 }
 .competition-page__cta-book {
   place-items: center;
@@ -715,6 +726,7 @@ a {
   margin-top: 2rem;
   background: #ffffff;
   border-top: 1px solid #ece5e0;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .footer h2 {
   line-height: 36px;
@@ -731,6 +743,7 @@ a {
   line-height: 1.15;
   font-size: 1.2rem;
   color: #1b1b1b;
+  font-family: "Paytone One", sans-serif;
 }
 .footer__title--company {
   color: var(--brand-dark);
@@ -817,11 +830,9 @@ a {
   .main::before {
     inset: 16rem 0 0 0;
   }
-  .header__inner {
-    padding-left: 1.5rem;
-  }
   .footer__inner {
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .sidebar {
@@ -841,15 +852,15 @@ a {
   }
   .header__inner {
     min-height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
     flex-direction: column;
     align-items: flex-start;
   }
   .header__brand {
     align-self: auto;
-    width: 6.4rem;
-    min-width: 6.4rem;
+    width: 6.2rem;
+    min-width: 6.2rem;
     height: auto;
     margin-bottom: 0;
     padding: 0.45rem 0.3rem;
@@ -864,11 +875,11 @@ a {
   .sidebar__stack {
     grid-template-columns: 1fr;
   }
-  .competition-page__hero, .competition-page__cta {
-    grid-template-columns: 1fr;
-  }
   .competition-page__hero {
     align-items: flex-start;
+  }
+  .competition-page__cta {
+    grid-template-columns: 1fr;
   }
   .competition-page__round-row {
     grid-template-columns: 4rem minmax(10rem, 1.3fr) 1fr 1fr 5rem;
@@ -882,24 +893,233 @@ a {
   }
 }
 @media (max-width: 640px) {
+  .main {
+    background: #fff;
+  }
+  .main::before {
+    display: none;
+  }
   .layout {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .layout .row {
+    margin-left: 0;
+    margin-right: 0;
+    gap: 0;
+  }
+  .layout .row > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .layout__content {
+    width: 100%;
+    padding: 0.65rem 0.9rem 2rem;
+  }
+  .sidebar {
+    display: none;
+  }
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
   }
   .header__inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    min-height: 4.25rem;
+    padding: 0.15rem 5px 0.25rem;
+    gap: 0.55rem;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
-  .footer__inner {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    grid-template-columns: 1fr;
+  .header__brand {
+    width: 4.4rem;
+    min-width: 4.4rem;
+    height: 4.9rem;
+    margin-bottom: -1.25rem;
+    padding: 0.3rem 0.22rem;
+    border-radius: 0 0 0.95rem 0.95rem;
+  }
+  .header__brand-image {
+    width: 2.35rem;
+  }
+  .header__nav img {
+    display: none !important;
+  }
+  .header__nav span {
+    font-size: 14px;
+  }
+  .header__nav-chevron {
+    display: none;
+  }
+  .header__profile-wrap .header__profile-body,
+  .header__profile-wrap .header__profile-chevron {
+    display: none;
+  }
+  .header__notify {
+    display: none;
+  }
+  .header__actions {
+    gap: 0.2rem;
+    margin-left: auto;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-wrap: nowrap;
+  }
+  .header__action {
+    display: none !important;
+  }
+  .header__action:nth-child(4) {
+    display: none !important;
+  }
+  .header__action-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex-basis: 0.95rem;
+  }
+  .competition-page {
+    gap: 1rem;
+  }
+  .competition-page__mobile-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0 0.7rem;
+    border-top: 1px solid #ececec;
+  }
+  .competition-page__mobile-back {
+    flex: 0 0 auto;
+    font-size: 1.55rem;
+    line-height: 1;
+    color: #202020;
+  }
+  .competition-page__mobile-title {
+    margin: 0;
+    color: #0d0d0d;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-family: "Paytone One", sans-serif;
+  }
+  .competition-page__hero {
+    min-height: auto;
+    padding: 0.95rem 0.95rem 0.85rem;
+    border-radius: 1.5rem;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .competition-page__hero::before, .competition-page__hero::after {
+    width: 1.05rem;
+    height: 1.05rem;
+    border-width: 2px;
+  }
+  .competition-page__title {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.32;
+  }
+  .competition-page__meta {
+    padding-left: 0;
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+  .competition-page__table {
+    padding: 0.65rem 0.55rem 0.8rem;
+    border-radius: 1.5rem;
   }
   .competition-page__round-table {
-    overflow-x: auto;
+    overflow: visible;
   }
   .competition-page__round-row {
-    min-width: 42rem;
+    min-width: 0;
+    grid-template-columns: 1.5rem minmax(4.35rem, 1.15fr) minmax(3.8rem, 1fr) minmax(3.8rem, 1fr) 1.8rem;
+    gap: 0.45rem;
+    padding: 0.38rem 0.15rem;
+  }
+  .competition-page__round-row--head {
+    padding-top: 0.15rem;
+    padding-bottom: 0.55rem;
+  }
+  .competition-page__round-row--head > span:nth-child(1) {
+    text-align: left;
+  }
+  .competition-page__round-row--head span {
+    font-size: 0.82rem;
+    line-height: 1.15;
+  }
+  .competition-page__round-row:not(.competition-page__round-row--head) span {
+    font-size: 0.72rem;
+    line-height: 1.32;
+  }
+  .competition-page__round-status i {
+    width: 1.45rem;
+    height: 1.45rem;
+    font-size: 0.72rem;
+  }
+  .competition-page__cta {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 1.35rem 1rem 1.2rem;
+    border-radius: 1.8rem;
+    text-align: center;
+  }
+  .competition-page__cta > img {
+    display: none;
+  }
+  .competition-page__cta-book {
+    order: -1;
+    width: 100%;
+    justify-items: center;
+  }
+  .competition-page__cta-book-image {
+    margin-left: 0;
+  }
+  .competition-page__cta-book-image {
+    width: min(12rem, 72vw);
+  }
+  .competition-page__cta-copy {
+    padding: 0;
+  }
+  .competition-page__cta-title {
+    margin: 0.9rem 0 1rem;
+    max-width: 15rem;
+    font-size: 1.2rem;
+    line-height: 1.32;
+    text-align: center;
+  }
+  .competition-page__cta-button {
+    width: auto;
+    min-width: 8.7rem;
+    min-height: 2.85rem;
+    font-size: 0.98rem;
+  }
+  .footer__inner {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem 3rem;
+    gap: 2rem;
+  }
+  .footer__col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .footer__title {
+    font-size: 24px;
+  }
+  .footer__title--company {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .footer__text, .footer__list li, .footer__list a, .footer__person-role, .footer__contact-link {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+  .footer__person-name {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+  .footer__badge {
+    width: 11.5rem;
   }
 }
 

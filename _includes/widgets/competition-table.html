@@ -14,10 +14,9 @@
       <span role="cell">{{ round.label }}</span>
       <span role="cell">{{ round.opens }}</span>
       <span role="cell">{{ round.closes }}</span>
-      <span class="competition-page__round-status" role="cell"
+      <span class="competition-page__round-status{% if round.complete %} competition-page__round-status--complete{% endif %}" role="cell"
         aria-label="{% if round.complete %}Đã hoàn thành{% else %}Chưa hoàn thành{% endif %}">
-        <i class="d-inline-flex align-items-center justify-content-center">{% if round.complete %}✓{% else %}✓{% endif
-          %}</i>
+        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
       </span>
     </div>
     {% endfor %}

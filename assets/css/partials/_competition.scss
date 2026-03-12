@@ -1,6 +1,9 @@
 @use "tokens" as t;
 
 .competition-page {
+  &__mobile-heading {
+    display: none;
+  }
 
   &__hero {
     position: relative;
@@ -86,6 +89,11 @@
       font-weight: 700;
     }
 
+    &:not(.competition-page__round-row--head):hover {
+      background: #f5f5f5;
+      border-radius: 12px;
+    }
+
     &:not(.competition-page__round-row--head)>span:nth-child(1) {
       text-align: center;
     }
@@ -115,6 +123,10 @@
       color: #fff;
       font-style: normal;
       font-size: 0.76rem;
+    }
+
+    &--complete i {
+      background: #45b649;
     }
   }
 
@@ -153,6 +165,7 @@
     font-weight: 900;
     font-size: 1.1rem;
     box-shadow: 0 12px 24px rgba(207, 58, 63, 0.26);
+    width: 180px;
   }
 
   &__cta-book {
