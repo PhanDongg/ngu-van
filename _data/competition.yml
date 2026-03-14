@@ -58,3 +58,21 @@ cta:
   title: "Ôn luyện cấp tốc <br />Chinh phục <br /> Kì thi Hội - cấp Tỉnh"
   button: Đăng kí ngay
   url: "#"
+exam_rules:
+  modal_id: examRulesModal
+  start_url: /bai-thi/
+  title: "Quy chế khảo thí"
+  items:
+    - "Hội đồng: Đơn vị tổ chức thi thành lập hội đồng thi cử giám sát chéo nghiêm túc, đảm bảo công bằng, nghiêm minh."
+    - "Không phát tán đề thi, bài thi, mã thi dưới bất kì hình thức nào."
+    - "Mỗi học sinh đăng ký duy nhất một tài khoản để học, ôn luyện, thi."
+    - "Học sinh tham dự thi tập trung dưới sự giám sát của hội đồng thi các cấp và ký biên bản xác nhận kết quả mới được công nhận."
+    - "Học sinh nhập đúng mã dự thi cả Hội đồng thi cấp, mới được công nhận kết quả."
+    - "Học sinh tuân thủ thời gian làm bài và lịch thi theo quy định của Ban Tổ Chức thông báo."
+    - "Học sinh không được mang tài liệu, thiết bị điện tử thông minh vào phòng thi; không trao đổi, nhắc bài hay nhận sự hỗ trợ làm bài từ người khác."
+    - "Học sinh chỉ được mang bút chì, bút mực, giấy nháp trắng vào phòng thi."
+    - "Học sinh chỉ được mở một trình duyệt web khi tham dự thi (Máy tính cần cài bảng gõ tiếng Việt là phần mềm Unikey 4.0. Bảng mã Unicode (code dựng sẵn) - Kiểu gõ Telex)."
+    - "Hội đồng thi hoặc học sinh vi phạm quy chế khảo thí, Ban Tổ Chức có quyền hủy kết quả thi."
+  agreement_label: "Tôi đồng ý với Quy chế khảo thí của Trạng Nguyên"
+  cancel_label: "Không đồng ý"
+  confirm_label: "Tôi đồng ý"

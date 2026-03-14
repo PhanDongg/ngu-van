@@ -1,0 +1,148 @@
+header:
+  eyebrow: "SÂN CHƠI TRẠNG NGUYÊN TOÀN TÀI KHỐI 2 NĂM HỌC 2025 - 2026"
+  title: "Vòng 3 - Điều kiện"
+  back_label: "Quay lại"
+  back_url: /vao-thi-trang-nguyen-2023/
+timer:
+  label: "Còn lại"
+  value: "00 : 29 : 51"
+pagination:
+  total: 30
+  prev_label: "Trang trước"
+  next_label: "Trang sau"
+  submit_label: "Nộp bài"
+questions:
+  - id: q1
+    number: 1
+    type: single_choice
+    prompt: "Chọn phép nhân thích hợp dựa vào gợi ý sau."
+    visual:
+      kind: multiplication
+      group_count: 5
+      item_count: 2
+    options:
+      - key: A.
+        text: "2 x 3 = 6"
+      - key: B.
+        text: "2 x 6 = 12"
+      - key: C.
+        text: "2 x 2 = 4"
+      - key: D.
+        text: "2 x 5 = 10"
+  - id: q3
+    number: 3
+    type: image_choice
+    prompt: "Chọn đáp án đúng."
+    intro: "Bạn Mẫn đã tạo ra các khối hình bằng cách ghép hai khối đã cho như hình dưới đây."
+    question_text: "Hỏi trong số các khối hình dưới đây, khối hình nào không được tạo ra bằng cách ghép hai hình của bạn Mẫn?"
+    source_shapes:
+      - columns:
+          - [0, 1]
+      - columns:
+          - [0, 1]
+    options:
+      - key: A.
+        shape:
+          columns:
+            - [0, 1, 2, 3]
+      - key: B.
+        shape:
+          columns:
+            - [0]
+            - [0]
+            - [0, 1]
+      - key: C.
+        shape:
+          columns:
+            - [0]
+            - [0, 1, 2]
+      - key: D.
+        shape:
+          columns:
+            - [0, 1, 2, 3]
+            - [0]
+  - id: q5
+    number: 5
+    type: fill_blank
+    prompt: "Điền số thích hợp vào chỗ trống."
+    intro: "Trong phép tính 120 - 20 = 100 có:"
+    blanks:
+      - before: "Số"
+        after: "là hiệu."
+      - before: "Số"
+        after: "là số bị trừ."
+      - before: "Và số"
+        after: "là số trừ."
+  - id: q6
+    number: 6
+    type: matching
+    prompt: "Nối phép tính với kết quả thích hợp."
+    left_items:
+      - "408 + 271"
+      - "690 - 458"
+      - "756 - 324"
+      - "245 + 132"
+    right_items:
+      - "377"
+      - "432"
+      - "679"
+      - "232"
+  - id: q7
+    number: 7
+    type: classify_lines
+    prompt: "Sắp xếp các hình ảnh sau vào ô thích hợp."
+    source_items:
+      - labels: ["A", "B"]
+        kind: segment_rise
+      - labels: ["A", "B"]
+        kind: line_horizontal
+      - labels: ["M", "N"]
+        kind: segment_vertical
+      - labels: ["P", "Q"]
+        kind: line_diagonal
+      - labels: ["B", "C"]
+        kind: segment_fall
+    buckets:
+      - title: "Đường thẳng"
+      - title: "Đoạn thẳng"
+  - id: q8
+    number: 8
+    type: sort_numbers
+    prompt: "Sắp xếp các số theo thứ tự từ lớn đến bé."
+    numbers:
+      - "804"
+      - "751"
+      - "720"
+      - "698"
+      - "679"
+  - id: q17
+    number: 17
+    type: animal_choice
+    prompt: "Chọn đáp án đúng."
+    question_text: "Loài vật nào dưới đây sống dưới nước?"
+    options:
+      - key: A.
+        emoji: "🐎"
+        label: "Ngựa"
+      - key: B.
+        emoji: "🦐"
+        label: "Tôm"
+      - key: C.
+        emoji: "🐅"
+        label: "Hổ"
+      - key: D.
+        emoji: "🐆"
+        label: "Báo"
+  - id: q23
+    number: 23
+    type: audio_choice
+    prompt: "Listen to the word in the picture. Then listen and choose the word with the same beginning sound as the picture."
+    picture_emoji: "🚐"
+    picture_word: "van"
+    options:
+      - key: A.
+        label: "Speaker 1"
+      - key: B.
+        label: "Speaker 2"
+      - key: C.
+        label: "Speaker 3"

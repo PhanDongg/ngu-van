@@ -1,0 +1,48 @@
+{% assign exam_rules = site.data.competition.exam_rules %}
+<div class="modal fade competition-page__exam-modal" id="{{ exam_rules.modal_id }}" tabindex="-1"
+  aria-labelledby="{{ exam_rules.modal_id }}Title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered competition-page__exam-modal-dialog">
+    <div class="modal-content competition-page__exam-modal-content">
+      <div class="competition-page__exam-modal-shell">
+        <div class="competition-page__exam-modal-corners" aria-hidden="true"></div>
+
+        <div class="competition-page__exam-modal-head">
+          <h3 class="competition-page__exam-modal-title" id="{{ exam_rules.modal_id }}Title">{{ exam_rules.title }}</h3>
+          <div class="competition-page__exam-modal-brand">
+            <img src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}" alt="Trang Nguyen Education">
+          </div>
+        </div>
+
+        <div class="competition-page__exam-modal-body">
+          <div class="competition-page__exam-modal-scroll">
+            <ol class="competition-page__exam-modal-list">
+              {% for item in exam_rules.items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+
+          <div class="competition-page__exam-modal-footer">
+            <label class="competition-page__exam-modal-check">
+              <input type="checkbox" checked>
+              <span>{{ exam_rules.agreement_label }}</span>
+            </label>
+
+            <div class="competition-page__exam-modal-actions">
+              <button class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost" type="button"
+                data-bs-dismiss="modal">
+                <img class="competition-page__exam-modal-button-icon"
+                  src="{{ '/assets/images/bai-thi/tnv_close_remove.svg' | relative_url }}" alt="" aria-hidden="true">
+                {{ exam_rules.cancel_label }}
+              </button>
+              <a class="competition-page__exam-modal-button competition-page__exam-modal-button--primary"
+                href="{{ exam_rules.start_url | relative_url }}">
+                {{ exam_rules.confirm_label }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

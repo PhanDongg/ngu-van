@@ -399,8 +399,8 @@
       </span>
     </div>
     
-    <div class="competition-page__round-row competition-page__round-row--current"
-      role="row">
+    <div class="competition-page__round-row competition-page__round-row--current competition-page__round-row--launch"
+      role="row" tabindex="0" aria-label="Mở quy chế khảo thí vòng hiện tại" data-bs-toggle="modal" data-bs-target="#examRulesModal">
       <span role="cell">9</span>
       <span role="cell">Vòng 9 - Thi Hội</span>
       <span role="cell">10/03/2026</span>
@@ -532,6 +532,73 @@
     </section>
   </div>
 </footer>
+  
+<div class="modal fade competition-page__exam-modal" id="examRulesModal" tabindex="-1"
+  aria-labelledby="examRulesModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered competition-page__exam-modal-dialog">
+    <div class="modal-content competition-page__exam-modal-content">
+      <div class="competition-page__exam-modal-shell">
+        <div class="competition-page__exam-modal-corners" aria-hidden="true"></div>
+
+        <div class="competition-page__exam-modal-head">
+          <h3 class="competition-page__exam-modal-title" id="examRulesModalTitle">Quy chế khảo thí</h3>
+          <div class="competition-page__exam-modal-brand">
+            <img src="/assets/icons/header/trang-nguyen-logo.svg" alt="Trang Nguyen Education">
+          </div>
+        </div>
+
+        <div class="competition-page__exam-modal-body">
+          <div class="competition-page__exam-modal-scroll">
+            <ol class="competition-page__exam-modal-list">
+              
+              <li>Hội đồng: Đơn vị tổ chức thi thành lập hội đồng thi cử giám sát chéo nghiêm túc, đảm bảo công bằng, nghiêm minh.</li>
+              
+              <li>Không phát tán đề thi, bài thi, mã thi dưới bất kì hình thức nào.</li>
+              
+              <li>Mỗi học sinh đăng ký duy nhất một tài khoản để học, ôn luyện, thi.</li>
+              
+              <li>Học sinh tham dự thi tập trung dưới sự giám sát của hội đồng thi các cấp và ký biên bản xác nhận kết quả mới được công nhận.</li>
+              
+              <li>Học sinh nhập đúng mã dự thi cả Hội đồng thi cấp, mới được công nhận kết quả.</li>
+              
+              <li>Học sinh tuân thủ thời gian làm bài và lịch thi theo quy định của Ban Tổ Chức thông báo.</li>
+              
+              <li>Học sinh không được mang tài liệu, thiết bị điện tử thông minh vào phòng thi; không trao đổi, nhắc bài hay nhận sự hỗ trợ làm bài từ người khác.</li>
+              
+              <li>Học sinh chỉ được mang bút chì, bút mực, giấy nháp trắng vào phòng thi.</li>
+              
+              <li>Học sinh chỉ được mở một trình duyệt web khi tham dự thi (Máy tính cần cài bảng gõ tiếng Việt là phần mềm Unikey 4.0. Bảng mã Unicode (code dựng sẵn) - Kiểu gõ Telex).</li>
+              
+              <li>Hội đồng thi hoặc học sinh vi phạm quy chế khảo thí, Ban Tổ Chức có quyền hủy kết quả thi.</li>
+              
+            </ol>
+          </div>
+
+          <div class="competition-page__exam-modal-footer">
+            <label class="competition-page__exam-modal-check">
+              <input type="checkbox" checked>
+              <span>Tôi đồng ý với Quy chế khảo thí của Trạng Nguyên</span>
+            </label>
+
+            <div class="competition-page__exam-modal-actions">
+              <button class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost" type="button"
+                data-bs-dismiss="modal">
+                <img class="competition-page__exam-modal-button-icon"
+                  src="/assets/images/bai-thi/tnv_close_remove.svg" alt="" aria-hidden="true">
+                Không đồng ý
+              </button>
+              <a class="competition-page__exam-modal-button competition-page__exam-modal-button--primary"
+                href="/bai-thi/">
+                Tôi đồng ý
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

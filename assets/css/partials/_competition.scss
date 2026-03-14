@@ -102,6 +102,16 @@
       color: #0d0d0d;
       font-weight: 900;
     }
+
+    &--launch {
+      cursor: pointer;
+
+      &:focus-visible {
+        outline: 3px solid rgba(234, 79, 68, 0.22);
+        outline-offset: 2px;
+        border-radius: 12px;
+      }
+    }
   }
 
   &__round-row:last-child {
@@ -181,4 +191,202 @@
     width: 12.5rem;
     filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.14));
   }
+
+  &__exam-modal {
+    --bs-modal-bg: transparent;
+    --bs-modal-border-width: 0;
+    --bs-modal-box-shadow: none;
+    --bs-modal-padding: 0;
+    --bs-backdrop-bg: rgba(255, 255, 255, 0.82);
+    --bs-backdrop-opacity: 1;
+    z-index: 2000;
+
+    &-dialog {
+      max-width: 66rem;
+    }
+
+    &-content {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    &-shell {
+      position: relative;
+      padding: 2rem 2rem 1.6rem;
+      background: rgba(255, 255, 255);
+      border: 2px solid #f6d4d3;
+      border-radius: 2rem;
+      box-shadow: 0 32px 84px rgba(55, 43, 36, 0.22), 0 14px 28px rgba(55, 43, 36, 0.1);
+    }
+
+    &-corners {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: -1px;
+        width: 3.4rem;
+        height: 3.1rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &::before {
+        left: -2px;
+        background-image: url("/assets/images/bai-thi/border-left.png");
+      }
+
+      &::after {
+        right: -7px;
+        background-image: url("/assets/images/bai-thi/border-right.png");
+      }
+    }
+
+    &-head {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    &-title {
+      margin: 0;
+      color: #060606;
+      font-size: 36px;
+      line-height: 1.1;
+      font-family: "Paytone One", sans-serif;
+      margin-top: auto;
+      font-weight: 400;
+    }
+
+    &-brand {
+      flex: 0 0 auto;
+      width: 7.2rem;
+      padding: 0.7rem 0.55rem;
+      border: 1px solid #f1c5c1;
+      border-radius: 1.25rem;
+      background: #fff7f6;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 1.35rem;
+    }
+
+    &-scroll {
+      max-height: 24rem;
+      padding-right: 0.4rem;
+      overflow: auto;
+    }
+
+    &-list {
+      margin: 0;
+      padding-left: 1.6rem;
+
+      li {
+        color: #25201d;
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      li+li {
+        margin-top: 0.5rem;
+      }
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 0.25rem;
+    }
+
+    &-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: #25201d;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+
+      input {
+        width: 1.3rem;
+        height: 1.3rem;
+        accent-color: #4a89ff;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-left: auto;
+    }
+
+    &-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-width: 11rem;
+      min-height: 3rem;
+      padding: 0 1.4rem;
+      border-radius: 999px;
+      border: 2px solid #c81d24;
+      font-size: 1rem;
+      font-weight: 800;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+
+      &--ghost {
+        background: #fff;
+        color: #c81d24;
+      }
+
+      &--primary {
+        background: #c81d24;
+        color: #fff;
+        box-shadow: 0 12px 22px rgba(200, 29, 36, 0.18);
+      }
+    }
+
+    &-button-icon {
+      width: 1rem;
+      height: 1rem;
+      object-fit: contain;
+      flex: 0 0 1rem;
+    }
+  }
+}
+
+.competition-page__exam-modal.modal {
+  z-index: 2000 !important;
+}
+
+.modal-backdrop,
+.modal-backdrop.fade,
+.modal-backdrop.show {
+  z-index: 1990 !important;
 }

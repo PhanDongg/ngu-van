@@ -8,8 +8,8 @@
     </div>
 
     {% for round in competition.rounds %}
-    <div class="competition-page__round-row{% if round.current %} competition-page__round-row--current{% endif %}"
-      role="row">
+    <div class="competition-page__round-row{% if round.current %} competition-page__round-row--current competition-page__round-row--launch{% endif %}"
+      role="row"{% if round.current %} tabindex="0" aria-label="Mở quy chế khảo thí vòng hiện tại" data-bs-toggle="modal" data-bs-target="#{{ competition.exam_rules.modal_id }}"{% endif %}>
       <span role="cell">{{ round.index }}</span>
       <span role="cell">{{ round.label }}</span>
       <span role="cell">{{ round.opens }}</span>
