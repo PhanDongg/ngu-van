@@ -2,9 +2,7 @@
 @use "mixins" as m;
 
 .header {
-  position: relative;
   z-index: 20;
-  overflow: visible;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid t.$header-border;
   backdrop-filter: blur(10px);
@@ -13,14 +11,9 @@
     @include m.page-container;
     min-height: 4.5rem;
     padding: 0 t.$page-padding-x;
-    gap: 1.5rem;
-    overflow: visible;
   }
 
   &__brand {
-    position: relative;
-    flex: 0 0 auto;
-    align-self: flex-start;
     width: 7.1rem;
     min-width: 7.1rem;
     height: 7.7rem;
@@ -37,16 +30,7 @@
     height: auto;
   }
 
-  &__nav {
-    gap: 0.9rem;
-    margin-right: auto;
-  }
-
   &__nav-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-
     &--has-dropdown:hover {
       .header__dropdown {
         opacity: 1;
@@ -65,8 +49,6 @@
   }
 
   &__nav-link {
-    position: relative;
-    gap: 0.5rem;
     padding: 1.55rem 0.1rem 1.05rem;
     color: t.$text-secondary;
     font-weight: 700;
@@ -115,7 +97,6 @@
   }
 
   &__dropdown {
-    position: absolute;
     top: calc(100% - 0.05rem);
     left: 50%;
     min-width: 17.6rem;
@@ -128,7 +109,6 @@
   }
 
   &__dropdown-list {
-    margin: 0;
     padding: 12px;
     background: #fff;
     border-radius: 24px;
@@ -140,7 +120,6 @@
   }
 
   &__dropdown-link {
-    display: block;
     padding: 0.75rem 0;
     color: #4f4a45;
     font-size: 1rem;
@@ -154,7 +133,6 @@
   }
 
   &__action {
-    gap: 0.5rem;
     padding: 8px 12px;
     border-radius: 0.5rem;
     font-weight: 800;
@@ -173,12 +151,8 @@
   }
 
   &__notify {
-    position: relative;
     width: 2rem;
     height: 2rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
     cursor: pointer;
   }
 
@@ -189,38 +163,24 @@
   }
 
   &__notify-dot {
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 0.55rem;
     height: 0.55rem;
     background: t.$accent-red;
     border-radius: 50%;
   }
 
-  &__profile-wrap {
-    position: relative;
-  }
-
   &__profile {
-    gap: 10px;
     cursor: pointer;
 
     &-avatar {
       width: 3rem;
       height: 3rem;
-      border-radius: 50%;
       padding: 5px;
     }
 
     &-item:nth-child(6) img {
       opacity: 0.6;
     }
-  }
-
-  &__profile-name,
-  &__profile-meta {
-    display: block;
   }
 
   &__profile-name {
@@ -243,14 +203,9 @@
   }
 
   &__profile-dropdown {
-    position: absolute;
     top: calc(100% + 0.35rem);
     right: 0;
     width: 17.5rem;
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(0.7rem);
@@ -265,7 +220,6 @@
   }
 
   &__profile-menu {
-    margin: 0;
     padding: 12px;
     background: #fff;
     border-radius: 1.65rem;
@@ -277,8 +231,6 @@
   }
 
   &__profile-link {
-    display: flex;
-    align-items: center;
     gap: 0.9rem;
     padding: 10px 8px;
     border-radius: 0.8rem;

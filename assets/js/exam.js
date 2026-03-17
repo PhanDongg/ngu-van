@@ -19,10 +19,103 @@
   const prevButton = document.querySelector("[data-pager-prev]");
   const nextButton = document.querySelector("[data-pager-next]");
   const chipButtons = Array.from(document.querySelectorAll("[data-question-chip]"));
+  const timerEl = document.querySelector("[data-exam-timer]");
   const examHeader = document.querySelector("[data-exam-header]");
   const examMain = document.querySelector("[data-exam-main]");
+  const submitModalEl = document.getElementById("examSubmitModal");
   const submitConfirmButton = document.querySelector("[data-exam-submit-confirm]");
   const examResult = document.querySelector("[data-exam-result]");
+  const resultFinishButton = document.querySelector(".exam-result__finish");
+  const storageKey = `exam-deadline:${exam.header?.title || "default"}`;
+  let timerInterval = null;
+  let autoSubmitShown = false;
+
+  function formatTimer(totalSeconds) {
+    const safeSeconds = Math.max(0, totalSeconds);
+    const hours = Math.floor(safeSeconds / 3600);
+    const minutes = Math.floor((safeSeconds % 3600) / 60);
+    const seconds = safeSeconds % 60;
+
+    return [hours, minutes, seconds]
+      .map((value) => String(value).padStart(2, "0"))
+      .join(" : ");
+  }
+
+  function getTimerDuration() {
+    const configuredDuration = Number(exam.timer?.duration_seconds);
+    if (Number.isFinite(configuredDuration) && configuredDuration > 0) {
+      return configuredDuration;
+    }
+
+    const rawValue = String(exam.timer?.value || "00 : 30 : 00");
+    const parts = rawValue.split(":").map((part) => Number(part.trim()));
+
+    if (parts.length === 3 && parts.every((part) => Number.isFinite(part))) {
+      return (parts[0] * 3600) + (parts[1] * 60) + parts[2];
+    }
+
+    return 1800;
+  }
+
+  function showSubmitModal() {
+    if (!submitModalEl || typeof bootstrap === "undefined") return;
+    bootstrap.Modal.getOrCreateInstance(submitModalEl).show();
+  }
+
+  function stopTimer() {
+    if (timerInterval) {
+      window.clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  }
+
+  function updateTimerDisplay(remainingSeconds) {
+    if (!timerEl) return;
+    timerEl.textContent = formatTimer(remainingSeconds);
+  }
+
+  function handleTimerExpired() {
+    stopTimer();
+    sessionStorage.removeItem(storageKey);
+    updateTimerDisplay(0);
+
+    if (!autoSubmitShown) {
+      autoSubmitShown = true;
+      showSubmitModal();
+    }
+  }
+
+  function startTimer() {
+    if (!timerEl) return;
+
+    const durationSeconds = getTimerDuration();
+    let deadline = Number(sessionStorage.getItem(storageKey));
+
+    if (!Number.isFinite(deadline) || deadline <= Date.now()) {
+      deadline = Date.now() + (durationSeconds * 1000);
+      sessionStorage.setItem(storageKey, String(deadline));
+    }
+
+    const tick = function () {
+      if (examResult && !examResult.hidden) {
+        stopTimer();
+        return;
+      }
+
+      const remainingSeconds = Math.max(0, Math.ceil((deadline - Date.now()) / 1000));
+      updateTimerDisplay(remainingSeconds);
+
+      if (remainingSeconds <= 0) {
+        handleTimerExpired();
+      }
+    };
+
+    tick();
+
+    if (!timerInterval) {
+      timerInterval = window.setInterval(tick, 1000);
+    }
+  }
 
   function getQuestionState(questionId) {
     if (!responses[questionId]) {
@@ -30,8 +123,13 @@
         selectedLeft: null,
         pairs: {},
         classifyPlacements: {},
-        sortOrder: null
+        sortOrder: null,
+        selectedOptions: []
       };
+    }
+
+    if (!Array.isArray(responses[questionId].selectedOptions)) {
+      responses[questionId].selectedOptions = [];
     }
 
     return responses[questionId];
@@ -59,7 +157,7 @@
 
   function renderLineFigure(kind, labels) {
     const card = document.createElement("div");
-    card.className = "exam-page__line-card";
+    card.className = "exam-page__line-card d-grid bg-white";
 
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(svgNS, "svg");
@@ -127,11 +225,11 @@
     visualEl.innerHTML = "";
 
     const groups = document.createElement("div");
-    groups.className = "exam-page__visual-groups";
+    groups.className = "exam-page__visual-groups d-flex flex-wrap justify-content-center";
 
     for (let group = 0; group < question.visual.group_count; group += 1) {
       const groupEl = document.createElement("div");
-      groupEl.className = "exam-page__visual-group";
+      groupEl.className = "exam-page__visual-group d-inline-flex";
 
       for (let item = 0; item < question.visual.item_count; item += 1) {
         const itemEl = document.createElement("span");
@@ -144,7 +242,7 @@
     }
 
     const formula = document.createElement("div");
-    formula.className = "exam-page__formula";
+    formula.className = "exam-page__formula d-inline-flex align-items-center";
     formula.setAttribute("aria-hidden", "true");
     formula.innerHTML = `
       <span class="exam-page__formula-box"></span>
@@ -167,11 +265,11 @@
     visualEl.appendChild(intro);
 
     const sources = document.createElement("div");
-    sources.className = "exam-page__source-shapes";
+    sources.className = "exam-page__source-shapes d-flex justify-content-center";
 
     question.source_shapes.forEach((shapeData) => {
       const frame = document.createElement("div");
-      frame.className = "exam-page__source-shape";
+      frame.className = "exam-page__source-shape d-grid";
       frame.appendChild(renderCubeShape(shapeData.columns));
       sources.appendChild(frame);
     });
@@ -185,13 +283,13 @@
   }
 
   function renderSingleChoiceOptions(question) {
-    optionsEl.className = "exam-page__options";
+    optionsEl.className = "exam-page__options d-grid";
     optionsEl.setAttribute("role", "radiogroup");
     optionsEl.innerHTML = "";
 
     question.options.forEach((option, optionIndex) => {
       const label = document.createElement("label");
-      label.className = "exam-page__option";
+      label.className = "exam-page__option position-relative d-flex align-items-center bg-transparent border-0 text-start";
       label.htmlFor = `question-${question.number}-option-${optionIndex + 1}`;
       label.innerHTML = `
         <input class="exam-page__option-input" type="radio" name="question-${question.number}" id="question-${question.number}-option-${optionIndex + 1}">
@@ -204,13 +302,13 @@
   }
 
   function renderImageChoiceOptions(question) {
-    optionsEl.className = "exam-page__options exam-page__options--image-choice";
+    optionsEl.className = "exam-page__options exam-page__options--image-choice d-grid";
     optionsEl.setAttribute("role", "radiogroup");
     optionsEl.innerHTML = "";
 
     question.options.forEach((option, optionIndex) => {
       const label = document.createElement("label");
-      label.className = "exam-page__image-option";
+      label.className = "exam-page__image-option position-relative d-grid align-items-center";
       label.htmlFor = `question-${question.number}-option-${optionIndex + 1}`;
 
       const input = document.createElement("input");
@@ -228,7 +326,7 @@
       key.textContent = option.key;
 
       const visual = document.createElement("div");
-      visual.className = "exam-page__image-option-visual";
+      visual.className = "exam-page__image-option-visual d-flex align-items-center";
       visual.appendChild(renderCubeShape(option.shape.columns));
 
       label.append(input, radio, key, visual);
@@ -246,11 +344,11 @@
     visualEl.appendChild(intro);
 
     const list = document.createElement("div");
-    list.className = "exam-page__fill-list";
+    list.className = "exam-page__fill-list d-grid";
 
     question.blanks.forEach((blank, blankIndex) => {
       const row = document.createElement("label");
-      row.className = "exam-page__fill-row";
+      row.className = "exam-page__fill-row d-flex align-items-center";
       row.innerHTML = `
         <span class="exam-page__fill-text">${blank.before}</span>
         <input class="exam-page__fill-input" type="text" inputmode="numeric" aria-label="Ô trống ${blankIndex + 1} câu hỏi ${question.number}">
@@ -260,7 +358,7 @@
     });
 
     visualEl.appendChild(list);
-    optionsEl.className = "exam-page__options exam-page__options--empty";
+    optionsEl.className = "exam-page__options exam-page__options--empty d-none";
     optionsEl.removeAttribute("role");
     optionsEl.innerHTML = "";
   }
@@ -271,19 +369,19 @@
     visualEl.innerHTML = "";
 
     const board = document.createElement("div");
-    board.className = "exam-page__matching-board";
+    board.className = "exam-page__matching-board position-relative d-grid align-items-start";
 
     const overlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     overlay.setAttribute("class", "exam-page__matching-lines");
     overlay.setAttribute("aria-hidden", "true");
 
     const leftColumn = document.createElement("div");
-    leftColumn.className = "exam-page__matching-column exam-page__matching-column--left";
+    leftColumn.className = "exam-page__matching-column exam-page__matching-column--left position-relative d-grid";
 
     question.left_items.forEach((item, itemIndex) => {
       const tile = document.createElement("button");
       tile.type = "button";
-      tile.className = "exam-page__matching-tile exam-page__matching-tile--left";
+      tile.className = "exam-page__matching-tile exam-page__matching-tile--left d-flex align-items-center border-0 text-start w-100";
       tile.dataset.matchLeft = String(itemIndex);
       tile.textContent = item;
       tile.classList.toggle("exam-page__matching-tile--selected", state.selectedLeft === itemIndex);
@@ -296,12 +394,12 @@
     });
 
     const rightColumn = document.createElement("div");
-    rightColumn.className = "exam-page__matching-column exam-page__matching-column--right";
+    rightColumn.className = "exam-page__matching-column exam-page__matching-column--right position-relative d-grid";
 
     question.right_items.forEach((item, itemIndex) => {
       const tile = document.createElement("button");
       tile.type = "button";
-      tile.className = "exam-page__matching-tile exam-page__matching-tile--right";
+      tile.className = "exam-page__matching-tile exam-page__matching-tile--right d-flex align-items-center border-0 text-start w-100";
       tile.dataset.matchRight = String(itemIndex);
       tile.textContent = item;
       const linkedLeftIndex = Object.keys(state.pairs).find((leftIndex) => state.pairs[leftIndex] === itemIndex);
@@ -326,7 +424,7 @@
     visualEl.appendChild(board);
     drawMatchingLines(board, overlay, state.pairs);
 
-    optionsEl.className = "exam-page__options exam-page__options--empty";
+    optionsEl.className = "exam-page__options exam-page__options--empty d-none";
     optionsEl.removeAttribute("role");
     optionsEl.innerHTML = "";
   }
@@ -387,7 +485,7 @@
     visualEl.innerHTML = "";
 
     const sourceTray = document.createElement("div");
-    sourceTray.className = "exam-page__classify-source";
+    sourceTray.className = "exam-page__classify-source d-grid";
     setupClassifyDropzone(sourceTray, question, null);
 
     question.source_items.forEach((item, itemIndex) => {
@@ -397,17 +495,17 @@
     });
 
     const bucketGrid = document.createElement("div");
-    bucketGrid.className = "exam-page__classify-buckets";
+    bucketGrid.className = "exam-page__classify-buckets d-grid";
 
     question.buckets.forEach((bucket, bucketIndex) => {
       const bucketEl = document.createElement("section");
-      bucketEl.className = "exam-page__classify-bucket";
+      bucketEl.className = "exam-page__classify-bucket position-relative";
       const title = document.createElement("h3");
       title.className = "exam-page__classify-bucket-title";
       title.textContent = bucket.title;
 
       const dropzone = document.createElement("div");
-      dropzone.className = "exam-page__classify-dropzone";
+      dropzone.className = "exam-page__classify-dropzone d-grid";
       setupClassifyDropzone(dropzone, question, bucketIndex);
 
       question.source_items.forEach((item, itemIndex) => {
@@ -421,7 +519,7 @@
 
     visualEl.append(sourceTray, bucketGrid);
 
-    optionsEl.className = "exam-page__options exam-page__options--empty";
+    optionsEl.className = "exam-page__options exam-page__options--empty d-none";
     optionsEl.removeAttribute("role");
     optionsEl.innerHTML = "";
   }
@@ -492,13 +590,13 @@
     visualEl.innerHTML = "";
 
     const tray = document.createElement("div");
-    tray.className = "exam-page__sort-tray";
+    tray.className = "exam-page__sort-tray d-flex align-items-start flex-wrap";
 
     state.sortOrder.forEach((itemIndex) => {
       const value = question.numbers[itemIndex];
       const chip = document.createElement("button");
       chip.type = "button";
-      chip.className = "exam-page__sort-chip";
+      chip.className = "exam-page__sort-chip d-inline-flex align-items-center justify-content-center";
       chip.draggable = true;
       chip.dataset.sortIndex = String(itemIndex);
       chip.textContent = value;
@@ -549,7 +647,7 @@
 
     visualEl.appendChild(tray);
 
-    optionsEl.className = "exam-page__options exam-page__options--empty";
+    optionsEl.className = "exam-page__options exam-page__options--empty d-none";
     optionsEl.removeAttribute("role");
     optionsEl.innerHTML = "";
   }
@@ -579,17 +677,17 @@
     visualEl.appendChild(prompt);
 
     const grid = document.createElement("div");
-    grid.className = "exam-page__animal-grid";
+    grid.className = "exam-page__animal-grid d-grid";
 
     question.options.forEach((option, optionIndex) => {
       const label = document.createElement("label");
-      label.className = "exam-page__animal-option";
+      label.className = "exam-page__animal-option position-relative d-grid align-items-center";
       label.htmlFor = `question-${question.number}-option-${optionIndex + 1}`;
       label.innerHTML = `
         <input class="exam-page__option-input" type="radio" name="question-${question.number}" id="question-${question.number}-option-${optionIndex + 1}">
         <span class="exam-page__option-radio exam-page__option-radio--animal" aria-hidden="true"></span>
         <span class="exam-page__animal-key">${option.key}</span>
-        <span class="exam-page__animal-figure" aria-hidden="true">${option.emoji}</span>
+        <span class="exam-page__animal-figure d-grid" aria-hidden="true">${option.emoji}</span>
         <span class="visually-hidden">${option.label}</span>
       `;
       grid.appendChild(label);
@@ -597,24 +695,26 @@
 
     visualEl.appendChild(grid);
 
-    optionsEl.className = "exam-page__options exam-page__options--empty";
+    optionsEl.className = "exam-page__options exam-page__options--empty d-none";
     optionsEl.removeAttribute("role");
     optionsEl.innerHTML = "";
   }
 
   function renderAudioChoiceQuestion(question) {
+    const state = getQuestionState(question.id);
+    const maxSelections = question.selection_limit || 1;
     visualEl.className = "exam-page__visual exam-page__visual--audio-choice";
     visualEl.innerHTML = "";
 
     const hero = document.createElement("div");
-    hero.className = "exam-page__audio-hero";
+    hero.className = "exam-page__audio-hero d-grid";
     hero.innerHTML = `
-      <div class="exam-page__audio-picture" aria-hidden="true">${question.picture_emoji}</div>
+      <div class="exam-page__audio-picture d-grid" aria-hidden="true">${question.picture_emoji}</div>
       <div class="exam-page__audio-word">${question.picture_word}</div>
     `;
 
     const leadButton = document.createElement("span");
-    leadButton.className = "exam-page__audio-button exam-page__audio-button--lead";
+    leadButton.className = "exam-page__audio-button exam-page__audio-button--lead d-inline-flex align-items-center justify-content-center bg-white";
     leadButton.setAttribute("aria-hidden", "true");
     leadButton.innerHTML = `
       <span class="exam-page__audio-button-icon" aria-hidden="true">🔊</span>
@@ -622,22 +722,50 @@
 
     visualEl.append(hero, leadButton);
 
-    optionsEl.className = "exam-page__options exam-page__options--audio";
-    optionsEl.setAttribute("role", "radiogroup");
+    optionsEl.className = "exam-page__options exam-page__options--audio d-grid";
+    optionsEl.setAttribute("role", maxSelections > 1 ? "group" : "radiogroup");
     optionsEl.innerHTML = "";
 
     question.options.forEach((option, optionIndex) => {
       const label = document.createElement("label");
-      label.className = "exam-page__audio-option";
+      const isChecked = state.selectedOptions.includes(optionIndex);
+      label.className = "exam-page__audio-option position-relative d-grid align-items-center";
       label.htmlFor = `question-${question.number}-option-${optionIndex + 1}`;
       label.innerHTML = `
-        <input class="exam-page__option-input" type="radio" name="question-${question.number}" id="question-${question.number}-option-${optionIndex + 1}">
+        <input class="exam-page__option-input" type="${maxSelections > 1 ? "checkbox" : "radio"}" name="question-${question.number}" id="question-${question.number}-option-${optionIndex + 1}" ${isChecked ? "checked" : ""}>
         <span class="exam-page__option-radio" aria-hidden="true"></span>
         <span class="exam-page__audio-option-key">${option.key}</span>
         <span class="exam-page__audio-button" aria-hidden="true">
           <span class="exam-page__audio-button-icon" aria-hidden="true">🔊</span>
         </span>
       `;
+
+      const input = label.querySelector(".exam-page__option-input");
+      input.addEventListener("change", function () {
+        if (maxSelections === 1) {
+          state.selectedOptions = input.checked ? [optionIndex] : [];
+          renderQuestion(question);
+          return;
+        }
+
+        if (input.checked) {
+          if (state.selectedOptions.includes(optionIndex)) {
+            return;
+          }
+
+          if (state.selectedOptions.length >= maxSelections) {
+            input.checked = false;
+            return;
+          }
+
+          state.selectedOptions = [...state.selectedOptions, optionIndex];
+        } else {
+          state.selectedOptions = state.selectedOptions.filter((selectedIndex) => selectedIndex !== optionIndex);
+        }
+
+        renderQuestion(question);
+      });
+
       optionsEl.appendChild(label);
     });
   }
@@ -724,6 +852,8 @@
 
   if (submitConfirmButton && examHeader && examMain && examResult) {
     submitConfirmButton.addEventListener("click", function () {
+      stopTimer();
+      sessionStorage.removeItem(storageKey);
       examHeader.hidden = true;
       examMain.hidden = true;
       examResult.hidden = false;
@@ -731,5 +861,13 @@
     });
   }
 
+  if (resultFinishButton) {
+    resultFinishButton.addEventListener("click", function () {
+      sessionStorage.removeItem(storageKey);
+      window.location.href = "/vao-thi-trang-nguyen-2023/";
+    });
+  }
+
+  startTimer();
   renderQuestion(questions[currentIndex]);
 })();

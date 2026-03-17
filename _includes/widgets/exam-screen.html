@@ -1,20 +1,22 @@
 {% assign exam = site.data.exam %}
 {% assign theme = site.data.theme %}
 <header class="exam-header" data-exam-header>
-  <div class="exam-header__inner">
-    <a class="exam-header__back" href="{{ exam.header.back_url | relative_url }}">
-      <span aria-hidden="true">←</span>
+  <div class="exam-header__inner d-grid align-items-center gap-3 mx-auto">
+    <a class="exam-header__back d-inline-flex align-items-center gap-1 fw-bold lh-1"
+      href="{{ exam.header.back_url | relative_url }}">
+      <span aria-hidden="true">&larr;</span>
       <span>{{ exam.header.back_label }}</span>
     </a>
 
-    <div class="exam-header__banner">
-      <p class="exam-header__eyebrow">{{ exam.header.eyebrow }}</p>
-      <h1 class="exam-header__title">{{ exam.header.title }}</h1>
+    <div class="exam-header__banner position-relative text-center">
+      <p class="exam-header__eyebrow fw-bold text-uppercase">{{ exam.header.eyebrow }}</p>
+      <h1 class="exam-header__title fw-bold">{{ exam.header.title }}</h1>
     </div>
 
-    <div class="exam-header__profile">
-      <img class="exam-header__avatar" src="{{ theme.profile.avatar | relative_url }}" alt="Ảnh đại diện học sinh">
-      <div class="exam-header__profile-copy">
+    <div class="exam-header__profile d-inline-flex align-items-center">
+      <img class="exam-header__avatar rounded-circle" src="{{ theme.profile.avatar | relative_url }}"
+        alt="Ảnh đại diện học sinh">
+      <div class="exam-header__profile-copy d-grid">
         <span class="exam-header__profile-name">{{ theme.profile.name }}</span>
         <span class="exam-header__profile-meta">{{ theme.profile.meta }}</span>
       </div>
@@ -26,8 +28,9 @@
   <div class="exam-page__inner" data-exam-app>
     <section class="exam-page__question-card">
       <div class="exam-page__question-head">
-        <h2 class="exam-page__question-index" data-question-index>Câu hỏi {{ exam.questions[0].number }}</h2>
-        <p class="exam-page__question-prompt" data-question-prompt>{{ exam.questions[0].prompt }}</p>
+        <h2 class="exam-page__question-index m-0 fw-bold" data-question-index>Câu hỏi {{ exam.questions[0].number }}
+        </h2>
+        <p class="exam-page__question-prompt m-0" data-question-prompt>{{ exam.questions[0].prompt }}</p>
         <p class="exam-page__question-aux" data-question-aux></p>
       </div>
 
@@ -36,12 +39,12 @@
     </section>
 
     <aside class="exam-page__sidebar">
-      <div class="exam-page__status-card">
+      <div class="exam-page__status-card sticky-top">
         <div class="exam-page__status-corners" aria-hidden="true"></div>
-        <p class="exam-page__status-label">{{ exam.timer.label }}</p>
-        <p class="exam-page__status-time">{{ exam.timer.value }}</p>
+        <p class="exam-page__status-label m-0 text-center">{{ exam.timer.label }}</p>
+        <p class="exam-page__status-time m-0 text-center mt-1 lh-1" data-exam-timer>{{ exam.timer.value }}</p>
 
-        <div class="exam-page__question-grid">
+        <div class="exam-page__question-grid d-grid">
           {% for number in (1..exam.pagination.total) %}
           <button
             class="exam-page__question-chip{% if number == exam.questions[0].number %} exam-page__question-chip--current{% endif %}"
@@ -51,42 +54,46 @@
           {% endfor %}
         </div>
 
-        <button class="exam-page__submit" type="button" data-bs-toggle="modal" data-bs-target="#examSubmitModal">
+        <button class="exam-page__submit w-100 border-0" type="button" data-bs-toggle="modal"
+          data-bs-target="#examSubmitModal">
           {{ exam.pagination.submit_label }}
         </button>
       </div>
     </aside>
   </div>
 
-  <div class="exam-page__pager">
+  <div class="exam-page__pager d-flex align-items-center justify-content-center">
     <button class="exam-page__pager-button exam-page__pager-button--muted" type="button" disabled data-pager-prev>
-      ← {{ exam.pagination.prev_label }}
+      &larr; {{ exam.pagination.prev_label }}
     </button>
-    <span class="exam-page__pager-current" data-pager-current>{{ exam.questions[0].number }}</span>
+    <span class="exam-page__pager-current d-inline-flex align-items-center justify-content-center" data-pager-current>{{
+      exam.questions[0].number }}</span>
     <button class="exam-page__pager-button" type="button" data-pager-next>
-      {{ exam.pagination.next_label }} →
+      {{ exam.pagination.next_label }} &rarr;
     </button>
   </div>
 </main>
 
 <div class="modal fade exam-submit-modal" id="examSubmitModal" tabindex="-1" aria-labelledby="examSubmitModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered exam-submit-modal__dialog">
-    <div class="modal-content exam-submit-modal__content">
+  <div class="modal-dialog modal-dialog-centered exam-submit-modal__dialog m-auto">
+    <div class="modal-content exam-submit-modal__content border-0 shadow-none">
       <div class="exam-submit-modal__body">
-        <h2 class="exam-submit-modal__title" id="examSubmitModalLabel">Bạn muốn nộp bài?</h2>
+        <h2 class="exam-submit-modal__title m-0 text-center" id="examSubmitModalLabel">Bạn muốn nộp bài?</h2>
 
-        <div class="exam-submit-modal__actions">
-          <button class="exam-submit-modal__button exam-submit-modal__button--cancel" type="button"
-            data-bs-dismiss="modal">
+        <div class="exam-submit-modal__actions d-flex">
+          <button
+            class="exam-submit-modal__button exam-submit-modal__button--cancel d-inline-flex align-items-center justify-content-center gap-2"
+            type="button" data-bs-dismiss="modal">
             <img class="exam-submit-modal__icon"
               src="{{ '/assets/images/bai-thi/tnv_close_remove.svg' | relative_url }}" alt="" aria-hidden="true">
             <span>Hủy</span>
           </button>
 
-          <button class="exam-submit-modal__button exam-submit-modal__button--confirm" type="button"
-            data-bs-dismiss="modal" data-exam-submit-confirm>
-            <span class="exam-submit-modal__check" aria-hidden="true">✓</span>
+          <button
+            class="exam-submit-modal__button exam-submit-modal__button--confirm d-inline-flex align-items-center justify-content-center gap-2"
+            type="button" data-bs-dismiss="modal" data-exam-submit-confirm>
+            <span class="exam-submit-modal__check" aria-hidden="true">&#10003;</span>
             <span>Tôi đồng ý</span>
           </button>
         </div>
@@ -95,53 +102,53 @@
   </div>
 </div>
 
-<section class="exam-result" data-exam-result hidden>
-  <div class="exam-result__toast" role="status" aria-live="polite">
-    <span class="exam-result__toast-icon" aria-hidden="true">✓</span>
-    <span class="exam-result__toast-text">Nộp bài thành công</span>
-    <span class="exam-result__toast-close position-absolute top-0 end-0 me-2 mt-1" aria-hidden="true">×</span>
+<section class="exam-result position-relative min-vh-100 overflow-hidden" data-exam-result hidden>
+  <div class="exam-result__toast position-absolute d-flex align-items-center" role="status" aria-live="polite">
+    <span class="exam-result__toast-icon d-inline-flex align-items-center justify-content-center" aria-hidden="true">&#10003;</span>
+    <span class="exam-result__toast-text flex-grow-1">Nộp bài thành công</span>
+    <span class="exam-result__toast-close position-absolute top-0 end-0 me-2 mt-1" aria-hidden="true">&times;</span>
   </div>
 
-  <div class="exam-result__center">
-    <div class="exam-result__spark exam-result__spark--left" aria-hidden="true">✦</div>
-    <div class="exam-result__spark exam-result__spark--right" aria-hidden="true">✦</div>
+  <div class="exam-result__center position-relative d-grid min-vh-100">
+    <div class="exam-result__spark exam-result__spark--left" aria-hidden="true">&#10022;</div>
+    <div class="exam-result__spark exam-result__spark--right" aria-hidden="true">&#10022;</div>
 
-    <div class="exam-result__mascot" aria-hidden="true">
+    <div class="exam-result__mascot position-relative d-grid" aria-hidden="true">
       <div class="exam-result__mascot-cloud"></div>
       <div class="exam-result__mascot-face">🧒</div>
     </div>
 
-    <div class="exam-result__card">
-      <div class="exam-result__ribbon">Thật tuyệt vời!</div>
+    <div class="exam-result__card position-relative text-center">
+      <div class="exam-result__ribbon text-white">Thật tuyệt vời!</div>
       <div class="exam-result__panel">
-        <p class="exam-result__message">
+        <p class="exam-result__message m-0 text-white">
           Chúc mừng SBD:961090107 đã hoàn thành vòng thi {{ exam.header.title }}
         </p>
 
         <div class="exam-result__score-box">
-          <span class="exam-result__score-label">Điểm số</span>
-          <span class="exam-result__score-value">270</span>
+          <span class="exam-result__score-label d-block text-white">Điểm số</span>
+          <span class="exam-result__score-value d-block text-white">270</span>
         </div>
 
-        <div class="exam-result__time-pill">Thời gian 24 : 41</div>
+        <div class="exam-result__time-pill text-white">Thời gian 24 : 41</div>
         <p class="exam-result__note">Làm tốt lắm! Hãy tiếp tục cố gắng nhé</p>
       </div>
 
-      <button class="exam-result__finish" type="button">Hoàn thành</button>
+      <button class="exam-result__finish mt-3 text-white" type="button">Hoàn thành</button>
     </div>
 
-    <div class="exam-result__links">
-      <a class="exam-result__link" href="#">Xem lịch sử tham dự</a>
-      <a class="exam-result__link" href="#">Khám phá vũ trụ Toàn Tài</a>
-      <a class="exam-result__link" href="#">Đăng kí ngay khóa "Học - Luyện - Thi - Chơi"</a>
+    <div class="exam-result__links d-grid">
+      <a class="exam-result__link text-white text-decoration-underline" href="#">Xem lịch sử tham dự</a>
+      <a class="exam-result__link text-white text-decoration-underline" href="#">Khám phá vũ trụ Toàn Tài</a>
+      <a class="exam-result__link text-white text-decoration-underline" href="#">Đăng kí ngay khóa "Học - Luyện - Thi - Chơi"</a>
     </div>
   </div>
 
-  <div class="exam-result__promo" aria-hidden="true">
-    <button class="exam-result__promo-close" type="button">×</button>
+  <div class="exam-result__promo position-absolute d-flex align-items-end" aria-hidden="true">
+    <button class="exam-result__promo-close rounded-circle" type="button">&times;</button>
     <div class="exam-result__promo-bubble">
-      <p class="exam-result__promo-copy">Ôn luyện ngay để chinh phục Trang Nguyên Toàn Tài</p>
-      <span class="exam-result__promo-cta">Xem thêm →</span>
+      <p class="exam-result__promo-copy m-0">Ôn luyện ngay để chinh phục Trang Nguyên Toàn Tài</p>
+      <span class="exam-result__promo-cta d-inline-block text-white">Xem thêm &rarr;</span>
     </div>
     <div class="exam-result__promo-robot">🤖</div>
   </div>

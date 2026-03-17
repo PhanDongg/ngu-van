@@ -1,18 +1,18 @@
 {% assign theme = site.data.theme %}
-<header class="header sticky-top">
-  <div class="header__inner container-xxl d-flex align-items-center">
-    <a class="header__brand d-inline-flex align-items-center justify-content-center text-decoration-none" href="#">
+<header class="header sticky-top position-relative overflow-visible">
+  <div class="header__inner container-xxl d-flex align-items-center gap-4 overflow-visible">
+    <a class="header__brand position-relative d-inline-flex align-items-center justify-content-center flex-shrink-0 align-self-start text-decoration-none" href="#">
       <img class="header__brand-image img-fluid" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}"
         alt="Trang Nguyen Education">
     </a>
 
-    <nav class="header__nav d-flex align-items-center me-auto" aria-label="Điều hướng chính">
+    <nav class="header__nav d-flex align-items-center gap-3 me-auto" aria-label="Điều hướng chính">
       {% for item in theme.header_nav %}
-      <div class="header__nav-item{% if item.children %} header__nav-item--has-dropdown{% endif %}">
-        <a class="header__nav-link d-inline-flex align-items-center text-decoration-none{% if item.active %} header__nav-link--active{% endif %}"
+      <div class="header__nav-item position-relative d-flex align-items-center{% if item.children %} header__nav-item--has-dropdown{% endif %}">
+        <a class="header__nav-link position-relative d-inline-flex align-items-center gap-2 text-decoration-none{% if item.active %} header__nav-link--active{% endif %}"
           href="{{ item.url }}">
           {% if item.icon %}
-          <img class="header__nav-icon" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
+          <img class="header__nav-icon d-block" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
           {% endif %}
           <span>{{ item.label }}</span>
           {% if item.chevron %}
@@ -21,11 +21,11 @@
         </a>
 
         {% if item.children %}
-        <div class="header__dropdown">
-          <ul class="header__dropdown-list list-unstyled">
+        <div class="header__dropdown position-absolute">
+          <ul class="header__dropdown-list list-unstyled mb-0">
             {% for child in item.children %}
             <li class="header__dropdown-item">
-              <a class="header__dropdown-link" href="{{ child.url }}">{{ child.label }}</a>
+              <a class="header__dropdown-link d-block" href="{{ child.url }}">{{ child.label }}</a>
             </li>
             {% endfor %}
           </ul>
@@ -37,41 +37,41 @@
 
     <div class="header__actions d-flex align-items-center">
       {% for item in theme.header_actions %}
-      <a class="header__action d-inline-flex align-items-center text-decoration-none{% if item.active %} header__action--active{% endif %}"
+      <a class="header__action d-inline-flex align-items-center gap-2 text-decoration-none{% if item.active %} header__action--active{% endif %}"
         href="{{ item.url }}">
-        <img class="header__action-icon" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
+        <img class="header__action-icon d-block" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
         <span>{{ item.label }}</span>
       </a>
       {% endfor %}
 
-      <button class="header__notify d-inline-flex align-items-center justify-content-center" type="button"
+      <button class="header__notify position-relative d-inline-flex align-items-center justify-content-center p-0 border-0 bg-transparent" type="button"
         aria-label="Thông báo">
-        <img class="header__notify-icon" src="{{ theme.notify_icon | relative_url }}" alt="" aria-hidden="true">
-        <span class="header__notify-dot"></span>
+        <img class="header__notify-icon d-block" src="{{ theme.notify_icon | relative_url }}" alt="" aria-hidden="true">
+        <span class="header__notify-dot position-absolute top-0 end-0"></span>
       </button>
 
-      <div class="header__profile-wrap dropdown">
-        <button class="header__profile d-flex align-items-center ps-2 border-0 bg-transparent" type="button"
+      <div class="header__profile-wrap position-relative dropdown">
+        <button class="header__profile d-flex align-items-center gap-2 ps-2 border-0 bg-transparent" type="button"
           data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-          <img class="header__profile-avatar" src="{{ theme.profile.avatar | relative_url }}"
+          <img class="header__profile-avatar rounded-circle d-block" src="{{ theme.profile.avatar | relative_url }}"
             alt="Ảnh đại diện học sinh">
-          <div class="header__profile-body text-start">
-            <span class="header__profile-name">{{ theme.profile.name }}</span>
-            <span class="header__profile-meta">{{ theme.profile.meta }}</span>
+          <div class="header__profile-body d-grid text-start">
+            <span class="header__profile-name d-block">{{ theme.profile.name }}</span>
+            <span class="header__profile-meta d-block">{{ theme.profile.meta }}</span>
           </div>
           <span class="header__profile-chevron" aria-hidden="true">
-            <img src="/assets/images/icon-arrow-down.svg" alt="">
+            <img class="d-block" src="/assets/images/icon-arrow-down.svg" alt="">
           </span>
         </button>
 
-        <div class="header__profile-dropdown dropdown-menu dropdown-menu-end">
-          <ul class="header__profile-menu list-unstyled">
+        <div class="header__profile-dropdown position-absolute dropdown-menu dropdown-menu-end d-block m-0 p-0 border-0">
+          <ul class="header__profile-menu list-unstyled mb-0">
             {% for item in theme.profile.menu %}
             <li class="header__profile-item">
-              <a class="header__profile-link{% if item.active %} header__profile-link--active{% endif %}{% if item.danger %} header__profile-link--danger{% endif %}"
+              <a class="header__profile-link d-flex align-items-center{% if item.active %} header__profile-link--active{% endif %}{% if item.danger %} header__profile-link--danger{% endif %}"
                 href="{{ item.url }}">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img src="{{ item.icon_image | relative_url }}" alt="">
+                  <img class="d-block" src="{{ item.icon_image | relative_url }}" alt="">
                 </span>
                 <span>{{ item.label }}</span>
               </a>

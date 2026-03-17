@@ -1,41 +1,41 @@
 {% assign exam_rules = site.data.competition.exam_rules %}
 <div class="modal fade competition-page__exam-modal" id="{{ exam_rules.modal_id }}" tabindex="-1"
   aria-labelledby="{{ exam_rules.modal_id }}Title" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered competition-page__exam-modal-dialog">
-    <div class="modal-content competition-page__exam-modal-content">
-      <div class="competition-page__exam-modal-shell">
+  <div class="modal-dialog modal-dialog-centered competition-page__exam-modal-dialog m-auto">
+    <div class="modal-content competition-page__exam-modal-content bg-transparent border-0 shadow-none">
+      <div class="competition-page__exam-modal-shell position-relative bg-white">
         <div class="competition-page__exam-modal-corners" aria-hidden="true"></div>
 
-        <div class="competition-page__exam-modal-head">
-          <h3 class="competition-page__exam-modal-title" id="{{ exam_rules.modal_id }}Title">{{ exam_rules.title }}</h3>
+        <div class="competition-page__exam-modal-head position-relative d-flex align-items-start justify-content-between gap-4">
+          <h3 class="competition-page__exam-modal-title m-0" id="{{ exam_rules.modal_id }}Title">{{ exam_rules.title }}</h3>
           <div class="competition-page__exam-modal-brand">
-            <img src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}" alt="Trang Nguyen Education">
+            <img class="d-block w-100 h-auto" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}" alt="Trang Nguyen Education">
           </div>
         </div>
 
-        <div class="competition-page__exam-modal-body">
-          <div class="competition-page__exam-modal-scroll">
-            <ol class="competition-page__exam-modal-list">
+        <div class="competition-page__exam-modal-body position-relative d-grid">
+          <div class="competition-page__exam-modal-scroll overflow-auto">
+            <ol class="competition-page__exam-modal-list m-0">
               {% for item in exam_rules.items %}
               <li>{{ item }}</li>
               {% endfor %}
             </ol>
           </div>
 
-          <div class="competition-page__exam-modal-footer">
-            <label class="competition-page__exam-modal-check">
+          <div class="competition-page__exam-modal-footer d-flex align-items-center justify-content-between gap-3">
+            <label class="competition-page__exam-modal-check d-inline-flex align-items-center">
               <input type="checkbox" checked>
               <span>{{ exam_rules.agreement_label }}</span>
             </label>
 
-            <div class="competition-page__exam-modal-actions">
-              <button class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost" type="button"
+            <div class="competition-page__exam-modal-actions d-flex align-items-center gap-3 ms-auto">
+              <button class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost d-inline-flex align-items-center justify-content-center gap-2" type="button"
                 data-bs-dismiss="modal">
                 <img class="competition-page__exam-modal-button-icon"
                   src="{{ '/assets/images/bai-thi/tnv_close_remove.svg' | relative_url }}" alt="" aria-hidden="true">
                 {{ exam_rules.cancel_label }}
               </button>
-              <a class="competition-page__exam-modal-button competition-page__exam-modal-button--primary"
+              <a class="competition-page__exam-modal-button competition-page__exam-modal-button--primary d-inline-flex align-items-center justify-content-center gap-2"
                 href="{{ exam_rules.start_url | relative_url }}">
                 {{ exam_rules.confirm_label }}
               </a>

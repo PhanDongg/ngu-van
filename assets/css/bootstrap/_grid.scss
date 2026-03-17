@@ -8,11 +8,24 @@
   margin-left: calc(v.$bs-grid-gutter-x * -0.5);
 }
 
+.g-4 {
+  row-gap: 1.5rem;
+}
+
 .row > * {
   width: 100%;
   max-width: 100%;
   padding-right: calc(v.$bs-grid-gutter-x * 0.5);
   padding-left: calc(v.$bs-grid-gutter-x * 0.5);
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
 }
 
 .col-12 {

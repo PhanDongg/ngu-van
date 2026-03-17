@@ -5,7 +5,8 @@ header:
   back_url: /vao-thi-trang-nguyen-2023/
 timer:
   label: "Còn lại"
-  value: "00 : 29 : 51"
+  value: "00 : 30 : 00"
+  duration_seconds: 1800
 pagination:
   total: 30
   prev_label: "Trang trước"
@@ -139,6 +140,7 @@ questions:
     prompt: "Listen to the word in the picture. Then listen and choose the word with the same beginning sound as the picture."
     picture_emoji: "🚐"
     picture_word: "van"
+    selection_limit: 2
     options:
       - key: A.
         label: "Speaker 1"

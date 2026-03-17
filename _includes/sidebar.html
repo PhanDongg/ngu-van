@@ -1,21 +1,21 @@
 <aside class="sidebar col-auto">
-  <div class="sidebar__stack d-grid">
+  <div class="sidebar__stack d-grid gap-3">
     {% for item in site.data.sidebar.boards %}
-    <section class="sidebar__board{% if item.highlight %} sidebar__board--highlight{% endif %}">
-      <div class="sidebar__board-wrapper">
-        <h3 class="sidebar__board-title fw-bold">{{ item.title }}</h3>
+    <section class="sidebar__board w-100{% if item.highlight %} sidebar__board--highlight p-0 overflow-hidden{% endif %}">
+      <div class="sidebar__board-wrapper text-center">
+        <h3 class="sidebar__board-title fw-bold m-0 text-center">{{ item.title }}</h3>
         {% if item.subtitle %}
-        <p class="sidebar__board-subtitle">{{ item.subtitle }}</p>
+        <p class="sidebar__board-subtitle text-center">{{ item.subtitle }}</p>
         {% endif %}
         {% if item.round_count %}
-        <span class="sidebar__board-meta">{{ item.round_count }}</span>
+        <span class="sidebar__board-meta d-block text-center">{{ item.round_count }}</span>
         {% endif %}
       </div>
 
       {% if item.children %}
-      <ul class="sidebar__board-list list-unstyled">
+      <ul class="sidebar__board-list list-unstyled m-0">
         {% for child in item.children %}
-        <li>{{ child }}</li>
+        <li class="position-relative">{{ child }}</li>
         {% endfor %}
       </ul>
       {% endif %}
@@ -23,8 +23,8 @@
     {% endfor %}
   </div>
 
-  <section class="sidebar__promo">
-    <img class="sidebar__promo-image" src="{{ '/assets/images/sidebar-desktop.webp' | relative_url }}"
-      alt="Hệ thống học Toán K-12 TNMath">
+  <section class="sidebar__promo overflow-hidden">
+    <img class="sidebar__promo-image d-block img-fluid" src="{{ '/assets/images/sidebar-desktop.webp' | relative_url }}"
+      alt="He thong hoc Toan K-12 TNMath">
   </section>
 </aside>

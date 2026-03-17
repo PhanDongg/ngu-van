@@ -2,9 +2,6 @@
 @use "mixins" as m;
 
 .main {
-  position: relative;
-  background: #fff;
-
   &::before {
     content: "";
     position: absolute;
@@ -16,7 +13,6 @@
 
 .layout {
   @include m.page-container;
-  position: relative;
   z-index: 1;
 
   &__content {
@@ -33,29 +29,25 @@
   padding-bottom: 2rem;
   padding-top: 64px;
 
-  &__stack {
-    gap: 1rem;
-  }
-
   &__board,
   &__promo {
     background: var(--surface);
     border-radius: var(--radius-lg);
   }
 
+  &__board:nth-child(2) {
+    padding: 0 !important;
+  }
+
   &__board {
-    width: 100%;
     padding: 25px 12px;
     background: t.$panel-blue;
     border-radius: 16px;
 
     &--highlight {
-      padding: 0;
-      overflow: hidden;
       background: t.$panel-yellow;
 
       .sidebar__board-wrapper {
-        text-align: center;
         background-color: #FFEED8;
         border-radius: 16px;
         border: 2px solid rgb(255 186 10);
@@ -73,8 +65,6 @@
   }
 
   &__board-title {
-    margin: 0;
-    text-align: center;
     color: #183259;
     font-size: 1.16rem;
     line-height: 1.28;
@@ -84,12 +74,10 @@
 
   &__board-subtitle {
     margin: 0.3rem 0 0;
-    text-align: center;
     color: var(--muted);
   }
 
   &__board-meta {
-    display: block;
     color: t.$panel-meta;
     font-size: 12px;
     font-weight: 700;
@@ -97,11 +85,9 @@
   }
 
   &__board-list {
-    margin: 0;
     padding: 8px 16px 8px 32px;
 
     li {
-      position: relative;
       font-size: 0.95rem;
       line-height: 20px;
       color: t.$panel-list-text;
@@ -123,19 +109,13 @@
 
   &__promo {
     margin-top: 0.9rem;
-    overflow: hidden;
     box-shadow: var(--shadow);
     border-radius: 1.5rem;
   }
 
-  &__promo-image {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .competition-page {
-  display: grid;
   gap: 1.2rem;
 
   &__hero,

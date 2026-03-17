@@ -10,35 +10,24 @@
   background-color: #fff;
 
   &__inner {
-    display: grid;
     grid-template-columns: 14rem minmax(0, 1fr) 14rem;
-    align-items: center;
-    gap: 1rem;
     max-width: 1680px;
-    margin: auto;
   }
 
   &__back {
-    display: inline-flex;
-    align-items: center;
     gap: 0.45rem;
     justify-self: start;
     padding: 0.7rem 1.3rem;
     border: 2px solid #b3ada7;
     border-radius: 999px;
-    background: #fff;
     color: #655f5a;
-    font-weight: 700;
-    line-height: 1;
   }
 
   &__banner {
-    position: relative;
     padding: 0.9rem 1.5rem 0.75rem;
     border: 2px solid #f3d8d7;
     border-radius: 0 0 1.2rem 1.2rem;
     background: rgba(255, 245, 245, 0.75);
-    text-align: center;
 
     &::before,
     &::after {
@@ -51,15 +40,6 @@
       background-size: contain;
     }
 
-    // &::before {
-    //   left: -1px;
-    //   background-image: url("/assets/images/bai-thi/border-left.png");
-    // }
-
-    // &::after {
-    //   right: -1px;
-    //   background-image: url("/assets/images/bai-thi/border-right.png");
-    // }
   }
 
   &__eyebrow,
@@ -70,21 +50,16 @@
   &__eyebrow {
     color: #686560;
     font-size: 0.88rem;
-    font-weight: 700;
     letter-spacing: 0.01em;
-    text-transform: uppercase;
   }
 
   &__title {
     margin-top: 0.25rem;
     color: #060606;
     font-size: 1.05rem;
-    font-weight: 900;
   }
 
   &__profile {
-    display: inline-flex;
-    align-items: center;
     justify-self: end;
     gap: 0.65rem;
     min-height: 3rem;
@@ -96,11 +71,9 @@
   &__avatar {
     width: 2.8rem;
     height: 2.8rem;
-    border-radius: 50%;
   }
 
   &__profile-copy {
-    display: grid;
     gap: 0.15rem;
   }
 
@@ -142,14 +115,11 @@
   }
 
   &__question-index,
-  &__question-prompt {
-    margin: 0;
-  }
+  &__question-prompt {}
 
   &__question-index {
     color: #4b4844;
     font-size: 1rem;
-    font-weight: 800;
   }
 
   &__question-prompt {
@@ -172,14 +142,10 @@
   }
 
   &__visual-groups {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 0.8rem;
   }
 
   &__visual-group {
-    display: inline-flex;
     gap: 0.1rem;
   }
 
@@ -189,8 +155,6 @@
   }
 
   &__formula {
-    display: inline-flex;
-    align-items: center;
     gap: 0.85rem;
   }
 
@@ -209,7 +173,6 @@
 
   &__options {
     margin-top: 2rem;
-    display: grid;
     gap: 0.85rem;
     max-width: 22rem;
 
@@ -225,16 +188,9 @@
   }
 
   &__option {
-    position: relative;
-    display: flex;
-    align-items: center;
     gap: 0.45rem;
-    padding: 0;
-    border: 0;
-    background: transparent;
     color: #4b4a47;
     font-size: 1rem;
-    text-align: left;
     cursor: pointer;
   }
 
@@ -347,14 +303,11 @@
   }
 
   &__fill-list {
-    display: grid;
     gap: 0.55rem;
     justify-items: start;
   }
 
   &__fill-row {
-    display: flex;
-    align-items: center;
     gap: 0.45rem;
     color: #44403b;
     font-size: 1.05rem;
@@ -384,11 +337,8 @@
   }
 
   &__matching-board {
-    position: relative;
-    display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 250px;
-    align-items: start;
   }
 
   &__matching-lines {
@@ -400,28 +350,20 @@
   }
 
   &__matching-column {
-    position: relative;
     z-index: 1;
-    display: grid;
     gap: 0.55rem;
   }
 
   &__matching-tile {
     min-height: 3rem;
-    display: flex;
-    align-items: center;
     padding: 0.55rem 1rem;
-    border: 0;
     background: #e7f4f3;
     color: #4b4a47;
     font-size: 1.05rem;
     line-height: 1.35;
-    text-align: left;
 
     &--left,
-    &--right {
-      width: 100%;
-    }
+    &--right {}
 
     &--right {
       padding-left: 2rem;
@@ -459,7 +401,6 @@
   }
 
   &__classify-source {
-    display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0.75rem;
     padding: 1rem;
@@ -469,13 +410,11 @@
   }
 
   &__line-card {
-    display: grid;
     place-items: center;
     min-height: 11.5rem;
     padding: 0.65rem;
     border: 2px solid #e1f0ef;
     border-radius: 0.25rem;
-    background: #fff;
 
     &--draggable {
       cursor: grab;
@@ -510,14 +449,11 @@
   }
 
   &__classify-buckets {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
 
-  &__classify-bucket {
-    position: relative;
-  }
+  &__classify-bucket {}
 
   &__classify-bucket-title {
     position: absolute;
@@ -535,7 +471,6 @@
 
   &__classify-dropzone {
     min-height: 11rem;
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-content: start;
     gap: 0.7rem;
@@ -552,9 +487,6 @@
 
   &__sort-tray {
     min-height: 5.9rem;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
     gap: 0.55rem;
     padding: 1.15rem 1rem;
     border: 2px solid #93a7a9;
@@ -565,9 +497,6 @@
   &__sort-chip {
     min-width: 4.25rem;
     min-height: 3.2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 0.55rem 0.85rem;
     border: 2px dashed #b4b4b4;
     border-radius: 0.35rem;
@@ -584,16 +513,12 @@
   }
 
   &__animal-grid {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem 2.5rem;
   }
 
   &__animal-option {
-    position: relative;
-    display: grid;
     grid-template-columns: 1.45rem 1.35rem minmax(0, 1fr);
-    align-items: center;
     column-gap: 0.45rem;
     min-height: 14rem;
     cursor: pointer;
@@ -611,7 +536,6 @@
   }
 
   &__animal-figure {
-    display: grid;
     place-items: center;
     min-height: 14rem;
     font-size: 11rem;
@@ -620,13 +544,11 @@
   }
 
   &__audio-hero {
-    display: grid;
     justify-items: center;
     gap: 0.7rem;
   }
 
   &__audio-picture {
-    display: grid;
     place-items: center;
     min-height: 10rem;
     font-size: 10rem;
@@ -645,12 +567,8 @@
   &__audio-button {
     width: 2.7rem;
     height: 2.7rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid #dedede;
     border-radius: 0.3rem;
-    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 
     &--lead {
@@ -670,10 +588,7 @@
   }
 
   &__audio-option {
-    position: relative;
-    display: grid;
     grid-template-columns: 1.45rem 1.35rem auto;
-    align-items: center;
     column-gap: 0.55rem;
     justify-content: start;
     cursor: pointer;
@@ -686,23 +601,17 @@
   }
 
   &__source-shapes {
-    display: flex;
-    justify-content: center;
     gap: 3rem;
     margin: 0.35rem 0 0.1rem;
   }
 
   &__source-shape {
     min-width: 4rem;
-    display: grid;
     place-items: center;
   }
 
   &__image-option {
-    position: relative;
-    display: grid;
     grid-template-columns: 1.45rem 1.3rem minmax(0, 1fr);
-    align-items: center;
     column-gap: 0.45rem;
     row-gap: 0.4rem;
     cursor: pointer;
@@ -716,8 +625,6 @@
 
   &__image-option-visual {
     min-height: 8rem;
-    display: flex;
-    align-items: center;
   }
 
   &__cube-shape {
@@ -742,7 +649,6 @@
   }
 
   &__status-card {
-    position: sticky;
     top: 1rem;
     padding: 1rem 0.9rem 0.95rem;
     border: 2px solid #f3d8d7;
@@ -775,10 +681,7 @@
   }
 
   &__status-label,
-  &__status-time {
-    margin: 0;
-    text-align: center;
-  }
+  &__status-time {}
 
   &__status-label {
     color: #7a756f;
@@ -786,16 +689,13 @@
   }
 
   &__status-time {
-    margin-top: 0.25rem;
     color: #060606;
     font-size: 20px;
     font-weight: 900;
-    line-height: 1;
   }
 
   &__question-grid {
     margin-top: 1rem;
-    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.7rem 0.55rem;
   }
@@ -819,10 +719,8 @@
   }
 
   &__submit {
-    width: 100%;
     margin-top: 1.15rem;
     min-height: 3rem;
-    border: 0;
     border-radius: 999px;
     background: #c81d24;
     color: #fff;
@@ -833,9 +731,6 @@
   &__pager {
     max-width: 1280px;
     margin: 1.55rem auto 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 1.2rem;
   }
 
@@ -857,9 +752,6 @@
   }
 
   &__pager-current {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     width: 2.45rem;
     height: 2.45rem;
     border-radius: 50%;
@@ -870,9 +762,6 @@
 }
 
 .exam-result {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
   padding: 1rem;
   background:
     radial-gradient(circle at center, rgba(255, 205, 37, 0.85) 0, rgba(255, 205, 37, 0.85) 21%, transparent 21.3%, transparent 30%, rgba(255, 205, 37, 0.2) 30.3%, rgba(255, 205, 37, 0.2) 40%, transparent 40.3%, transparent 49%, rgba(255, 205, 37, 0.14) 49.3%, rgba(255, 205, 37, 0.14) 58%, transparent 58.3%),
@@ -892,13 +781,10 @@
   }
 
   &__toast {
-    position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 2;
     min-width: 19rem;
-    display: flex;
-    align-items: center;
     gap: 0.7rem;
     padding: 1.5rem 1.1rem;
     border-radius: 0.2rem;
@@ -910,9 +796,6 @@
   &__toast-icon {
     width: 1.25rem;
     height: 1.25rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.22);
     font-weight: 900;
@@ -920,7 +803,6 @@
   }
 
   &__toast-text {
-    flex: 1 1 auto;
     font-size: 0.95rem;
     font-weight: 700;
   }
@@ -931,10 +813,7 @@
   }
 
   &__center {
-    position: relative;
     z-index: 1;
-    min-height: 100vh;
-    display: grid;
     align-content: center;
     justify-items: center;
     gap: 1.35rem;
@@ -958,9 +837,7 @@
   }
 
   &__mascot {
-    position: relative;
     margin-bottom: -2.1rem;
-    display: grid;
     justify-items: center;
   }
 
@@ -982,7 +859,6 @@
   }
 
   &__card {
-    position: relative;
     width: min(100%, 21rem);
     padding: 2.65rem 1.15rem 1.45rem;
     border-radius: 2.2rem;
@@ -991,7 +867,6 @@
       inset 0 0 0 4px rgba(152, 213, 255, 0.35),
       0 18px 0 #2f85cd,
       0 34px 60px rgba(79, 52, 11, 0.28);
-    text-align: center;
   }
 
   &__ribbon {
@@ -1002,7 +877,6 @@
     padding: 0.95rem 1.6rem 0.9rem;
     border-radius: 2rem 2rem 1.4rem 1.4rem;
     background: linear-gradient(180deg, #ffd914 0%, #f5c400 100%);
-    color: #fff;
     font-size: 1.15rem;
     font-weight: 900;
     text-shadow: 0 3px 0 rgba(132, 89, 0, 0.45);
@@ -1017,8 +891,6 @@
   }
 
   &__message {
-    margin: 0;
-    color: #fff;
     font-size: 0.95rem;
     font-weight: 800;
     line-height: 1.45;
@@ -1034,18 +906,14 @@
   }
 
   &__score-label {
-    display: block;
     padding: 0.6rem 0.7rem;
     background: #306ec5;
-    color: #fff;
     font-size: 0.95rem;
     font-weight: 800;
   }
 
   &__score-value {
-    display: block;
     padding: 0.75rem 0.7rem 0.95rem;
-    color: #fff;
     font-size: 3rem;
     font-weight: 900;
     line-height: 1;
@@ -1058,7 +926,6 @@
     padding: 0.7rem 0.95rem;
     border-radius: 0.7rem;
     background: rgba(75, 126, 204, 0.95);
-    color: #fff;
     font-size: 0.95rem;
     font-weight: 800;
   }
@@ -1072,39 +939,31 @@
 
   &__finish {
     min-width: 10.8rem;
-    margin-top: 1rem;
     padding: 0.8rem 1.5rem;
     border: 3px solid #ffb3b3;
     border-radius: 999px;
     background: linear-gradient(180deg, #ff9084 0%, #f4534b 100%);
-    color: #fff;
     font-size: 1.2rem;
     font-weight: 900;
     box-shadow: 0 10px 18px rgba(154, 47, 30, 0.25);
   }
 
   &__links {
-    display: grid;
     justify-items: center;
     gap: 0.45rem;
     padding-top: 20px;
   }
 
   &__link {
-    color: #fff;
     font-size: 0.95rem;
     font-weight: 700;
-    text-decoration: underline;
     text-underline-offset: 0.14em;
   }
 
   &__promo {
-    position: absolute;
     right: 1.4rem;
     bottom: 1.2rem;
     z-index: 1;
-    display: flex;
-    align-items: flex-end;
     gap: 0.55rem;
   }
 
@@ -1113,7 +972,6 @@
     height: 2.8rem;
     margin-bottom: 1.35rem;
     border: 2px solid #323232;
-    border-radius: 50%;
     background: rgba(255, 255, 255, 0.8);
     color: #111;
     font-size: 2rem;
@@ -1131,7 +989,6 @@
   }
 
   &__promo-copy {
-    margin: 0;
     color: #9a1925;
     font-size: 0.95rem;
     font-weight: 900;
@@ -1139,12 +996,10 @@
   }
 
   &__promo-cta {
-    display: inline-block;
     margin-top: 0.7rem;
     padding: 0.45rem 0.9rem;
     border-radius: 999px;
     background: #d6222a;
-    color: #fff;
     font-size: 0.78rem;
     font-weight: 800;
   }
@@ -1362,7 +1217,6 @@
   }
 
   &__content {
-    border: 0;
     border-radius: 1.85rem;
     box-shadow: 0 24px 48px rgba(40, 28, 22, 0.18);
   }
@@ -1372,7 +1226,6 @@
   }
 
   &__title {
-    margin: 0;
     color: #111;
     font-size: 1.2rem;
     font-weight: 900;
@@ -1380,7 +1233,6 @@
   }
 
   &__actions {
-    display: flex;
     gap: 0.35rem;
     margin-top: 40px;
   }
@@ -1388,10 +1240,6 @@
   &__button {
     flex: 1 1 0;
     min-height: 2.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.45rem;
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 700;

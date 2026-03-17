@@ -1,14 +1,14 @@
 {% assign competition = site.data.competition %}
-<section class="competition-page__table">
-  <div class="competition-page__round-table" role="table" aria-label="Danh sách vòng thi">
-    <div class="competition-page__round-row competition-page__round-row--head" role="row">
+<section class="competition-page__table position-relative">
+  <div class="competition-page__round-table d-grid" role="table" aria-label="Danh sách vòng thi">
+    <div class="competition-page__round-row competition-page__round-row--head d-grid align-items-center gap-3" role="row">
       {% for heading in competition.table_headings %}
       <span role="columnheader">{{ heading }}</span>
       {% endfor %}
     </div>
 
     {% for round in competition.rounds %}
-    <div class="competition-page__round-row{% if round.current %} competition-page__round-row--current competition-page__round-row--launch{% endif %}"
+    <div class="competition-page__round-row d-grid align-items-center gap-3{% if round.current %} competition-page__round-row--current competition-page__round-row--launch{% endif %}"
       role="row"{% if round.current %} tabindex="0" aria-label="Mở quy chế khảo thí vòng hiện tại" data-bs-toggle="modal" data-bs-target="#{{ competition.exam_rules.modal_id }}"{% endif %}>
       <span role="cell">{{ round.index }}</span>
       <span role="cell">{{ round.label }}</span>

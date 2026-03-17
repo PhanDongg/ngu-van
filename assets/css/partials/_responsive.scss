@@ -91,6 +91,7 @@
 @media (max-width: 640px) {
   .main {
     background: #fff;
+    padding: 20px 16px 0;
 
     &::before {
       display: none;
@@ -115,7 +116,7 @@
 
   .layout__content {
     width: 100%;
-    padding: 0.65rem 0.9rem 2rem;
+    padding: 0;
   }
 
   .sidebar {
@@ -134,6 +135,8 @@
       flex-direction: row;
       align-items: center;
       flex-wrap: nowrap;
+      justify-content: space-between;
+
     }
 
     &__brand {
@@ -150,6 +153,8 @@
     }
 
     &__nav {
+      margin-right: 0 !important;
+
       img {
         display: none !important;
       }
@@ -178,10 +183,11 @@
     &__actions {
       gap: 0.2rem;
       margin-left: auto;
-      flex: 1 1 auto;
+      flex: none;
       justify-content: flex-start;
       overflow: hidden;
       flex-wrap: nowrap;
+      margin-left: 0 !important;
     }
 
     &__action {
@@ -207,7 +213,6 @@
       align-items: center;
       gap: 0.75rem;
       padding: 0.75rem 0 0.7rem;
-      border-top: 1px solid #ececec;
     }
 
     &__mobile-back {
