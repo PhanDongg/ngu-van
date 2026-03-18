@@ -20,7 +20,13 @@
     padding-top: 64px;
     padding-left: 25px;
     padding-bottom: 30px;
+
   }
+      @media screen and (max-width: 1024px) {
+      .layout__content {
+        padding-top: 0 !important;
+      }
+    }
 }
 
 .sidebar {

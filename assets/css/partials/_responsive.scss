@@ -29,6 +29,25 @@
   }
 }
 
+@media (max-width: 1024px) and (min-width: 641px) {
+  .header {
+    &__inner {
+      position: relative;
+    }
+
+    &__nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      max-width: calc(100% - 11rem);
+      margin: 0 !important;
+      justify-content: center;
+      flex: 0 1 auto;
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .header {
     position: static;
@@ -37,7 +56,6 @@
       min-height: auto;
       padding-top: 0.85rem;
       padding-bottom: 0.85rem;
-      flex-direction: column;
       align-items: flex-start;
     }
 
@@ -89,8 +107,11 @@
 }
 
 @media (max-width: 640px) {
+  body {
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom));
+  }
+
   .main {
-    background: #fff;
     padding: 20px 16px 0;
 
     &::before {
@@ -99,8 +120,6 @@
   }
 
   .layout {
-    padding-left: 0;
-    padding-right: 0;
 
     .row {
       margin-left: 0;
@@ -132,11 +151,6 @@
       min-height: 4.25rem;
       padding: 0.15rem 5px 0.25rem;
       gap: 0.55rem;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-
     }
 
     &__brand {
@@ -153,7 +167,8 @@
     }
 
     &__nav {
-      margin-right: 0 !important;
+      justify-content: center;
+      flex: 1 1 auto;
 
       img {
         display: none !important;
@@ -191,7 +206,6 @@
     }
 
     &__action {
-      display: none !important;
 
       &:nth-child(4) {
         display: none !important;
@@ -202,6 +216,42 @@
       width: 0.95rem;
       height: 0.95rem;
       flex-basis: 0.95rem;
+    }
+
+    &__mobile-actions {
+      display: grid !important;
+      position: fixed;
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: calc(0.75rem + env(safe-area-inset-bottom));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.2rem;
+      padding: 0.4rem;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid #ece5e0;
+      box-shadow: 0 14px 32px rgba(35, 31, 24, 0.14);
+      backdrop-filter: blur(10px);
+      z-index: 45;
+    }
+
+    &__mobile-action {
+      min-height: 4.35rem;
+      padding: 0.55rem 0.35rem 0.5rem;
+      border-radius: 1rem;
+      color: #5d5852;
+      font-size: 0.9rem;
+      line-height: 1.15;
+
+      &--active {
+        color: #2d2924;
+      }
+    }
+
+    &__mobile-action-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      flex-basis: 1.35rem;
+      margin-bottom: 0.35rem;
     }
   }
 
@@ -232,8 +282,6 @@
 
     &__hero {
       min-height: auto;
-      padding: 0.95rem 0.95rem 0.85rem;
-      border-radius: 1.5rem;
       gap: 0.3rem;
       flex-direction: column;
       align-items: flex-start;
@@ -270,7 +318,6 @@
     &__round-row {
       min-width: 0;
       grid-template-columns: 1.5rem minmax(4.35rem, 1.15fr) minmax(3.8rem, 1fr) minmax(3.8rem, 1fr) 1.8rem;
-      gap: 0.45rem;
       padding: 0.38rem 0.15rem;
 
       &--head {
@@ -282,7 +329,7 @@
         }
 
         span {
-          font-size: 0.82rem;
+          font-size: 11px;
           line-height: 1.15;
         }
       }
@@ -348,7 +395,7 @@
   .footer {
     &__inner {
       grid-template-columns: 1fr;
-      padding: 2rem 1rem 3rem;
+      padding: 2rem 1rem 1rem;
       gap: 2rem;
     }
 
@@ -385,3 +432,109 @@
     }
   }
 }
+
+@media (max-width: 640px) {
+  .competition-page__exam-modal {
+
+    .competition-page__exam-modal-dialog {
+      max-width: none;
+      min-height: calc(100dvh - 1rem);
+    }
+
+    .competition-page__exam-modal-shell {
+      max-height: calc(100dvh - 1rem);
+      padding: 1rem 1rem 1.1rem;
+      border-radius: 1.75rem;
+      box-shadow: 0 24px 56px rgba(55, 43, 36, 0.2), 0 10px 24px rgba(55, 43, 36, 0.12);
+    }
+
+    .competition-page__exam-modal-corners::before,
+    .competition-page__exam-modal-corners::after {
+      width: 2.85rem;
+      height: 2.55rem;
+    }
+
+    .competition-page__exam-modal-head {
+      gap: 0.85rem;
+      margin-bottom: 0.9rem;
+      align-items: center;
+    }
+
+    .competition-page__exam-modal-title {
+      font-size: 2rem;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .competition-page__exam-modal-brand {
+      width: 6.75rem;
+      padding: 0.55rem 0.45rem;
+      border-radius: 1rem;
+    }
+
+    .competition-page__exam-modal-body {
+      gap: 0.9rem;
+    }
+
+    .competition-page__exam-modal-scroll {
+      max-height: min(48dvh, 25rem);
+      padding: 0 0.2rem;
+    }
+
+    .competition-page__exam-modal-list {
+      padding-left: 1.35rem;
+    }
+
+    .competition-page__exam-modal-list li {
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+
+    .competition-page__exam-modal-footer {
+      flex-direction: column;
+      align-items: stretch !important;
+      gap: 0.9rem;
+      padding-top: 0.9rem;
+    }
+
+    .competition-page__exam-modal-check {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 0.65rem;
+      font-size: 0.97rem;
+      line-height: 1.45;
+    }
+
+    .competition-page__exam-modal-check input {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.14rem;
+      flex: 0 0 1.15rem;
+    }
+
+    .competition-page__exam-modal-actions {
+      width: 100%;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem !important;
+      margin-left: 0 !important;
+    }
+
+    .competition-page__exam-modal-button {
+      min-width: 0;
+      width: 100%;
+      min-height: 3rem;
+      padding: 0 0.9rem;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .competition-page__exam-modal-button-icon {
+      width: 0.95rem;
+      height: 0.95rem;
+      flex-basis: 0.95rem;
+    }
+  }
+}
+
+// exam-modal mobile polish

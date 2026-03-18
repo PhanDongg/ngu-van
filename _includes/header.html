@@ -1,14 +1,17 @@
 {% assign theme = site.data.theme %}
 <header class="header sticky-top position-relative overflow-visible">
-  <div class="header__inner container-xxl d-flex align-items-center gap-4 overflow-visible">
-    <a class="header__brand position-relative d-inline-flex align-items-center justify-content-center flex-shrink-0 align-self-start text-decoration-none" href="#">
+  <div
+    class="header__inner container-xxl d-flex align-items-center gap-xl-4 gap-xs-2 overflow-visible flex-xs-row align-items-md-center flex-md-nowrap justify-content-between">
+    <a class="header__brand position-relative d-inline-flex align-items-center justify-content-center flex-shrink-0 align-self-start text-decoration-none"
+      href="#">
       <img class="header__brand-image img-fluid" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}"
         alt="Trang Nguyen Education">
     </a>
 
-    <nav class="header__nav d-flex align-items-center gap-3 me-auto" aria-label="Điều hướng chính">
+    <nav class="header__nav d-flex align-items-center gap-md-3 gap-2" aria-label="Điều hướng chính">
       {% for item in theme.header_nav %}
-      <div class="header__nav-item position-relative d-flex align-items-center{% if item.children %} header__nav-item--has-dropdown{% endif %}">
+      <div
+        class="header__nav-item position-relative d-flex align-items-center{% if item.children %} header__nav-item--has-dropdown{% endif %}">
         <a class="header__nav-link position-relative d-inline-flex align-items-center gap-2 text-decoration-none{% if item.active %} header__nav-link--active{% endif %}"
           href="{{ item.url }}">
           {% if item.icon %}
@@ -37,15 +40,16 @@
 
     <div class="header__actions d-flex align-items-center">
       {% for item in theme.header_actions %}
-      <a class="header__action d-inline-flex align-items-center gap-2 text-decoration-none{% if item.active %} header__action--active{% endif %}"
+      <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none{% if item.active %} header__action--active{% endif %} "
         href="{{ item.url }}">
         <img class="header__action-icon d-block" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
         <span>{{ item.label }}</span>
       </a>
       {% endfor %}
 
-      <button class="header__notify position-relative d-inline-flex align-items-center justify-content-center p-0 border-0 bg-transparent" type="button"
-        aria-label="Thông báo">
+      <button
+        class="header__notify position-relative d-xl-inline-flex align-items-center justify-content-center p-0 border-0 bg-transparent d-xs-none"
+        type="button" aria-label="Thông báo">
         <img class="header__notify-icon d-block" src="{{ theme.notify_icon | relative_url }}" alt="" aria-hidden="true">
         <span class="header__notify-dot position-absolute top-0 end-0"></span>
       </button>
@@ -55,7 +59,7 @@
           data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
           <img class="header__profile-avatar rounded-circle d-block" src="{{ theme.profile.avatar | relative_url }}"
             alt="Ảnh đại diện học sinh">
-          <div class="header__profile-body d-grid text-start">
+          <div class="header__profile-body d-lg-grid text-start d-xs-none">
             <span class="header__profile-name d-block">{{ theme.profile.name }}</span>
             <span class="header__profile-meta d-block">{{ theme.profile.meta }}</span>
           </div>
@@ -64,7 +68,8 @@
           </span>
         </button>
 
-        <div class="header__profile-dropdown position-absolute dropdown-menu dropdown-menu-end d-block m-0 p-0 border-0">
+        <div
+          class="header__profile-dropdown position-absolute dropdown-menu dropdown-menu-end d-block m-0 p-0 border-0">
           <ul class="header__profile-menu list-unstyled mb-0">
             {% for item in theme.profile.menu %}
             <li class="header__profile-item">
@@ -83,3 +88,12 @@
     </div>
   </div>
 </header>
+<nav class="header__mobile-actions position-fixed start-0 end-0 bottom-0 d-grid d-xl-none" aria-label="Lối tắt trên di động">
+  {% for item in theme.header_actions %}
+  <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none{% if item.active %} header__mobile-action--active{% endif %}"
+    href="{{ item.url }}"{% if item.active %} aria-current="page"{% endif %}>
+    <img class="header__mobile-action-icon d-block" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
+    <span>{{ item.label }}</span>
+  </a>
+  {% endfor %}
+</nav>

@@ -6,10 +6,13 @@
       <div class="competition-page__exam-modal-shell position-relative bg-white">
         <div class="competition-page__exam-modal-corners" aria-hidden="true"></div>
 
-        <div class="competition-page__exam-modal-head position-relative d-flex align-items-start justify-content-between gap-4">
-          <h3 class="competition-page__exam-modal-title m-0" id="{{ exam_rules.modal_id }}Title">{{ exam_rules.title }}</h3>
+        <div
+          class="competition-page__exam-modal-head position-relative d-flex align-items-start justify-content-between gap-4">
+          <h3 class="competition-page__exam-modal-title mt-auto" id="{{ exam_rules.modal_id }}Title">{{ exam_rules.title
+            }}</h3>
           <div class="competition-page__exam-modal-brand">
-            <img class="d-block w-100 h-auto" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}" alt="Trang Nguyen Education">
+            <img class="d-block w-100 h-auto" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}"
+              alt="Trang Nguyen Education">
           </div>
         </div>
 
@@ -29,8 +32,9 @@
             </label>
 
             <div class="competition-page__exam-modal-actions d-flex align-items-center gap-3 ms-auto">
-              <button class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost d-inline-flex align-items-center justify-content-center gap-2" type="button"
-                data-bs-dismiss="modal">
+              <button
+                class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost d-inline-flex align-items-center justify-content-center gap-2"
+                type="button" data-bs-dismiss="modal">
                 <img class="competition-page__exam-modal-button-icon"
                   src="{{ '/assets/images/bai-thi/tnv_close_remove.svg' | relative_url }}" alt="" aria-hidden="true">
                 {{ exam_rules.cancel_label }}

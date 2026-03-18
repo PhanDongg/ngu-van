@@ -240,7 +240,6 @@
       font-size: 36px;
       line-height: 1.1;
       font-family: "Paytone One", sans-serif;
-      margin-top: auto;
       font-weight: 400;
     }
 
@@ -336,4 +335,40 @@
 .modal-backdrop.fade,
 .modal-backdrop.show {
   z-index: 1990 !important;
+}
+
+// exam-modal polish
+.competition-page__exam-modal {
+  .competition-page__exam-modal-shell {
+    background: linear-gradient(180deg, #fffdfc 0%, #fff7f6 100%);
+  }
+
+  .competition-page__exam-modal-head {
+    align-items: flex-end;
+  }
+
+  .competition-page__exam-modal-body {
+    min-height: 0;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .competition-page__exam-modal-scroll {
+    padding-right: 0.55rem;
+    scrollbar-width: thin;
+    scrollbar-color: #efc1bc transparent;
+  }
+
+  .competition-page__exam-modal-footer {
+    padding-top: 1rem;
+    border-top: 1px solid #f3d9d6;
+  }
+
+  .competition-page__exam-modal-check {
+    gap: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .competition-page__exam-modal-actions {
+    flex: 0 0 auto;
+  }
 }

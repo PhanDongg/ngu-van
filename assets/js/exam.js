@@ -29,6 +29,8 @@
   const storageKey = `exam-deadline:${exam.header?.title || "default"}`;
   let timerInterval = null;
   let autoSubmitShown = false;
+  let activeClassifyPointerDrag = null;
+  let activeSortPointerDrag = null;
 
   function formatTimer(totalSeconds) {
     const safeSeconds = Math.max(0, totalSeconds);
@@ -447,12 +449,15 @@
       const rightRect = rightTile.getBoundingClientRect();
       const x1 = leftRect.right - boardRect.left;
       const y1 = leftRect.top + leftRect.height / 2 - boardRect.top;
-      const markerRadius = 10;
       const x2 = rightRect.left - boardRect.left;
       const y2 = rightRect.top + rightRect.height / 2 - boardRect.top;
+      const isCompact = window.matchMedia("(max-width: 640px)").matches;
+      const markerRadius = isCompact ? 8 : 10;
       const markerCenterX = x2;
       const pathEndX = markerCenterX - markerRadius;
-      const delta = Math.max((pathEndX - x1) * 0.38, 56);
+      const delta = isCompact
+        ? Math.max((pathEndX - x1) * 0.28, 12)
+        : Math.max((pathEndX - x1) * 0.38, 56);
 
       const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
       path.setAttribute("d", `M ${x1} ${y1} C ${x1 + delta} ${y1}, ${pathEndX - delta} ${y2}, ${pathEndX} ${y2}`);
@@ -542,10 +547,15 @@
     card.addEventListener("dragend", function () {
       card.classList.remove("exam-page__line-card--dragging");
     });
+    card.addEventListener("pointerdown", function (event) {
+      if (event.pointerType === "mouse") return;
+      startClassifyPointerDrag(card, question, itemIndex, event);
+    });
     return card;
   }
 
   function setupClassifyDropzone(dropzone, question, bucketIndex) {
+    dropzone.dataset.classifyBucket = bucketIndex === null ? "source" : String(bucketIndex);
     dropzone.addEventListener("dragover", function (event) {
       event.preventDefault();
       event.dataTransfer.dropEffect = "move";
@@ -580,6 +590,130 @@
     });
   }
 
+  function startClassifyPointerDrag(card, question, itemIndex, event) {
+    if (activeClassifyPointerDrag) {
+      cleanupClassifyPointerDrag();
+    }
+
+    event.preventDefault();
+
+    const rect = card.getBoundingClientRect();
+    const ghost = card.cloneNode(true);
+    ghost.classList.add("exam-page__line-card--drag-ghost");
+    ghost.style.width = `${rect.width}px`;
+    ghost.style.height = `${rect.height}px`;
+    ghost.style.left = `${rect.left}px`;
+    ghost.style.top = `${rect.top}px`;
+    document.body.appendChild(ghost);
+
+    card.classList.add("exam-page__line-card--dragging");
+
+    activeClassifyPointerDrag = {
+      card,
+      ghost,
+      pointerId: event.pointerId,
+      questionId: question.id,
+      itemIndex,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top,
+      hoverDropzone: null
+    };
+
+    updateClassifyPointerGhostPosition(event.clientX, event.clientY);
+    updateClassifyPointerHover(event.clientX, event.clientY);
+
+    document.addEventListener("pointermove", handleClassifyPointerMove);
+    document.addEventListener("pointerup", handleClassifyPointerEnd);
+    document.addEventListener("pointercancel", handleClassifyPointerEnd);
+  }
+
+  function handleClassifyPointerMove(event) {
+    if (!activeClassifyPointerDrag || event.pointerId !== activeClassifyPointerDrag.pointerId) return;
+
+    event.preventDefault();
+    updateClassifyPointerGhostPosition(event.clientX, event.clientY);
+    updateClassifyPointerHover(event.clientX, event.clientY);
+  }
+
+  function handleClassifyPointerEnd(event) {
+    if (!activeClassifyPointerDrag || event.pointerId !== activeClassifyPointerDrag.pointerId) return;
+
+    event.preventDefault();
+    const dropzone = getClassifyDropzoneFromPoint(event.clientX, event.clientY) || activeClassifyPointerDrag.hoverDropzone;
+    const questionId = activeClassifyPointerDrag.questionId;
+    const itemIndex = activeClassifyPointerDrag.itemIndex;
+
+    cleanupClassifyPointerDrag();
+
+    if (!dropzone) return;
+
+    const bucketValue = dropzone.dataset.classifyBucket;
+    const bucketIndex = bucketValue === "source" ? null : Number(bucketValue);
+    const state = getQuestionState(questionId);
+    state.classifyPlacements[itemIndex] = bucketIndex;
+
+    if (bucketIndex === null) {
+      delete state.classifyPlacements[itemIndex];
+    }
+
+    const nextQuestion = questions.find((entry) => entry.id === questionId);
+    if (nextQuestion) {
+      renderQuestion(nextQuestion);
+    }
+  }
+
+  function updateClassifyPointerGhostPosition(clientX, clientY) {
+    if (!activeClassifyPointerDrag) return;
+
+    const { ghost, offsetX, offsetY } = activeClassifyPointerDrag;
+    ghost.style.left = `${clientX - offsetX}px`;
+    ghost.style.top = `${clientY - offsetY}px`;
+  }
+
+  function updateClassifyPointerHover(clientX, clientY) {
+    if (!activeClassifyPointerDrag) return;
+
+    const nextDropzone = getClassifyDropzoneFromPoint(clientX, clientY);
+    if (activeClassifyPointerDrag.hoverDropzone === nextDropzone) return;
+
+    if (activeClassifyPointerDrag.hoverDropzone) {
+      activeClassifyPointerDrag.hoverDropzone.classList.remove("exam-page__classify-dropzone--hover");
+    }
+
+    activeClassifyPointerDrag.hoverDropzone = nextDropzone;
+
+    if (nextDropzone) {
+      nextDropzone.classList.add("exam-page__classify-dropzone--hover");
+    }
+  }
+
+  function getClassifyDropzoneFromPoint(clientX, clientY) {
+    const target = document.elementFromPoint(clientX, clientY);
+    if (!target) return null;
+
+    return target.closest("[data-classify-bucket]");
+  }
+
+  function cleanupClassifyPointerDrag() {
+    if (!activeClassifyPointerDrag) return;
+
+    const { card, ghost, hoverDropzone } = activeClassifyPointerDrag;
+    card.classList.remove("exam-page__line-card--dragging");
+
+    if (ghost && ghost.parentNode) {
+      ghost.parentNode.removeChild(ghost);
+    }
+
+    if (hoverDropzone) {
+      hoverDropzone.classList.remove("exam-page__classify-dropzone--hover");
+    }
+
+    document.removeEventListener("pointermove", handleClassifyPointerMove);
+    document.removeEventListener("pointerup", handleClassifyPointerEnd);
+    document.removeEventListener("pointercancel", handleClassifyPointerEnd);
+
+    activeClassifyPointerDrag = null;
+  }
   function renderSortNumbersQuestion(question) {
     const state = getQuestionState(question.id);
     if (!Array.isArray(state.sortOrder)) {
@@ -612,6 +746,10 @@
       });
       chip.addEventListener("dragend", function () {
         chip.classList.remove("exam-page__sort-chip--dragging");
+      });
+      chip.addEventListener("pointerdown", function (event) {
+        if (event.pointerType === "mouse") return;
+        startSortPointerDrag(chip, tray, question, event);
       });
       tray.appendChild(chip);
     });
@@ -667,6 +805,129 @@
     }, { offset: Number.NEGATIVE_INFINITY, element: null }).element;
   }
 
+
+  function startSortPointerDrag(chip, tray, question, event) {
+    if (activeSortPointerDrag) {
+      cleanupSortPointerDrag();
+    }
+
+    event.preventDefault();
+
+    const rect = chip.getBoundingClientRect();
+    const ghost = chip.cloneNode(true);
+    ghost.classList.add("exam-page__sort-chip--drag-ghost");
+    ghost.style.width = `${rect.width}px`;
+    ghost.style.height = `${rect.height}px`;
+    ghost.style.left = `${rect.left}px`;
+    ghost.style.top = `${rect.top}px`;
+    document.body.appendChild(ghost);
+
+    chip.classList.add("exam-page__sort-chip--dragging");
+
+    activeSortPointerDrag = {
+      chip,
+      tray,
+      ghost,
+      pointerId: event.pointerId,
+      questionId: question.id,
+      offsetX: event.clientX - rect.left,
+      offsetY: event.clientY - rect.top
+    };
+
+    updateSortPointerGhostPosition(event.clientX, event.clientY);
+    updateSortPointerReorder(event.clientX, event.clientY);
+
+    document.addEventListener("pointermove", handleSortPointerMove);
+    document.addEventListener("pointerup", handleSortPointerEnd);
+    document.addEventListener("pointercancel", handleSortPointerEnd);
+  }
+
+  function handleSortPointerMove(event) {
+    if (!activeSortPointerDrag || event.pointerId !== activeSortPointerDrag.pointerId) return;
+
+    event.preventDefault();
+    updateSortPointerGhostPosition(event.clientX, event.clientY);
+    updateSortPointerReorder(event.clientX, event.clientY);
+  }
+
+  function handleSortPointerEnd(event) {
+    if (!activeSortPointerDrag || event.pointerId !== activeSortPointerDrag.pointerId) return;
+
+    event.preventDefault();
+    const { tray, questionId } = activeSortPointerDrag;
+    cleanupSortPointerDrag();
+
+    const nextOrder = Array.from(tray.querySelectorAll("[data-sort-index]")).map((node) => Number(node.dataset.sortIndex));
+    const state = getQuestionState(questionId);
+    state.sortOrder = nextOrder;
+
+    const nextQuestion = questions.find((entry) => entry.id === questionId);
+    if (nextQuestion) {
+      renderQuestion(nextQuestion);
+    }
+  }
+
+  function updateSortPointerGhostPosition(clientX, clientY) {
+    if (!activeSortPointerDrag) return;
+
+    const { ghost, offsetX, offsetY } = activeSortPointerDrag;
+    ghost.style.left = `${clientX - offsetX}px`;
+    ghost.style.top = `${clientY - offsetY}px`;
+  }
+
+  function updateSortPointerReorder(clientX, clientY) {
+    if (!activeSortPointerDrag) return;
+
+    const { tray, chip } = activeSortPointerDrag;
+    const afterElement = getSortPointerAfterElement(tray, chip, clientX, clientY);
+
+    if (afterElement == null) {
+      tray.appendChild(chip);
+    } else if (afterElement !== chip) {
+      tray.insertBefore(chip, afterElement);
+    }
+  }
+
+  function getSortPointerAfterElement(container, activeChip, pointerX, pointerY) {
+    const elements = [...container.querySelectorAll(".exam-page__sort-chip")].filter((chip) => chip !== activeChip);
+    if (!elements.length) return null;
+
+    const sampleBox = elements[0].getBoundingClientRect();
+    const rowThreshold = sampleBox.height * 0.45;
+
+    for (const child of elements) {
+      const box = child.getBoundingClientRect();
+      const centerY = box.top + box.height / 2;
+      const centerX = box.left + box.width / 2;
+
+      if (pointerY < centerY - rowThreshold) {
+        return child;
+      }
+
+      if (Math.abs(pointerY - centerY) <= rowThreshold && pointerX < centerX) {
+        return child;
+      }
+    }
+
+    return null;
+  }
+
+  function cleanupSortPointerDrag() {
+    if (!activeSortPointerDrag) return;
+
+    const { chip, ghost } = activeSortPointerDrag;
+    chip.classList.remove("exam-page__sort-chip--dragging");
+
+    if (ghost && ghost.parentNode) {
+      ghost.parentNode.removeChild(ghost);
+    }
+
+    document.removeEventListener("pointermove", handleSortPointerMove);
+    document.removeEventListener("pointerup", handleSortPointerEnd);
+    document.removeEventListener("pointercancel", handleSortPointerEnd);
+
+    activeSortPointerDrag = null;
+  }
   function renderAnimalChoiceQuestion(question) {
     visualEl.className = "exam-page__visual exam-page__visual--animal-choice";
     visualEl.innerHTML = "";

@@ -1,7 +1,7 @@
 {% assign competition = site.data.competition %}
 <section class="competition-page__table position-relative">
   <div class="competition-page__round-table d-grid" role="table" aria-label="Danh sách vòng thi">
-    <div class="competition-page__round-row competition-page__round-row--head d-grid align-items-center gap-3" role="row">
+    <div class="competition-page__round-row competition-page__round-row--head d-grid align-items-center gap-sm-3 gap-2" role="row">
       {% for heading in competition.table_headings %}
       <span role="columnheader">{{ heading }}</span>
       {% endfor %}
