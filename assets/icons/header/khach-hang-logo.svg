@@ -1,0 +1,17 @@
+<svg width="80" height="88" viewBox="0 0 80 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#B72026">
+    <path d="M41.6 0.8C46.1 4.2 48.6 8.1 49 12.4C52 11 54.4 8.8 56.1 5.7C55.7 10.1 54.1 13.7 51.4 16.4C49.1 18.6 46.3 20.1 43 20.7C47.1 22.3 50.6 25.2 53.4 29.5C49 28.5 45.3 26.7 42.1 24.1C39.1 21.7 37.1 18.7 36.1 15.1C35 11.4 35.4 7.3 37.2 2.9L41.6 0.8Z"/>
+    <path d="M27.3 18.1C30.2 18.5 32.8 19.5 35.2 21.1C32.5 22.6 29.7 23.2 26.7 22.9C24 22.5 21.6 21.5 19.3 19.8C21.7 18.5 24.4 17.9 27.3 18.1Z" opacity=".92"/>
+    <path d="M30.7 27.4C34.6 28.3 37.8 30.2 40.2 33.1C36.3 32.8 32.9 31.9 29.9 30.4C27.5 29.2 25.4 27.5 23.5 25.4C26.2 25.6 28.6 26.3 30.7 27.4Z" opacity=".86"/>
+    <circle cx="46.7" cy="8.5" r="1.9"/>
+  </g>
+
+  <text x="40" y="48.2" text-anchor="middle" fill="#B72026" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="11.4" letter-spacing="2.5">KHACH</text>
+  <text x="40" y="60.6" text-anchor="middle" fill="#B72026" font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif" font-size="11.4" letter-spacing="2.5">HANG</text>
+  <text x="40" y="70.6" text-anchor="middle" fill="#B72026" font-family="Trebuchet MS, 'Segoe UI', sans-serif" font-size="4.6" font-weight="800" letter-spacing="1.2">EDUCATION</text>
+
+  <g stroke="#B72026" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 75.5H24.8C25.7 75.5 26.4 74.8 26.4 73.9V73H31.2V73.9C31.2 76.4 29.2 78.4 26.7 78.4H14.5"/>
+    <path d="M65.5 75.5H55.2C54.3 75.5 53.6 74.8 53.6 73.9V73H48.8V73.9C48.8 76.4 50.8 78.4 53.3 78.4H65.5"/>
+  </g>
+</svg>

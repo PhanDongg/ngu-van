@@ -29,6 +29,24 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .header__mobile-actions {
+    display: grid !important;
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.2rem;
+    padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #ece5e0;
+    box-shadow: 0 14px 32px rgba(35, 31, 24, 0.14);
+    backdrop-filter: blur(10px);
+    z-index: 45;
+  }
+}
+
 @media (max-width: 1024px) and (min-width: 641px) {
   .header {
     &__inner {
@@ -219,19 +237,19 @@
     }
 
     &__mobile-actions {
-      display: grid !important;
-      position: fixed;
-      left: 0.75rem;
-      right: 0.75rem;
-      bottom: calc(0.75rem + env(safe-area-inset-bottom));
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.2rem;
-      padding: 0.4rem;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid #ece5e0;
-      box-shadow: 0 14px 32px rgba(35, 31, 24, 0.14);
-      backdrop-filter: blur(10px);
-      z-index: 45;
+      // display: grid !important;
+      // position: fixed;
+      // left: 0.75rem;
+      // right: 0.75rem;
+      // bottom: calc(0.75rem + env(safe-area-inset-bottom));
+      // grid-template-columns: repeat(4, minmax(0, 1fr));
+      // gap: 0.2rem;
+      // padding: 0.4rem;
+      // background: rgba(255, 255, 255, 0.96);
+      // border: 1px solid #ece5e0;
+      // box-shadow: 0 14px 32px rgba(35, 31, 24, 0.14);
+      // backdrop-filter: blur(10px);
+      // z-index: 45;
     }
 
     &__mobile-action {
@@ -538,3 +556,55 @@
 }
 
 // exam-modal mobile polish
+@media (max-width: 640px) {
+  .sidebar {
+    display: block;
+    width: 100%;
+    max-width: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .sidebar__stack {
+    display: none !important;
+  }
+
+  .sidebar__promo {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 1.6rem;
+  }
+
+  .sidebar__promo-image {
+    width: 100%;
+  }
+
+    .sidebar__promo-overlay {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &::before {
+      inset: 0.45rem 0.45rem auto;
+      height: 60%;
+    }
+  }
+
+    .sidebar__promo-title {
+    max-width: 13.5rem;
+    margin-top: 1.8rem;
+    font-size: 1.65rem;
+  }
+
+    .sidebar__promo-pills {
+    gap: 0.55rem;
+    margin-top: 1.45rem;
+  }
+
+    .sidebar__promo-pill {
+    width: fit-content;
+    max-width: 12.8rem;
+    font-size: 0.95rem;
+    padding: 0.68rem 1rem;
+  }
+
+}

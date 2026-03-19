@@ -4,7 +4,7 @@
     class="header__inner container-xxl d-flex align-items-center gap-xl-4 gap-xs-2 overflow-visible flex-xs-row align-items-md-center flex-md-nowrap justify-content-between">
     <a class="header__brand position-relative d-inline-flex align-items-center justify-content-center flex-shrink-0 align-self-start text-decoration-none"
       href="#">
-      <img class="header__brand-image img-fluid" src="{{ '/assets/icons/header/trang-nguyen-logo.svg' | relative_url }}"
+      <img class="header__brand-image img-fluid" src="{{ '/assets/icons/header/khach-hang-logo.svg' | relative_url }}"
         alt="Trang Nguyen Education">
     </a>
 
@@ -64,7 +64,7 @@
             <span class="header__profile-meta d-block">{{ theme.profile.meta }}</span>
           </div>
           <span class="header__profile-chevron" aria-hidden="true">
-            <img class="d-block" src="/assets/images/icon-arrow-down.svg" alt="">
+            <img class="d-block" src="{{ '/assets/images/icon-arrow-down.svg' | relative_url }}" alt="">
           </span>
         </button>
 
@@ -88,10 +88,11 @@
     </div>
   </div>
 </header>
-<nav class="header__mobile-actions position-fixed start-0 end-0 bottom-0 d-grid d-xl-none" aria-label="Lối tắt trên di động">
+<nav class="header__mobile-actions position-fixed start-0 end-0 bottom-0 d-grid d-xl-none"
+  aria-label="Lối tắt trên di động">
   {% for item in theme.header_actions %}
   <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none{% if item.active %} header__mobile-action--active{% endif %}"
-    href="{{ item.url }}"{% if item.active %} aria-current="page"{% endif %}>
+    href="{{ item.url }}" {% if item.active %} aria-current="page" {% endif %}>
     <img class="header__mobile-action-icon d-block" src="{{ item.icon | relative_url }}" alt="" aria-hidden="true">
     <span>{{ item.label }}</span>
   </a>
