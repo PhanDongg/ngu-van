@@ -1,0 +1,168 @@
+hero_slides:
+  - image: /assets/images/home/banner-1.png
+    alt: Banner khuyến mãi Trạng Nguyên 1
+  - image: /assets/images/home/banner-2.png
+    alt: Banner khuyến mãi Trạng Nguyên 2
+  - image: /assets/images/home/banner-1.png
+    alt: Banner khuyến mãi Trạng Nguyên 3
+  - image: /assets/images/home/banner-2.png
+    alt: Banner khuyến mãi Trạng Nguyên 4
+  - image: /assets/images/home/banner-1.png
+    alt: Banner khuyến mãi Trạng Nguyên 5
+
+products_section:
+  ornament: /assets/images/home/cupVioedu.png
+  title: Sản Phẩm Của Khách Hàng
+  cta_label: Tìm hiểu ngay
+  items:
+    - image: studentPic_new.png
+      title: Lách Cách Edu
+      description: Khơi hứng thú học tập với nội dung tương tác gần gũi cho học sinh nhỏ tuổi.
+      theme: mint
+      href: "#"
+    - image: teacher.png
+      title: Toàn Tài
+      description: Không gian đồng hành để phụ huynh theo dõi tiến độ và hỗ trợ con học tập hiệu quả.
+      theme: blue
+      href: "#"
+    - image: school.png
+      title: TNMath K-12
+      description: Hệ thống học tập dành cho nhà trường với lộ trình rõ ràng và bài luyện phong phú.
+      theme: amber
+      href: "#"
+    - image: teacher.png
+      title: Tiếng Việt
+      description: Bài học bám sát kỹ năng đọc hiểu, viết và luyện tập cho học sinh tiểu học.
+      theme: sand
+      href: "#"
+    - image: phuhuynh.png
+      title: Toàn Tài
+      description: Không gian đồng hành để phụ huynh theo dõi tiến độ và hỗ trợ con học tập hiệu quả.
+      theme: blue
+      href: "#"
+
+highlights_section:
+  ornament: /assets/images/home/assistance1.png
+  title: Điểm Nổi Bật Của Khách Hàng
+  center_image: /assets/images/home/studentPic_new.png
+  left_items:
+    - icon: /assets/images/home/saveMoney.png
+      title: Format bài giảng sáng tạo, nhân văn, ý nghĩa
+      description: Hệ thống bài giảng được thiết kế theo nhiều format gần gũi như bản tin, showgame và chuyên đề để học sinh tiếp thu tự nhiên, hứng thú hơn.
+    - icon: /assets/images/home/baocaotq.png
+      title: Học tập tương tác độc đáo giúp con nhớ lâu
+      description: Các bài học kết hợp video, trò chơi và hoạt động tương tác giúp con luyện tư duy nhanh, ghi nhớ lâu và chủ động hơn khi học.
+  right_items:
+    - icon: /assets/images/home/videosp.png
+      title: Hành trình Học - Luyện - Thi - Chơi giúp con nhớ sâu
+      description: Một lộ trình học tập được công nghệ hóa và cá nhân hóa giúp học sinh vừa học, vừa luyện tập và trải nghiệm trò chơi trí tuệ một cách tự nhiên.
+    - icon: /assets/images/home/timemng.png
+      title: Báo cáo kết quả học tập - đánh giá rõ ràng
+      description: Kết quả học tập được cập nhật rõ ràng để phụ huynh dễ theo dõi tiến độ, mức độ chăm chỉ và điểm mạnh của con qua từng chặng học.
+
+language_arena_section:
+  title: Sân Chơi Của Khách Hàng
+  benefits:
+    - Nâng cao khả năng cảm thụ Văn học
+    - Kiểm tra kiến thức Tiếng Việt toàn diện
+    - Truyền cảm hứng học, giao lưu kiến thức
+    - Thi theo khoa bảng, đậm nét dân tộc
+    - Thấu hiểu các giá trị nhân văn của ông cha
+  timeline:
+    - title: Thi Hương
+      period: 13/01-16/01/2026
+      marker_image: /assets/images/home/lotrinh1.png
+      marker_label: "1"
+    - title: Thi Hội
+      period: 10/03-14/03/2026
+      marker_label: "2"
+    - title: Thi Đình
+      period: 11/04-12/04/2026
+      marker_image: /assets/images/home/lotrinh3.png
+      marker_label: "3"
+    - title: Thi sơ khảo
+      period: 09/12-13/12/2025
+      marker_label: "4"
+  articles:
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      date: 15.01.2026
+      title: Từ điển Tiếng Việt tra cứu nhanh, chính xác, chi tiết
+      href: "#"
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      date: 20.02.2026
+      title: "Dẫn chứng nghị luận xã hội 4.0, bí kíp đạt điểm cao môn Văn"
+      href: "#"
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      date: 28.02.2026
+      title: "Góc chia sẻ học sinh: luyện Văn chắc nền tảng, nhớ lâu hơn"
+      href: "#"
+  cta_label: Xem thêm
+  cta_href: "#"
+
+featured_events_section:
+  ornament: /assets/images/home/assistance1.png
+  title: Sự Kiện Nổi Bật
+  items:
+    - image: /assets/images/home/teacher.png
+      title: Tọa đàm “Đổi mới văn hóa dạy và học toán” và Lễ ra mắt Sân chơi Toán học Việt Nam
+      href: "#"
+    - image: /assets/images/home/studentPic_new.png
+      title: "Hội thi Đình Tiếng Việt 2024 - 2025: Hành trình tôn vinh tài năng và tinh hoa Tiếng Việt"
+      href: "#"
+    - image: /assets/images/home/phuhuynh.png
+      title: "Chung kết Đấu Trường Toàn Tài 2024 - 2025: Vinh danh tài năng nhỏ - Gieo hạt bản lĩnh lớn"
+      href: "#"
+spotlight_section:
+  ornament: /assets/images/home/assistance1.png
+  title: Tiêu Điểm Khách Hàng
+  accent_image: /assets/images/home/school.png
+  cta_label: Khám phá
+  items:
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      title: Hệ sinh thái
+      description: TNMath được ra đời như một hệ sinh thái học tập hiện đại, nơi học sinh khám phá kiến thức theo nhịp độ phù hợp với mình.
+      href: "#"
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      title: Chung kết
+      description: Sau 10 tháng miệt mài với nhiều phần thi đầy cảm hứng, các thí sinh xuất sắc đã cùng nhau tạo nên một mùa giải đáng nhớ.
+      href: "#"
+    - image: /assets/images/home/tieng-viet-2-1735804486-2.jpg
+      title: Hội thi Đình
+      description: Hành trình tôn vinh tài năng và tình yêu Tiếng Việt được tiếp nối bằng những trải nghiệm thi đấu giàu cảm xúc, tự hào và bản sắc.
+      href: "#"
+partners_section:
+  ornament: /assets/images/home/assistance1.png
+  title: Đối Tác Chiến Lược
+  items:
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Viện Sử Học - Viện Hàn Lâm Khoa Học Xã Hội Việt Nam
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Viện Công nghệ thông tin - Viện Hàn lâm Khoa học và Công nghệ Việt Nam
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: VIASM - Viện Nghiên Cứu Cao Cấp Về Toán
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Viện Ngôn ngữ học - Viện Hàn lâm Khoa học xã hội Việt Nam
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Viện Khoa Học Giáo Dục Việt Nam
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Trung tâm Bản quyền số - Hội Truyền thông số Việt Nam
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Trung tâm nghiên cứu Việt Nam học - Viện nghiên cứu Việt Nam học
+    - image: /assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png
+      title: Làng Trong Thung - Jacaranda Valley Ecofarm
+experts_section:
+  ornament: /assets/images/home/assistance1.png
+  title: Ý Kiến Từ Chuyên Gia
+  items:
+    - image: /assets/images/home/giao-su.png
+      quote: Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.
+      role: Giáo Sư
+      name: Phan Văn Đông
+    - image: /assets/images/home/giao-su.png
+      quote: Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.
+      role: Giáo Sư
+      name: Phan Sỹ Đông
+    - image: /assets/images/home/giao-su.png
+      quote: Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.
+      role: Nhà thơ
+      name: Phan Sỹ Đông

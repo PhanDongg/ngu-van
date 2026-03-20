@@ -3,33 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trạng Nguyên Tiếng Việt Khối 1</title>
-  <meta name="description" content="Giao diện mô phỏng trang vòng thi theo mockup.">
+  <title>Trang chủ</title>
+  <meta name="description" content="Trang chủ của website.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/tracnghiem/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
 </head>
-<body class="page-competition">
+<body class="page-home">
   
 <header class="header sticky-top position-relative overflow-visible">
   <div
     class="header__inner container-xxl d-flex align-items-center gap-xl-4 gap-xs-2 overflow-visible flex-xs-row align-items-md-center flex-md-nowrap justify-content-between">
     <a class="header__brand position-relative d-inline-flex align-items-center justify-content-center flex-shrink-0 align-self-start text-decoration-none"
-      href="#">
-      <img class="header__brand-image img-fluid" src="/tracnghiem/assets/icons/header/khach-hang-logo.svg"
+      href="/">
+      <img class="header__brand-image img-fluid" src="/assets/icons/header/khach-hang-logo.svg"
         alt="Trang Nguyen Education">
     </a>
 
-    <nav class="header__nav d-flex align-items-center gap-md-3 gap-2" aria-label="Điều hướng chính">
+    <nav class="header__nav d-flex align-items-center gap-md-3 gap-2" aria-label="Dieu huong chinh">
       
       <div
         class="header__nav-item position-relative d-flex align-items-center">
         <a class="header__nav-link position-relative d-inline-flex align-items-center gap-2 text-decoration-none"
           href="#">
           
-          <img class="header__nav-icon d-block" src="/tracnghiem/assets/icons/header/reward.87a97663.svg" alt="" aria-hidden="true">
+          <img class="header__nav-icon d-block" src="/assets/icons/header/reward.87a97663.svg" alt="" aria-hidden="true">
           
           <span>Khen thưởng</span>
           
@@ -43,7 +44,7 @@
         <a class="header__nav-link position-relative d-inline-flex align-items-center gap-2 text-decoration-none"
           href="#">
           
-          <img class="header__nav-icon d-block" src="/tracnghiem/assets/icons/header/inprocess.bde7f5e2.svg" alt="" aria-hidden="true">
+          <img class="header__nav-icon d-block" src="/assets/icons/header/inprocess.bde7f5e2.svg" alt="" aria-hidden="true">
           
           <span>Tiến độ</span>
           
@@ -92,49 +93,57 @@
 
     <div class="header__actions d-flex align-items-center">
       
+      
+      
       <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none "
         href="#">
-        <img class="header__action-icon d-block" src="/tracnghiem/assets/icons/header/icon-hoc-gioi.201d7cb7.svg" alt="" aria-hidden="true">
+        <img class="header__action-icon d-block" src="/assets/icons/header/icon-hoc-gioi.201d7cb7.svg" alt="" aria-hidden="true">
         <span>Học giỏi</span>
       </a>
       
+      
+      
       <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none "
         href="#">
-        <img class="header__action-icon d-block" src="/tracnghiem/assets/icons/header/icon-luyen.77700d7e.svg" alt="" aria-hidden="true">
+        <img class="header__action-icon d-block" src="/assets/icons/header/icon-luyen.77700d7e.svg" alt="" aria-hidden="true">
         <span>Luyện thích</span>
       </a>
       
-      <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none header__action--active "
-        href="#">
-        <img class="header__action-icon d-block" src="/tracnghiem/assets/icons/header/icon-thi-hay.da3ec4c5.svg" alt="" aria-hidden="true">
+      
+      
+      <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none "
+        href="/thi-hay/">
+        <img class="header__action-icon d-block" src="/assets/icons/header/icon-thi-hay.da3ec4c5.svg" alt="" aria-hidden="true">
         <span>Thi hay</span>
       </a>
       
+      
+      
       <a class="header__action d-xl-inline-flex d-none align-items-center gap-2 text-decoration-none "
         href="#">
-        <img class="header__action-icon d-block" src="/tracnghiem/assets/icons/header/icon-game.cb5607fb.svg" alt="" aria-hidden="true">
+        <img class="header__action-icon d-block" src="/assets/icons/header/icon-game.cb5607fb.svg" alt="" aria-hidden="true">
         <span>Chơi vui</span>
       </a>
       
 
       <button
         class="header__notify position-relative d-xl-inline-flex align-items-center justify-content-center p-0 border-0 bg-transparent d-xs-none"
-        type="button" aria-label="Thông báo">
-        <img class="header__notify-icon d-block" src="/tracnghiem/assets/icons/header/icon-notify.3adb68d2.svg" alt="" aria-hidden="true">
+        type="button" aria-label="Thong bao">
+        <img class="header__notify-icon d-block" src="/assets/icons/header/icon-notify.3adb68d2.svg" alt="" aria-hidden="true">
         <span class="header__notify-dot position-absolute top-0 end-0"></span>
       </button>
 
       <div class="header__profile-wrap position-relative dropdown">
         <button class="header__profile d-flex align-items-center gap-2 ps-2 border-0 bg-transparent" type="button"
           data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-          <img class="header__profile-avatar rounded-circle d-block" src="/tracnghiem/assets/icons/header/avatar.0103a42e.svg"
-            alt="Ảnh đại diện học sinh">
+          <img class="header__profile-avatar rounded-circle d-block" src="/assets/icons/header/avatar.0103a42e.svg"
+            alt="Anh dai dien hoc sinh">
           <div class="header__profile-body d-lg-grid text-start d-xs-none">
             <span class="header__profile-name d-block">Phan Đông</span>
             <span class="header__profile-meta d-block">SBD: 961090107</span>
           </div>
           <span class="header__profile-chevron" aria-hidden="true">
-            <img class="d-block" src="/tracnghiem/assets/images/icon-arrow-down.svg" alt="">
+            <img class="d-block" src="/assets/images/icon-arrow-down.svg" alt="">
           </span>
         </button>
 
@@ -146,7 +155,7 @@
               <a class="header__profile-link d-flex align-items-center"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_1.9e806156.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_1.9e806156.svg" alt="">
                 </span>
                 <span>Thông tin cá nhân</span>
               </a>
@@ -156,7 +165,7 @@
               <a class="header__profile-link d-flex align-items-center header__profile-link--active"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_2.4fbb9554.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_2.4fbb9554.svg" alt="">
                 </span>
                 <span>Khóa học đang có</span>
               </a>
@@ -166,7 +175,7 @@
               <a class="header__profile-link d-flex align-items-center"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_3.fb179eb0.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_3.fb179eb0.svg" alt="">
                 </span>
                 <span>Giỏ hàng</span>
               </a>
@@ -176,7 +185,7 @@
               <a class="header__profile-link d-flex align-items-center"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_4.5a759e1b.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_4.5a759e1b.svg" alt="">
                 </span>
                 <span>Lịch sử mua hàng</span>
               </a>
@@ -186,7 +195,7 @@
               <a class="header__profile-link d-flex align-items-center"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_5.2a8d73f4.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_5.2a8d73f4.svg" alt="">
                 </span>
                 <span>Hỏi đáp</span>
               </a>
@@ -196,7 +205,7 @@
               <a class="header__profile-link d-flex align-items-center"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/profile-lock.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/profile-lock.svg" alt="">
                 </span>
                 <span>Đổi mật khẩu</span>
               </a>
@@ -206,7 +215,7 @@
               <a class="header__profile-link d-flex align-items-center header__profile-link--danger"
                 href="#">
                 <span class="header__profile-icon" aria-hidden="true">
-                  <img class="d-block" src="/tracnghiem/assets/icons/header/avt_6.5ef84696.svg" alt="">
+                  <img class="d-block" src="/assets/icons/header/avt_6.5ef84696.svg" alt="">
                 </span>
                 <span>Đăng xuất</span>
               </a>
@@ -219,281 +228,718 @@
   </div>
 </header>
 <nav class="header__mobile-actions position-fixed start-0 end-0 bottom-0 d-grid d-xl-none"
-  aria-label="Lối tắt trên di động">
+  aria-label="Loi tat tren di dong">
+  
+  
   
   <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none"
     href="#" >
-    <img class="header__mobile-action-icon d-block" src="/tracnghiem/assets/icons/header/icon-hoc-gioi.201d7cb7.svg" alt="" aria-hidden="true">
+    <img class="header__mobile-action-icon d-block" src="/assets/icons/header/icon-hoc-gioi.201d7cb7.svg" alt="" aria-hidden="true">
     <span>Học giỏi</span>
   </a>
   
+  
+  
   <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none"
     href="#" >
-    <img class="header__mobile-action-icon d-block" src="/tracnghiem/assets/icons/header/icon-luyen.77700d7e.svg" alt="" aria-hidden="true">
+    <img class="header__mobile-action-icon d-block" src="/assets/icons/header/icon-luyen.77700d7e.svg" alt="" aria-hidden="true">
     <span>Luyện thích</span>
   </a>
   
-  <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none header__mobile-action--active"
-    href="#"  aria-current="page" >
-    <img class="header__mobile-action-icon d-block" src="/tracnghiem/assets/icons/header/icon-thi-hay.da3ec4c5.svg" alt="" aria-hidden="true">
+  
+  
+  <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none"
+    href="/thi-hay/" >
+    <img class="header__mobile-action-icon d-block" src="/assets/icons/header/icon-thi-hay.da3ec4c5.svg" alt="" aria-hidden="true">
     <span>Thi hay</span>
   </a>
   
+  
+  
   <a class="header__mobile-action d-flex flex-column align-items-center justify-content-center text-decoration-none"
     href="#" >
-    <img class="header__mobile-action-icon d-block" src="/tracnghiem/assets/icons/header/icon-game.cb5607fb.svg" alt="" aria-hidden="true">
+    <img class="header__mobile-action-icon d-block" src="/assets/icons/header/icon-game.cb5607fb.svg" alt="" aria-hidden="true">
     <span>Chơi vui</span>
   </a>
   
 </nav>
 
-  <main class="main position-relative bg-white">
-    <div class="layout container-xxl position-relative px-0 px-md-3">
-      <div class="row g-4 align-items-start">
-        <aside class="sidebar col-auto">
-  <div class="sidebar__stack d-grid gap-3">
-    
-    <section class="sidebar__board w-100">
-      <div class="sidebar__board-wrapper text-center">
-        <h3 class="sidebar__board-title fw-bold m-0 text-center">Sân chơi Toán học Việt Nam (VNMF)</h3>
+  <main class="home-main bg-white">
+    <section class="container-xxl py-4 py-lg-5">
+      
+<section class="home-hero pt-1">
+  <div id="homeHeroCarousel" class="carousel slide mx-auto pb-4" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="home-hero__frame position-relative">
+      <div class="carousel-inner overflow-hidden">
         
-        <p class="sidebar__board-subtitle text-center"></p>
+          <div class="carousel-item active">
+            <article class="w-100">
+              <div class="home-hero__media ratio ratio-21x9 overflow-hidden">
+                <img src="/assets/images/home/banner-1.png" alt="Banner khuyến mãi Trạng Nguyên 1" class="home-hero__image img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+            </article>
+          </div>
         
+          <div class="carousel-item">
+            <article class="w-100">
+              <div class="home-hero__media ratio ratio-21x9 overflow-hidden">
+                <img src="/assets/images/home/banner-2.png" alt="Banner khuyến mãi Trạng Nguyên 2" class="home-hero__image img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+            </article>
+          </div>
+        
+          <div class="carousel-item">
+            <article class="w-100">
+              <div class="home-hero__media ratio ratio-21x9 overflow-hidden">
+                <img src="/assets/images/home/banner-1.png" alt="Banner khuyến mãi Trạng Nguyên 3" class="home-hero__image img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+            </article>
+          </div>
+        
+          <div class="carousel-item">
+            <article class="w-100">
+              <div class="home-hero__media ratio ratio-21x9 overflow-hidden">
+                <img src="/assets/images/home/banner-2.png" alt="Banner khuyến mãi Trạng Nguyên 4" class="home-hero__image img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+            </article>
+          </div>
+        
+          <div class="carousel-item">
+            <article class="w-100">
+              <div class="home-hero__media ratio ratio-21x9 overflow-hidden">
+                <img src="/assets/images/home/banner-1.png" alt="Banner khuyến mãi Trạng Nguyên 5" class="home-hero__image img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+            </article>
+          </div>
         
       </div>
 
-      
-    </section>
-    
-    <section class="sidebar__board w-100 sidebar__board--highlight p-0 overflow-hidden">
-      <div class="sidebar__board-wrapper text-center">
-        <h3 class="sidebar__board-title fw-bold m-0 text-center">Trạng Nguyên Tiếng Việt</h3>
-        
-        
-        <span class="sidebar__board-meta d-block text-center">1 kỳ thi</span>
-        
-      </div>
+      <button class="carousel-control-prev home-hero__control opacity-100" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="prev">
+        <span class="home-hero__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M15 6l-6 6l6 6"></path></svg>
+        </span>
+        <span class="visually-hidden">Slide trước</span>
+      </button>
+      <button class="carousel-control-next home-hero__control opacity-100" type="button" data-bs-target="#homeHeroCarousel" data-bs-slide="next">
+        <span class="home-hero__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+        </span>
+        <span class="visually-hidden">Slide sau</span>
+      </button>
+    </div>
 
+    <div class="carousel-indicators position-static mt-3 mb-0 gap-2">
       
-      <ul class="sidebar__board-list list-unstyled m-0">
-        
-        <li class="position-relative">Sân chơi Trạng Nguyên Tiếng Việt Khối 1 Năm học 2025 - 2026</li>
-        
-      </ul>
+        <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="0" class="active home-hero__indicator" aria-current="true" aria-label="Banner 1"></button>
       
-    </section>
-    
-    <section class="sidebar__board w-100">
-      <div class="sidebar__board-wrapper text-center">
-        <h3 class="sidebar__board-title fw-bold m-0 text-center">Trạng Nguyên Toàn Tài</h3>
-        
-        
-      </div>
+        <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="1" class="home-hero__indicator" aria-label="Banner 2"></button>
+      
+        <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="2" class="home-hero__indicator" aria-label="Banner 3"></button>
+      
+        <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="3" class="home-hero__indicator" aria-label="Banner 4"></button>
+      
+        <button type="button" data-bs-target="#homeHeroCarousel" data-bs-slide-to="4" class="home-hero__indicator" aria-label="Banner 5"></button>
+      
+    </div>
+  </div>
+</section>
 
-      
-    </section>
-    
+<section class="home-section pt-4 pt-lg-0">
+  <div class="text-center">
+    <img src="/assets/images/home/cupVioedu.png" alt="" class="img-fluid mb-3 m-auto" width="168" height="34" />
+    <h2 class="home-section__title fw-bold mb-0">Sản Phẩm Của Khách Hàng</h2>
   </div>
 
-  <section class="sidebar__promo position-relative overflow-hidden">
-    <img class="sidebar__promo-image d-block img-fluid" src="/tracnghiem/assets/images/sidebar-desktop.webp"
-      alt="Hệ thống học Ngữ văn K-12">
-    <div class="sidebar__promo-overlay position-absolute top-0 start-0 w-100 h-100 text-center">
-      <h3 class="sidebar__promo-title m-0">Hệ thống học Ngữ văn K-12</h3>
-      <div class="sidebar__promo-pills d-grid">
-        <span class="sidebar__promo-pill">Giúp bạn hết sợ Ngữ văn</span>
-        <span class="sidebar__promo-pill">Học giỏi Ngữ văn</span>
-        <span class="sidebar__promo-pill">Chinh phục mọi mục tiêu</span>
-      </div>
+  <div class="home-products mx-auto mt-4 mt-lg-5 pb-4" data-home-products-slider="">
+    <div class="home-products__frame position-relative">
+      <button class="home-products__control home-products__control--prev position-absolute border-0 bg-transparent p-0" type="button" data-direction="prev" aria-label="Sản phẩm trước">
+        <span class="home-products__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M15 6l-6 6l6 6"></path></svg>
+        </span>
+      </button>
 
-    </div>
-  </section>
-</aside>
-
-
-        <section class="layout__content col">
+      <div class="home-products__viewport overflow-hidden">
+        <div class="home-products__track d-flex" data-track="">
           
+            <div class="home-products__item flex-shrink-0">
+              <article class="home-products__card home-products__card--mint rounded-5 d-flex flex-column align-items-center text-center px-3 px-lg-4 pt-4 pt-lg-5 pb-3 h-100">
+                <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
+                  <img src="/assets/images/home/studentPic_new.png" alt="Lách Cách Edu" class="img-fluid" />
+                </div>
+                <h3 class="home-products__name fw-bold mb-2">Lách Cách Edu</h3>
+                <p class="home-products__description mb-4">Khơi hứng thú học tập với nội dung tương tác gần gũi cho học sinh nhỏ tuổi.</p>
+                <a href="#" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Tìm hiểu ngay</span>
+                  <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                </a>
+              </article>
+            </div>
+          
+            <div class="home-products__item flex-shrink-0">
+              <article class="home-products__card home-products__card--blue rounded-5 d-flex flex-column align-items-center text-center px-3 px-lg-4 pt-4 pt-lg-5 pb-3 h-100">
+                <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
+                  <img src="/assets/images/home/teacher.png" alt="Toàn Tài" class="img-fluid" />
+                </div>
+                <h3 class="home-products__name fw-bold mb-2">Toàn Tài</h3>
+                <p class="home-products__description mb-4">Không gian đồng hành để phụ huynh theo dõi tiến độ và hỗ trợ con học tập hiệu quả.</p>
+                <a href="#" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Tìm hiểu ngay</span>
+                  <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                </a>
+              </article>
+            </div>
+          
+            <div class="home-products__item flex-shrink-0">
+              <article class="home-products__card home-products__card--amber rounded-5 d-flex flex-column align-items-center text-center px-3 px-lg-4 pt-4 pt-lg-5 pb-3 h-100">
+                <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
+                  <img src="/assets/images/home/school.png" alt="TNMath K-12" class="img-fluid" />
+                </div>
+                <h3 class="home-products__name fw-bold mb-2">TNMath K-12</h3>
+                <p class="home-products__description mb-4">Hệ thống học tập dành cho nhà trường với lộ trình rõ ràng và bài luyện phong phú.</p>
+                <a href="#" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Tìm hiểu ngay</span>
+                  <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                </a>
+              </article>
+            </div>
+          
+            <div class="home-products__item flex-shrink-0">
+              <article class="home-products__card home-products__card--sand rounded-5 d-flex flex-column align-items-center text-center px-3 px-lg-4 pt-4 pt-lg-5 pb-3 h-100">
+                <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
+                  <img src="/assets/images/home/teacher.png" alt="Tiếng Việt" class="img-fluid" />
+                </div>
+                <h3 class="home-products__name fw-bold mb-2">Tiếng Việt</h3>
+                <p class="home-products__description mb-4">Bài học bám sát kỹ năng đọc hiểu, viết và luyện tập cho học sinh tiểu học.</p>
+                <a href="#" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Tìm hiểu ngay</span>
+                  <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                </a>
+              </article>
+            </div>
+          
+            <div class="home-products__item flex-shrink-0">
+              <article class="home-products__card home-products__card--blue rounded-5 d-flex flex-column align-items-center text-center px-3 px-lg-4 pt-4 pt-lg-5 pb-3 h-100">
+                <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
+                  <img src="/assets/images/home/phuhuynh.png" alt="Toàn Tài" class="img-fluid" />
+                </div>
+                <h3 class="home-products__name fw-bold mb-2">Toàn Tài</h3>
+                <p class="home-products__description mb-4">Không gian đồng hành để phụ huynh theo dõi tiến độ và hỗ trợ con học tập hiệu quả.</p>
+                <a href="#" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
+                  <span>Tìm hiểu ngay</span>
+                  <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                </a>
+              </article>
+            </div>
+          
+        </div>
+      </div>
 
-<section class="competition-page__mobile-heading">
-  <a class="competition-page__mobile-back" href="#" aria-label="Quay lại">←</a>
-  <h2 class="competition-page__mobile-title">TRẠNG NGUYÊN TIẾNG VIỆT</h2>
-</section>
-<article class="competition-page d-grid">
-  
-<section class="competition-page__hero d-flex align-items-center justify-content-between position-relative">
-  <img class="position-absolute top-0 start-0" src="/tracnghiem/assets/images/body/yellow_l.036a7443.svg"
-    alt="Competition Hero Image">
-  <img class="position-absolute top-0 end-0" src="/tracnghiem/assets/images/body/yellow_r.35e6e9e0.svg"
-    alt="Competition Hero Image">
-  <div class="text-md-center">
-    <h1 class="competition-page__title m-0 text-md-center">Sân chơi Trạng Nguyên Tiếng Việt Khối 1 Năm học 2025 - 2026</h1>
-  </div>
-  <span class="competition-page__meta ms-md-auto">9 VÒNG THI</span>
-</section>
-  
-<section class="competition-page__table position-relative">
-  <div class="competition-page__round-table d-grid" role="table" aria-label="Danh sách vòng thi">
-    <div class="competition-page__round-row competition-page__round-row--head d-grid align-items-center gap-sm-3 gap-2" role="row">
-      
-      <span role="columnheader">STT</span>
-      
-      <span role="columnheader">Vòng thi</span>
-      
-      <span role="columnheader">Ngày mở</span>
-      
-      <span role="columnheader">Ngày đóng</span>
-      
-      <span role="columnheader">Hoàn thành</span>
-      
+      <button class="home-products__control home-products__control--next position-absolute border-0 bg-transparent p-0" type="button" data-direction="next" aria-label="Sản phẩm sau">
+        <span class="home-products__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+        </span>
+      </button>
     </div>
 
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">1</span>
-      <span role="cell">Vòng 1</span>
-      <span role="cell">08/08/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
+    <div class="d-flex align-items-center justify-content-center gap-2 mt-4 mb-0">
+      
+        <button type="button" class="home-products__indicator is-active" data-index="0" aria-label="Nhóm sản phẩm 1"></button>
+      
+        <button type="button" class="home-products__indicator" data-index="1" aria-label="Nhóm sản phẩm 2"></button>
+      
+        <button type="button" class="home-products__indicator" data-index="2" aria-label="Nhóm sản phẩm 3"></button>
+      
+        <button type="button" class="home-products__indicator" data-index="3" aria-label="Nhóm sản phẩm 4"></button>
+      
+        <button type="button" class="home-products__indicator" data-index="4" aria-label="Nhóm sản phẩm 5"></button>
+      
     </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">2</span>
-      <span role="cell">Vòng 2</span>
-      <span role="cell">08/09/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">3</span>
-      <span role="cell">Vòng 3</span>
-      <span role="cell">18/09/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">4</span>
-      <span role="cell">Vòng 4</span>
-      <span role="cell">08/10/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">5</span>
-      <span role="cell">Vòng 5</span>
-      <span role="cell">18/10/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">6</span>
-      <span role="cell">Vòng 6</span>
-      <span role="cell">08/11/2025</span>
-      <span role="cell">03/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">7</span>
-      <span role="cell">Vòng 7 - Sơ khảo - Cấp trường</span>
-      <span role="cell">09/12/2025</span>
-      <span role="cell">13/12/2025</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3"
-      role="row">
-      <span role="cell">8</span>
-      <span role="cell">Vòng 8 - Thi Hương</span>
-      <span role="cell">13/01/2026</span>
-      <span role="cell">16/01/2026</span>
-      <span class="competition-page__round-status competition-page__round-status--complete" role="cell"
-        aria-label="Đã hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
-    <div class="competition-page__round-row d-grid align-items-center gap-3 competition-page__round-row--current competition-page__round-row--launch"
-      role="row" tabindex="0" aria-label="Mở quy chế khảo thí vòng hiện tại" data-bs-toggle="modal" data-bs-target="#examRulesModal">
-      <span role="cell">9</span>
-      <span role="cell">Vòng 9 - Thi Hội</span>
-      <span role="cell">10/03/2026</span>
-      <span role="cell">14/03/2026</span>
-      <span class="competition-page__round-status" role="cell"
-        aria-label="Chưa hoàn thành">
-        <i class="d-inline-flex align-items-center justify-content-center">✓</i>
-      </span>
-    </div>
-    
   </div>
 </section>
 
-  
-<section class="competition-page__cta d-grid gap-3 position-relative mt-2">
-  <img class="position-absolute top-0 start-0" src="/tracnghiem/assets/images/body/yellow_l.036a7443.svg"
-    alt="Competition Hero Image">
-  <img class="position-absolute top-0 end-0" src="/tracnghiem/assets/images/body/yellow_r.35e6e9e0.svg"
-    alt="Competition Hero Image">
-  <div class="competition-page__cta-copy">
-    <h2 class="competition-page__cta-title">Ôn luyện cấp tốc <br />Chinh phục <br /> Kì thi Hội - cấp Tỉnh</h2>
-    <a class="competition-page__cta-button d-inline-flex align-items-center justify-content-center"
-      href="#">Đăng kí ngay</a>
+<section class="home-highlights pt-5 pt-xl-6">
+  <div class="text-center">
+    <img src="/assets/images/home/assistance1.png" alt="" class="home-highlights__ornament img-fluid mb-3 m-auto" />
+    <h2 class="home-section__title fw-bold mb-0">Điểm Nổi Bật Của Khách Hàng</h2>
   </div>
 
-  <div class="competition-page__cta-book d-grid">
-    <img class="competition-page__cta-book-image d-block rounded-4" src="/tracnghiem/assets/images/tntv.webp"
-      alt="Sách luyện tiếng Việt 365">
-  </div>
-</section>
-
-</article>
-
-        </section>
+  <div class="row g-4 g-xl-5 align-items-center mt-4 mt-lg-5">
+    <div class="col-12 col-md-4 mt-0">
+      <div class="d-grid gap-4 gap-md-5">
+        
+          <article class="home-highlights__item text-center">
+            <img src="/assets/images/home/saveMoney.png" alt="" class="home-highlights__icon img-fluid mb-3 m-auto" />
+            <h3 class="home-highlights__heading fw-bold mb-3">Format bài giảng sáng tạo, nhân văn, ý nghĩa</h3>
+            <p class="home-highlights__copy mb-0">Hệ thống bài giảng được thiết kế theo nhiều format gần gũi như bản tin, showgame và chuyên đề để học sinh tiếp thu tự nhiên, hứng thú hơn.</p>
+          </article>
+        
+          <article class="home-highlights__item text-center">
+            <img src="/assets/images/home/baocaotq.png" alt="" class="home-highlights__icon img-fluid mb-3 m-auto" />
+            <h3 class="home-highlights__heading fw-bold mb-3">Học tập tương tác độc đáo giúp con nhớ lâu</h3>
+            <p class="home-highlights__copy mb-0">Các bài học kết hợp video, trò chơi và hoạt động tương tác giúp con luyện tư duy nhanh, ghi nhớ lâu và chủ động hơn khi học.</p>
+          </article>
+        
       </div>
     </div>
+
+    <div class="col-12 col-md-4 mt-0">
+      <div class="home-highlights__visual-wrap mx-auto position-relative">
+        <div class="home-highlights__visual-shell rounded-5 overflow-hidden mx-auto">
+          <img src="/assets/images/home/studentPic_new.png" alt="Điểm nổi bật Trạng Nguyên" class="home-highlights__visual img-fluid d-block w-100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 mt-0">
+      <div class="d-grid gap-4 gap-md-5">
+        
+          <article class="home-highlights__item text-center">
+            <img src="/assets/images/home/videosp.png" alt="" class="home-highlights__icon img-fluid mb-3 m-auto" />
+            <h3 class="home-highlights__heading fw-bold mb-3">Hành trình Học - Luyện - Thi - Chơi giúp con nhớ sâu</h3>
+            <p class="home-highlights__copy mb-0">Một lộ trình học tập được công nghệ hóa và cá nhân hóa giúp học sinh vừa học, vừa luyện tập và trải nghiệm trò chơi trí tuệ một cách tự nhiên.</p>
+          </article>
+        
+          <article class="home-highlights__item text-center">
+            <img src="/assets/images/home/timemng.png" alt="" class="home-highlights__icon img-fluid mb-3 m-auto" />
+            <h3 class="home-highlights__heading fw-bold mb-3">Báo cáo kết quả học tập - đánh giá rõ ràng</h3>
+            <p class="home-highlights__copy mb-0">Kết quả học tập được cập nhật rõ ràng để phụ huynh dễ theo dõi tiến độ, mức độ chăm chỉ và điểm mạnh của con qua từng chặng học.</p>
+          </article>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-language-arena mt-5 pt-5 pb-4 pb-lg-5">
+  <div class="home-language-arena__inner home-section">
+  <div class="text-center position-relative z-1">
+    <h2 class="home-section__title fw-bold mb-0">Sân Chơi Của Khách Hàng</h2>
+  </div>
+
+  <div class="home-language-arena__crest mx-auto mt-4 mt-lg-5 position-relative" aria-hidden="true">
+    <span class="home-language-arena__crest-wing home-language-arena__crest-wing--left"></span>
+    <span class="home-language-arena__crest-wing home-language-arena__crest-wing--right"></span>
+    <span class="home-language-arena__crest-cap"></span>
+    <span class="home-language-arena__crest-brim"></span>
+    <span class="home-language-arena__crest-gem"></span>
+  </div>
+
+  <div class="home-language-arena__benefits d-grid gap-3 gap-lg-4 mt-4 mt-lg-5">
+    
+      <div class="home-language-arena__benefit rounded-4 d-flex align-items-center justify-content-center text-center px-3 px-lg-4 py-4 fw-semibold">
+        Nâng cao khả năng cảm thụ Văn học
+      </div>
+    
+      <div class="home-language-arena__benefit rounded-4 d-flex align-items-center justify-content-center text-center px-3 px-lg-4 py-4 fw-semibold">
+        Kiểm tra kiến thức Tiếng Việt toàn diện
+      </div>
+    
+      <div class="home-language-arena__benefit rounded-4 d-flex align-items-center justify-content-center text-center px-3 px-lg-4 py-4 fw-semibold">
+        Truyền cảm hứng học, giao lưu kiến thức
+      </div>
+    
+      <div class="home-language-arena__benefit rounded-4 d-flex align-items-center justify-content-center text-center px-3 px-lg-4 py-4 fw-semibold">
+        Thi theo khoa bảng, đậm nét dân tộc
+      </div>
+    
+      <div class="home-language-arena__benefit rounded-4 d-flex align-items-center justify-content-center text-center px-3 px-lg-4 py-4 fw-semibold">
+        Thấu hiểu các giá trị nhân văn của ông cha
+      </div>
+    
+  </div>
+
+  <div class="row g-4 g-xl-5 align-items-stretch mt-4 mt-lg-4">
+    <div class="col-12 col-lg-6 mt-0">
+      <article class="home-language-arena__panel home-language-arena__panel--timeline rounded-5 h-100 p-4 p-xl-5">
+        <div class="home-language-arena__timeline position-relative mx-auto">
+          
+            
+            <div class="home-language-arena__timeline-item d-flex align-items-center justify-content-center w-100 is-right">
+              
+                <div class="home-language-arena__timeline-side" aria-hidden="true"></div>
+                <div class="home-language-arena__timeline-marker d-flex align-items-center justify-content-center flex-shrink-0">
+                  
+                    <span class="home-language-arena__timeline-badge rounded-circle d-inline-flex align-items-center justify-content-center">4</span>
+                  
+                </div>
+                <div class="home-language-arena__timeline-copy text-start">
+                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">Thi sơ khảo</h3>
+                  <p class="home-language-arena__timeline-period mb-0">09/12-13/12/2025</p>
+                </div>
+              
+            </div>
+          
+            
+            <div class="home-language-arena__timeline-item d-flex align-items-center justify-content-center w-100 is-left">
+              
+                <div class="home-language-arena__timeline-copy text-end">
+                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">Thi Đình</h3>
+                  <p class="home-language-arena__timeline-period mb-0">11/04-12/04/2026</p>
+                </div>
+                <div class="home-language-arena__timeline-marker d-flex align-items-center justify-content-center flex-shrink-0">
+                  
+                    <img src="/assets/images/home/lotrinh3.png" alt="" class="img-fluid" />
+                  
+                </div>
+                <div class="home-language-arena__timeline-side" aria-hidden="true"></div>
+              
+            </div>
+          
+            
+            <div class="home-language-arena__timeline-item d-flex align-items-center justify-content-center w-100 is-right">
+              
+                <div class="home-language-arena__timeline-side" aria-hidden="true"></div>
+                <div class="home-language-arena__timeline-marker d-flex align-items-center justify-content-center flex-shrink-0">
+                  
+                    <span class="home-language-arena__timeline-badge rounded-circle d-inline-flex align-items-center justify-content-center">2</span>
+                  
+                </div>
+                <div class="home-language-arena__timeline-copy text-start">
+                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">Thi Hội</h3>
+                  <p class="home-language-arena__timeline-period mb-0">10/03-14/03/2026</p>
+                </div>
+              
+            </div>
+          
+            
+            <div class="home-language-arena__timeline-item d-flex align-items-center justify-content-center w-100 is-left">
+              
+                <div class="home-language-arena__timeline-copy text-end">
+                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">Thi Hương</h3>
+                  <p class="home-language-arena__timeline-period mb-0">13/01-16/01/2026</p>
+                </div>
+                <div class="home-language-arena__timeline-marker d-flex align-items-center justify-content-center flex-shrink-0">
+                  
+                    <img src="/assets/images/home/lotrinh1.png" alt="" class="img-fluid" />
+                  
+                </div>
+                <div class="home-language-arena__timeline-side" aria-hidden="true"></div>
+              
+            </div>
+          
+        </div>
+      </article>
+    </div>
+
+    <div class="col-12 col-lg-6 mt-0">
+      <article class="home-language-arena__panel rounded-5 h-100 p-4 p-xl-5 d-flex flex-column">
+        <div class="d-grid gap-3 gap-lg-4">
+          
+            <a href="#" class="home-language-arena__article d-flex align-items-start gap-3 text-decoration-none">
+              <div class="home-language-arena__article-image rounded-4 overflow-hidden flex-shrink-0">
+                <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Từ điển Tiếng Việt tra cứu nhanh, chính xác, chi tiết" class="img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="home-language-arena__article-copy min-w-0">
+                <span class="home-language-arena__article-date d-inline-flex align-items-center rounded-pill mb-2 px-3 py-1">15.01.2026</span>
+                <h3 class="home-language-arena__article-title fw-bold mb-0">Từ điển Tiếng Việt tra cứu nhanh, chính xác, chi tiết</h3>
+              </div>
+            </a>
+          
+            <a href="#" class="home-language-arena__article d-flex align-items-start gap-3 text-decoration-none">
+              <div class="home-language-arena__article-image rounded-4 overflow-hidden flex-shrink-0">
+                <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Dẫn chứng nghị luận xã hội 4.0, bí kíp đạt điểm cao môn Văn" class="img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="home-language-arena__article-copy min-w-0">
+                <span class="home-language-arena__article-date d-inline-flex align-items-center rounded-pill mb-2 px-3 py-1">20.02.2026</span>
+                <h3 class="home-language-arena__article-title fw-bold mb-0">Dẫn chứng nghị luận xã hội 4.0, bí kíp đạt điểm cao môn Văn</h3>
+              </div>
+            </a>
+          
+            <a href="#" class="home-language-arena__article d-flex align-items-start gap-3 text-decoration-none">
+              <div class="home-language-arena__article-image rounded-4 overflow-hidden flex-shrink-0">
+                <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Góc chia sẻ học sinh: luyện Văn chắc nền tảng, nhớ lâu hơn" class="img-fluid w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="home-language-arena__article-copy min-w-0">
+                <span class="home-language-arena__article-date d-inline-flex align-items-center rounded-pill mb-2 px-3 py-1">28.02.2026</span>
+                <h3 class="home-language-arena__article-title fw-bold mb-0">Góc chia sẻ học sinh: luyện Văn chắc nền tảng, nhớ lâu hơn</h3>
+              </div>
+            </a>
+          
+        </div>
+
+        <a href="#" class="home-language-arena__cta btn rounded-pill mt-4 mt-lg-auto px-4 py-3 align-self-stretch align-self-lg-start d-inline-flex align-items-center justify-content-center gap-2">
+          <span>Xem thêm</span>
+          <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="home-events home-section pt-5 pt-xl-6">
+  <div class="text-center">
+    <img src="/assets/images/home/assistance1.png" alt="" class="home-events__ornament img-fluid mb-3 m-auto" />
+    <h2 class="home-section__title fw-bold mb-0">Sự Kiện Nổi Bật</h2>
+  </div>
+
+  <div class="row g-4 g-lg-5 mt-4 mt-lg-5">
+    
+      <div class="col-12 col-md-6 col-xl-4 mt-0">
+        <a href="#" class="home-events__card d-block text-decoration-none h-100">
+          <div class="home-events__image-wrap rounded-4 overflow-hidden mb-3">
+            <img src="/assets/images/home/teacher.png" alt="Tọa đàm “Đổi mới văn hóa dạy và học toán” và Lễ ra mắt Sân chơi Toán học Việt Nam" class="home-events__image img-fluid w-100 h-100 object-fit-contain" />
+          </div>
+          <h3 class="home-events__title fw-bold mb-0">Tọa đàm “Đổi mới văn hóa dạy và học toán” và Lễ ra mắt Sân chơi Toán học Việt Nam</h3>
+        </a>
+      </div>
+    
+      <div class="col-12 col-md-6 col-xl-4 mt-0">
+        <a href="#" class="home-events__card d-block text-decoration-none h-100">
+          <div class="home-events__image-wrap rounded-4 overflow-hidden mb-3">
+            <img src="/assets/images/home/studentPic_new.png" alt="Hội thi Đình Tiếng Việt 2024 - 2025: Hành trình tôn vinh tài năng và tinh hoa Tiếng Việt" class="home-events__image img-fluid w-100 h-100 object-fit-contain" />
+          </div>
+          <h3 class="home-events__title fw-bold mb-0">Hội thi Đình Tiếng Việt 2024 - 2025: Hành trình tôn vinh tài năng và tinh hoa Tiếng Việt</h3>
+        </a>
+      </div>
+    
+      <div class="col-12 col-md-6 col-xl-4 mt-0">
+        <a href="#" class="home-events__card d-block text-decoration-none h-100">
+          <div class="home-events__image-wrap rounded-4 overflow-hidden mb-3">
+            <img src="/assets/images/home/phuhuynh.png" alt="Chung kết Đấu Trường Toàn Tài 2024 - 2025: Vinh danh tài năng nhỏ - Gieo hạt bản lĩnh lớn" class="home-events__image img-fluid w-100 h-100 object-fit-contain" />
+          </div>
+          <h3 class="home-events__title fw-bold mb-0">Chung kết Đấu Trường Toàn Tài 2024 - 2025: Vinh danh tài năng nhỏ - Gieo hạt bản lĩnh lớn</h3>
+        </a>
+      </div>
+    
+  </div>
+</section>
+<section class="home-spotlight home-section pt-5 pt-xl-6">
+  <div class="home-spotlight__heading text-center position-relative">
+    <div class="home-spotlight__title-wrap d-inline-flex flex-column align-items-center position-relative px-4 px-lg-5 pt-3 pb-0">
+      <img src="/assets/images/home/assistance1.png" alt="" class="home-spotlight__ornament img-fluid mb-2" />
+      <h2 class="home-spotlight__heading-title fw-bold mb-0">Tiêu Điểm Khách Hàng</h2>
+      <img src="/assets/images/home/school.png" alt="" class="home-spotlight__accent img-fluid" />
+    </div>
+  </div>
+
+  <div id="homeSpotlightCarousel" class="carousel slide pb-4" data-bs-touch="false">
+    <div class="home-spotlight__frame position-relative">
+      <div class="carousel-inner">
+        
+          <div class="carousel-item active">
+            <div class="home-spotlight__panel rounded-5 p-3 p-lg-4">
+              <div class="row align-items-stretch">
+                <div class="col-12 col-lg-6 mt-0">
+                  <div class="home-spotlight__media overflow-hidden h-100 d-flex align-items-center justify-content-center">
+                    <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Hệ sinh thái" class="home-spotlight__image img-fluid w-100 h-100 object-fit-contain rounded-4" />
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 mt-0">
+                  <article class="home-spotlight__content rounded-4 h-100 d-flex flex-column justify-content-center p-4 p-xl-5">
+                    <h3 class="home-spotlight__title fw-bold mb-3">Hệ sinh thái</h3>
+                    <p class="home-spotlight__description mb-4">TNMath được ra đời như một hệ sinh thái học tập hiện đại, nơi học sinh khám phá kiến thức theo nhịp độ phù hợp với mình.</p>
+                    <a href="#" class="home-spotlight__cta btn rounded-pill px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2 align-self-start">
+                      <span>Khám phá</span>
+                      <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="carousel-item">
+            <div class="home-spotlight__panel rounded-5 p-3 p-lg-4">
+              <div class="row align-items-stretch">
+                <div class="col-12 col-lg-6 mt-0">
+                  <div class="home-spotlight__media overflow-hidden h-100 d-flex align-items-center justify-content-center">
+                    <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Chung kết" class="home-spotlight__image img-fluid w-100 h-100 object-fit-contain rounded-4" />
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 mt-0">
+                  <article class="home-spotlight__content rounded-4 h-100 d-flex flex-column justify-content-center p-4 p-xl-5">
+                    <h3 class="home-spotlight__title fw-bold mb-3">Chung kết</h3>
+                    <p class="home-spotlight__description mb-4">Sau 10 tháng miệt mài với nhiều phần thi đầy cảm hứng, các thí sinh xuất sắc đã cùng nhau tạo nên một mùa giải đáng nhớ.</p>
+                    <a href="#" class="home-spotlight__cta btn rounded-pill px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2 align-self-start">
+                      <span>Khám phá</span>
+                      <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="carousel-item">
+            <div class="home-spotlight__panel rounded-5 p-3 p-lg-4">
+              <div class="row align-items-stretch">
+                <div class="col-12 col-lg-6 mt-0">
+                  <div class="home-spotlight__media overflow-hidden h-100 d-flex align-items-center justify-content-center">
+                    <img src="/assets/images/home/tieng-viet-2-1735804486-2.jpg" alt="Hội thi Đình" class="home-spotlight__image img-fluid w-100 h-100 object-fit-contain rounded-4" />
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6 mt-0">
+                  <article class="home-spotlight__content rounded-4 h-100 d-flex flex-column justify-content-center p-4 p-xl-5">
+                    <h3 class="home-spotlight__title fw-bold mb-3">Hội thi Đình</h3>
+                    <p class="home-spotlight__description mb-4">Hành trình tôn vinh tài năng và tình yêu Tiếng Việt được tiếp nối bằng những trải nghiệm thi đấu giàu cảm xúc, tự hào và bản sắc.</p>
+                    <a href="#" class="home-spotlight__cta btn rounded-pill px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2 align-self-start">
+                      <span>Khám phá</span>
+                      <svg stroke="currentColor" fill="none" stroke-width="2.4" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+
+      <button class="carousel-control-prev home-spotlight__control opacity-100" type="button" data-bs-target="#homeSpotlightCarousel" data-bs-slide="prev">
+        <span class="home-spotlight__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M15 6l-6 6l6 6"></path></svg>
+        </span>
+        <span class="visually-hidden">Slide trước</span>
+      </button>
+      <button class="carousel-control-next home-spotlight__control opacity-100" type="button" data-bs-target="#homeSpotlightCarousel" data-bs-slide="next">
+        <span class="home-spotlight__control-icon d-inline-flex align-items-center justify-content-center rounded-circle" aria-hidden="true">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="30" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6l-6 6"></path></svg>
+        </span>
+        <span class="visually-hidden">Slide sau</span>
+      </button>
+    </div>
+
+    <div class="carousel-indicators position-static mt-4 mb-0 gap-2">
+      
+        <button type="button" data-bs-target="#homeSpotlightCarousel" data-bs-slide-to="0" class="active home-spotlight__indicator" aria-current="true" aria-label="Tiêu điểm 1"></button>
+      
+        <button type="button" data-bs-target="#homeSpotlightCarousel" data-bs-slide-to="1" class="home-spotlight__indicator" aria-label="Tiêu điểm 2"></button>
+      
+        <button type="button" data-bs-target="#homeSpotlightCarousel" data-bs-slide-to="2" class="home-spotlight__indicator" aria-label="Tiêu điểm 3"></button>
+      
+    </div>
+  </div>
+</section>
+<section class="home-partners home-section pt-5 pt-xl-6">
+  <div class="text-center">
+    <img src="/assets/images/home/assistance1.png" alt="" class="home-partners__ornament img-fluid mb-3 m-auto" />
+    <h2 class="home-section__title fw-bold mb-0">Đối Tác Chiến Lược</h2>
+  </div>
+
+  <div class="home-partners__grid mt-4 mt-lg-5">
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Viện Sử Học - Viện Hàn Lâm Khoa Học Xã Hội Việt Nam" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Viện Sử Học - Viện Hàn Lâm Khoa Học Xã Hội Việt Nam</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Viện Công nghệ thông tin - Viện Hàn lâm Khoa học và Công nghệ Việt Nam" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Viện Công nghệ thông tin - Viện Hàn lâm Khoa học và Công nghệ Việt Nam</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="VIASM - Viện Nghiên Cứu Cao Cấp Về Toán" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">VIASM - Viện Nghiên Cứu Cao Cấp Về Toán</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Viện Ngôn ngữ học - Viện Hàn lâm Khoa học xã hội Việt Nam" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Viện Ngôn ngữ học - Viện Hàn lâm Khoa học xã hội Việt Nam</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Viện Khoa Học Giáo Dục Việt Nam" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Viện Khoa Học Giáo Dục Việt Nam</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Trung tâm Bản quyền số - Hội Truyền thông số Việt Nam" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Trung tâm Bản quyền số - Hội Truyền thông số Việt Nam</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Trung tâm nghiên cứu Việt Nam học - Viện nghiên cứu Việt Nam học" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Trung tâm nghiên cứu Việt Nam học - Viện nghiên cứu Việt Nam học</h3>
+      </article>
+    
+      <article class="home-partners__item text-center">
+        <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
+          <img src="/assets/images/home/136f2838-563e-4bef-8700-3026eecf5436.png" alt="Làng Trong Thung - Jacaranda Valley Ecofarm" class="home-partners__logo img-fluid" />
+        </div>
+        <h3 class="home-partners__name fw-bold mb-0">Làng Trong Thung - Jacaranda Valley Ecofarm</h3>
+      </article>
+    
+  </div>
+</section>
+<section class="home-experts mt-5 pt-5 pb-5 pb-lg-6">
+  <div class="home-experts__inner home-section">
+    <div class="text-center position-relative z-1">
+      <img src="/assets/images/home/assistance1.png" alt="" class="home-experts__ornament img-fluid mb-3 m-auto" />
+      <h2 class="home-section__title fw-bold mb-0">Ý Kiến Từ Chuyên Gia</h2>
+    </div>
+
+    <div class="home-experts__grid mt-4 mt-lg-5">
+      
+        <article class="home-experts__card rounded-5 h-100 position-relative">
+          <div class="home-experts__card-body d-flex flex-column h-100">
+            <p class="home-experts__quote text-center mb-4">Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.</p>
+            <div class="home-experts__portrait-wrap mt-auto d-flex align-items-end justify-content-center">
+              <img src="/assets/images/home/giao-su.png" alt="Phan Văn Đông" class="home-experts__portrait img-fluid" />
+            </div>
+            <div class="home-experts__meta rounded-5 text-center mx-auto">
+              <p class="home-experts__role mb-2">Giáo Sư</p>
+              <h3 class="home-experts__name fw-bold mb-0">Phan Văn Đông</h3>
+            </div>
+          </div>
+        </article>
+      
+        <article class="home-experts__card rounded-5 h-100 position-relative">
+          <div class="home-experts__card-body d-flex flex-column h-100">
+            <p class="home-experts__quote text-center mb-4">Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.</p>
+            <div class="home-experts__portrait-wrap mt-auto d-flex align-items-end justify-content-center">
+              <img src="/assets/images/home/giao-su.png" alt="Phan Sỹ Đông" class="home-experts__portrait img-fluid" />
+            </div>
+            <div class="home-experts__meta rounded-5 text-center mx-auto">
+              <p class="home-experts__role mb-2">Giáo Sư</p>
+              <h3 class="home-experts__name fw-bold mb-0">Phan Sỹ Đông</h3>
+            </div>
+          </div>
+        </article>
+      
+        <article class="home-experts__card rounded-5 h-100 position-relative">
+          <div class="home-experts__card-body d-flex flex-column h-100">
+            <p class="home-experts__quote text-center mb-4">Nội dung các khóa học tôn vinh các giá trị văn hóa dân tộc. Sự kết hợp sáng tạo này đã tạo ra sân chơi rất bổ ích và thân thiện cho các em học sinh.</p>
+            <div class="home-experts__portrait-wrap mt-auto d-flex align-items-end justify-content-center">
+              <img src="/assets/images/home/giao-su.png" alt="Phan Sỹ Đông" class="home-experts__portrait img-fluid" />
+            </div>
+            <div class="home-experts__meta rounded-5 text-center mx-auto">
+              <p class="home-experts__role mb-2">Nhà thơ</p>
+              <h3 class="home-experts__name fw-bold mb-0">Phan Sỹ Đông</h3>
+            </div>
+          </div>
+        </article>
+      
+    </div>
+  </div>
+</section>
+
+    </section>
   </main>
 
   
 <footer class="footer">
   <div class="footer__inner m-auto d-grid gap-4">
     <section class="footer__col footer__col--brand px-3">
-      <h2 class="footer__title footer__title--company mb-3">Công ty TNHH đầu tư Giáo Dục Trạng Nguyên</h2>
+      <h2 class="footer__title footer__title--company mb-3">Công ty TNHH đầu tư Giáo Dục Khách Hàng</h2>
       <p class="footer__text">Giấy phép ĐKKD số 0108781729 do Sở Kế hoạch và Đầu tư TP Hà Nội cấp ngày 12/06/2019, thay đổi lần thứ 3 ngày 04/07/2022</p>
       <p class="footer__text"></p>
       <div class="footer__person">
         <div class="footer__person-representative footer__title mb-2">Người đại diện</div>
-        <div class="footer__person-name">Bà Trịnh Thị Hương</div>
+        <div class="footer__person-name">Ông Phan Sỹ Đông</div>
         <span class="footer__person-role">TỔNG GIÁM ĐỐC</span>
       </div>
     </section>
@@ -501,9 +947,9 @@
     <section class="footer__col">
       <h3 class="footer__title mb-4">Thông tin trụ sở</h3>
       <p class="footer__text fw-bold fs-6 mb-0">Hà Nội</p>
-      <p class="footer__text">Số 7, Ngõ 68 Phố Trung Kính, Phường Yên Hòa, Quận Cầu Giấy</p>
+      <p class="footer__text">Số 65, Đường Duy Tân, Phường Hưng Dũng, Thành phố Vinh, Tỉnh Nghệ An</p>
       <p class="footer__text">Liên hệ hợp tác: 0582102343</p>
-      <img class="footer__badge" src="/tracnghiem/assets/icons/footer/dakhaibao-bct-v-DtZ8GFLT.png"
+      <img class="footer__badge" src="/assets/icons/footer/dakhaibao-bct-v-DtZ8GFLT.png"
         alt="Đã thông báo Bộ Công Thương">
     </section>
 
@@ -523,7 +969,7 @@
           </span>
           <div class="footer__contact-body d-grid">
             <strong class="footer__contact-label d-block">Email</strong>
-            <a class="footer__contact-link d-block" href="mailto:info@trangnguyen.edu.vn">info@trangnguyen.edu.vn</a>
+            <a class="footer__contact-link d-block" href="mailto:phandong752@gmail.com">phandong752@gmail.com</a>
           </div>
         </li>
         
@@ -548,17 +994,17 @@
         
         <a class="footer__social-link d-inline-flex align-items-center justify-content-center" href="#"
           aria-label="YouTube">
-          <img class="footer__social-icon d-block" src="/tracnghiem/assets/icons/footer/youtobe.svg" alt="YouTube">
+          <img class="footer__social-icon d-block" src="/assets/icons/footer/youtobe.svg" alt="YouTube">
         </a>
         
         <a class="footer__social-link d-inline-flex align-items-center justify-content-center" href="#"
           aria-label="Facebook">
-          <img class="footer__social-icon d-block" src="/tracnghiem/assets/icons/footer/facebook.svg" alt="Facebook">
+          <img class="footer__social-icon d-block" src="/assets/icons/footer/facebook.svg" alt="Facebook">
         </a>
         
         <a class="footer__social-link d-inline-flex align-items-center justify-content-center" href="#"
           aria-label="Zalo">
-          <img class="footer__social-icon d-block" src="/tracnghiem/assets/icons/footer/zalo.svg" alt="Zalo">
+          <img class="footer__social-icon d-block" src="/assets/icons/footer/zalo.svg" alt="Zalo">
         </a>
         
       </div>
@@ -579,75 +1025,7 @@
   </div>
 </footer>
 
-  
-<div class="modal fade competition-page__exam-modal" id="examRulesModal" tabindex="-1"
-  aria-labelledby="examRulesModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered competition-page__exam-modal-dialog m-auto">
-    <div class="modal-content competition-page__exam-modal-content bg-transparent border-0 shadow-none">
-      <div class="competition-page__exam-modal-shell position-relative bg-white">
-        <div class="competition-page__exam-modal-corners" aria-hidden="true"></div>
-
-        <div
-          class="competition-page__exam-modal-head position-relative d-flex align-items-start justify-content-between gap-4">
-          <h3 class="competition-page__exam-modal-title mt-auto" id="examRulesModalTitle">Quy chế khảo thí</h3>
-          <div class="competition-page__exam-modal-brand">
-            <img class="d-block w-100 h-auto" src="/tracnghiem/assets/icons/header/khach-hang-logo.svg"
-              alt="Trang Nguyen Education">
-          </div>
-        </div>
-
-        <div class="competition-page__exam-modal-body position-relative d-grid">
-          <div class="competition-page__exam-modal-scroll overflow-auto">
-            <ol class="competition-page__exam-modal-list m-0">
-              
-              <li>Hội đồng: Đơn vị tổ chức thi thành lập hội đồng thi cử giám sát chéo nghiêm túc, đảm bảo công bằng, nghiêm minh.</li>
-              
-              <li>Không phát tán đề thi, bài thi, mã thi dưới bất kì hình thức nào.</li>
-              
-              <li>Mỗi học sinh đăng ký duy nhất một tài khoản để học, ôn luyện, thi.</li>
-              
-              <li>Học sinh tham dự thi tập trung dưới sự giám sát của hội đồng thi các cấp và ký biên bản xác nhận kết quả mới được công nhận.</li>
-              
-              <li>Học sinh nhập đúng mã dự thi cả Hội đồng thi cấp, mới được công nhận kết quả.</li>
-              
-              <li>Học sinh tuân thủ thời gian làm bài và lịch thi theo quy định của Ban Tổ Chức thông báo.</li>
-              
-              <li>Học sinh không được mang tài liệu, thiết bị điện tử thông minh vào phòng thi; không trao đổi, nhắc bài hay nhận sự hỗ trợ làm bài từ người khác.</li>
-              
-              <li>Học sinh chỉ được mang bút chì, bút mực, giấy nháp trắng vào phòng thi.</li>
-              
-              <li>Học sinh chỉ được mở một trình duyệt web khi tham dự thi (Máy tính cần cài bảng gõ tiếng Việt là phần mềm Unikey 4.0. Bảng mã Unicode (code dựng sẵn) - Kiểu gõ Telex).</li>
-              
-              <li>Hội đồng thi hoặc học sinh vi phạm quy chế khảo thí, Ban Tổ Chức có quyền hủy kết quả thi.</li>
-              
-            </ol>
-          </div>
-
-          <div class="competition-page__exam-modal-footer d-flex align-items-center justify-content-between gap-3">
-            <label class="competition-page__exam-modal-check d-inline-flex align-items-center">
-              <input type="checkbox" checked>
-              <span>Tôi đồng ý với Quy chế khảo thí của Trạng Nguyên</span>
-            </label>
-
-            <div class="competition-page__exam-modal-actions d-flex align-items-center gap-3 ms-auto">
-              <button
-                class="competition-page__exam-modal-button competition-page__exam-modal-button--ghost d-inline-flex align-items-center justify-content-center gap-2"
-                type="button" data-bs-dismiss="modal">
-                <img class="competition-page__exam-modal-button-icon"
-                  src="/tracnghiem/assets/images/bai-thi/tnv_close_remove.svg" alt="" aria-hidden="true">
-                Không đồng ý
-              </button>
-              <a class="competition-page__exam-modal-button competition-page__exam-modal-button--primary d-inline-flex align-items-center justify-content-center gap-2"
-                href="/tracnghiem/bai-thi/">
-                Tôi đồng ý
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <script src="/assets/js/home.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,21 +1,21 @@
 company:
-  title: "Công ty TNHH đầu tư Giáo Dục Trạng Nguyên"
+  title: "Công ty TNHH đầu tư Giáo Dục Khách Hàng"
   license: "Giấy phép ĐKKD số 0108781729 do Sở Kế hoạch và Đầu tư TP Hà Nội cấp ngày 12/06/2019, thay đổi lần thứ 3 ngày 04/07/2022"
   update: ""
   representative: "Người đại diện"
-  representative-name: "Bà Trịnh Thị Hương"
+  representative-name: "Ông Phan Sỹ Đông"
   role: "TỔNG GIÁM ĐỐC"
 office:
   title: "Thông tin trụ sở"
   city: "Hà Nội"
-  address: "Số 7, Ngõ 68 Phố Trung Kính, Phường Yên Hòa, Quận Cầu Giấy"
+  address: "Số 65, Đường Duy Tân, Phường Hưng Dũng, Thành phố Vinh, Tỉnh Nghệ An"
   contact: "Liên hệ hợp tác: 0582102343"
 support:
   title: "Chăm sóc khách hàng"
   items:
     - label: Email
-      value: info@trangnguyen.edu.vn
-      href: "mailto:info@trangnguyen.edu.vn"
+      value: phandong752@gmail.com
+      href: "mailto:phandong752@gmail.com"
       icon: email
     - label: Hotline
       value: "1900633330"

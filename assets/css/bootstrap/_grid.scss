@@ -1,5 +1,28 @@
+@use "sass:math";
 @use "variables" as v;
 @use "mixins" as m;
+
+@mixin make-col($size) {
+  flex: 0 0 auto;
+  width: math.percentage(math.div($size, 12));
+}
+
+@mixin make-grid-columns($infix: "") {
+  .col#{$infix} {
+    flex: 1 0 0%;
+  }
+
+  .col#{$infix}-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .col#{$infix}-#{$i} {
+      @include make-col($i);
+    }
+  }
+}
 
 .row {
   display: flex;
@@ -19,32 +42,24 @@
   padding-left: calc(v.$bs-grid-gutter-x * 0.5);
 }
 
-.col {
-  flex: 1 0 0%;
+@include make-grid-columns();
+
+@include m.media-up(sm) {
+  @include make-grid-columns("-sm");
 }
 
-.col-auto {
-  flex: 0 0 auto;
-  width: auto;
+@include m.media-up(md) {
+  @include make-grid-columns("-md");
 }
 
-.col-12 {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.col-xl-3,
-.col-xl-9 {
-  flex: 0 0 auto;
-  width: 100%;
+@include m.media-up(lg) {
+  @include make-grid-columns("-lg");
 }
 
 @include m.media-up(xl) {
-  .col-xl-3 {
-    width: 25%;
-  }
+  @include make-grid-columns("-xl");
+}
 
-  .col-xl-9 {
-    width: 75%;
-  }
+@include m.media-up(xxl) {
+  @include make-grid-columns("-xxl");
 }
