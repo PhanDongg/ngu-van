@@ -12,3 +12,9 @@
 .container-xxl {
   max-width: v.$bs-container-max-width;
 }
+@media (max-width: 1024px) {
+  .container-xxl {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

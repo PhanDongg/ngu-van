@@ -16,7 +16,7 @@ header_action_active: "__none__"
 {% assign partners_section = home.partners_section %}
 {% assign experts_section = home.experts_section %}
 
-<section class="home-hero pt-1">
+<section class="home-hero pt-1 ">
   <div id="homeHeroCarousel" class="carousel slide mx-auto pb-4" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="home-hero__frame position-relative">
       <div class="carousel-inner overflow-hidden">
@@ -56,7 +56,7 @@ header_action_active: "__none__"
 <section class="home-section pt-4 pt-lg-0">
   <div class="text-center">
     <img src="{{ products_section.ornament | relative_url }}" alt="" class="img-fluid mb-3 m-auto" width="168" height="34">
-    <h2 class="home-section__title fw-bold mb-0">{{ products_section.title }}</h2>
+    <h2 class="home-section__title mb-0">{{ products_section.title }}</h2>
   </div>
 
   <div class="home-products mx-auto mt-4 mt-lg-5 pb-4" data-home-products-slider>
@@ -105,7 +105,7 @@ header_action_active: "__none__"
 <section class="home-highlights pt-5 pt-xl-6">
   <div class="text-center">
     <img src="{{ highlights_section.ornament | relative_url }}" alt="" class="home-highlights__ornament img-fluid mb-3 m-auto">
-    <h2 class="home-section__title fw-bold mb-0">{{ highlights_section.title }}</h2>
+    <h2 class="home-section__title mb-0">{{ highlights_section.title }}</h2>
   </div>
 
   <div class="row g-4 g-xl-5 align-items-center mt-4 mt-lg-5">
@@ -114,7 +114,7 @@ header_action_active: "__none__"
         {% for item in highlights_section.left_items %}
           <article class="home-highlights__item text-center">
             <img src="{{ item.icon | relative_url }}" alt="" class="home-highlights__icon img-fluid mb-3 m-auto">
-            <h3 class="home-highlights__heading fw-bold mb-3">{{ item.title }}</h3>
+            <h3 class="home-highlights__heading fw-normal mb-3">{{ item.title }}</h3>
             <p class="home-highlights__copy mb-0">{{ item.description }}</p>
           </article>
         {% endfor %}
@@ -134,7 +134,7 @@ header_action_active: "__none__"
         {% for item in highlights_section.right_items %}
           <article class="home-highlights__item text-center">
             <img src="{{ item.icon | relative_url }}" alt="" class="home-highlights__icon img-fluid mb-3 m-auto">
-            <h3 class="home-highlights__heading fw-bold mb-3">{{ item.title }}</h3>
+            <h3 class="home-highlights__heading fw-normal mb-3">{{ item.title }}</h3>
             <p class="home-highlights__copy mb-0">{{ item.description }}</p>
           </article>
         {% endfor %}
@@ -143,10 +143,10 @@ header_action_active: "__none__"
   </div>
 </section>
 
-<section class="home-language-arena mt-5 pt-5 pb-4 pb-lg-5">
+<section class="home-language-arena mt-5 pt-5 pb-4 pb-lg-5 ">
   <div class="home-language-arena__inner home-section">
   <div class="text-center position-relative z-1">
-    <h2 class="home-section__title fw-bold mb-0">{{ language_arena_section.title }}</h2>
+    <h2 class="home-section__title mb-0">{{ language_arena_section.title }}</h2>
   </div>
 
   <div class="home-language-arena__crest mx-auto mt-4 mt-lg-5 position-relative" aria-hidden="true">
@@ -182,12 +182,12 @@ header_action_active: "__none__"
                   {% endif %}
                 </div>
                 <div class="home-language-arena__timeline-copy text-start">
-                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">{{ item.title }}</h3>
+                  <h3 class="home-language-arena__timeline-title fw-normal mb-1">{{ item.title }}</h3>
                   <p class="home-language-arena__timeline-period mb-0">{{ item.period }}</p>
                 </div>
               {% else %}
                 <div class="home-language-arena__timeline-copy text-end">
-                  <h3 class="home-language-arena__timeline-title fw-bold mb-1">{{ item.title }}</h3>
+                  <h3 class="home-language-arena__timeline-title fw-normal mb-1">{{ item.title }}</h3>
                   <p class="home-language-arena__timeline-period mb-0">{{ item.period }}</p>
                 </div>
                 <div class="home-language-arena__timeline-marker d-flex align-items-center justify-content-center flex-shrink-0">
@@ -207,15 +207,15 @@ header_action_active: "__none__"
 
     <div class="col-12 col-lg-6 mt-0">
       <article class="home-language-arena__panel rounded-5 h-100 p-4 p-xl-5 d-flex flex-column">
-        <div class="d-grid gap-3 gap-lg-4">
+        <div class="d-grid gap-4 gap-sm-3 gap-lg-4">
           {% for article in language_arena_section.articles %}
-            <a href="{{ article.href }}" class="home-language-arena__article d-flex align-items-start gap-3 text-decoration-none">
+            <a href="{{ article.href }}" class="home-language-arena__article d-flex align-items-start gap-3 text-decoration-none flex-column flex-sm-row">
               <div class="home-language-arena__article-image rounded-4 overflow-hidden flex-shrink-0">
                 <img src="{{ article.image | relative_url }}" alt="{{ article.title }}" class="img-fluid w-100 h-100 object-fit-cover">
               </div>
               <div class="home-language-arena__article-copy min-w-0">
                 <span class="home-language-arena__article-date d-inline-flex align-items-center rounded-pill mb-2 px-3 py-1">{{ article.date }}</span>
-                <h3 class="home-language-arena__article-title fw-bold mb-0">{{ article.title }}</h3>
+                <h3 class="home-language-arena__article-title fw-normal mb-0">{{ article.title }}</h3>
               </div>
             </a>
           {% endfor %}
@@ -233,7 +233,7 @@ header_action_active: "__none__"
 <section class="home-events home-section pt-5 pt-xl-6">
   <div class="text-center">
     <img src="{{ featured_events_section.ornament | relative_url }}" alt="" class="home-events__ornament img-fluid mb-3 m-auto">
-    <h2 class="home-section__title fw-bold mb-0">{{ featured_events_section.title }}</h2>
+    <h2 class="home-section__title mb-0">{{ featured_events_section.title }}</h2>
   </div>
 
   <div class="row g-4 g-lg-5 mt-4 mt-lg-5">
@@ -243,17 +243,17 @@ header_action_active: "__none__"
           <div class="home-events__image-wrap rounded-4 overflow-hidden mb-3">
             <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="home-events__image img-fluid w-100 h-100 object-fit-contain">
           </div>
-          <h3 class="home-events__title fw-bold mb-0">{{ item.title }}</h3>
+          <h3 class="home-events__title fw-normal mb-0">{{ item.title }}</h3>
         </a>
       </div>
     {% endfor %}
   </div>
 </section>
-<section class="home-spotlight home-section pt-5 pt-xl-6">
+<section class="home-spotlight home-section pt-5 pt-xl-6 px-xl-0">
   <div class="home-spotlight__heading text-center position-relative">
     <div class="home-spotlight__title-wrap d-inline-flex flex-column align-items-center position-relative px-4 px-lg-5 pt-3 pb-0">
       <img src="{{ spotlight_section.ornament | relative_url }}" alt="" class="home-spotlight__ornament img-fluid mb-2">
-      <h2 class="home-spotlight__heading-title fw-bold mb-0">{{ spotlight_section.title }}</h2>
+      <h2 class="home-spotlight__heading-title mb-0 home-section__title">{{ spotlight_section.title }}</h2>
       <img src="{{ spotlight_section.accent_image | relative_url }}" alt="" class="home-spotlight__accent img-fluid">
     </div>
   </div>
@@ -272,7 +272,7 @@ header_action_active: "__none__"
                 </div>
                 <div class="col-12 col-lg-6 mt-0">
                   <article class="home-spotlight__content rounded-4 h-100 d-flex flex-column justify-content-center p-4 p-xl-5">
-                    <h3 class="home-spotlight__title fw-bold mb-3">{{ item.title }}</h3>
+                    <h3 class="home-spotlight__title fw-normal mb-3">{{ item.title }}</h3>
                     <p class="home-spotlight__description mb-4">{{ item.description }}</p>
                     <a href="{{ item.href }}" class="home-spotlight__cta btn rounded-pill px-4 py-3 d-inline-flex align-items-center justify-content-center gap-2 align-self-start">
                       <span>{{ spotlight_section.cta_label }}</span>
@@ -310,7 +310,7 @@ header_action_active: "__none__"
 <section class="home-partners home-section pt-5 pt-xl-6">
   <div class="text-center">
     <img src="{{ partners_section.ornament | relative_url }}" alt="" class="home-partners__ornament img-fluid mb-3 m-auto">
-    <h2 class="home-section__title fw-bold mb-0">{{ partners_section.title }}</h2>
+    <h2 class="home-section__title mb-0">{{ partners_section.title }}</h2>
   </div>
 
   <div class="home-partners__grid mt-4 mt-lg-5">
@@ -319,16 +319,16 @@ header_action_active: "__none__"
         <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
           <img src="{{ item.image }}" alt="{{ item.title }}" class="home-partners__logo img-fluid">
         </div>
-        <h3 class="home-partners__name fw-bold mb-0">{{ item.title }}</h3>
+        <h3 class="home-partners__name fw-normal mb-0">{{ item.title }}</h3>
       </article>
     {% endfor %}
   </div>
 </section>
-<section class="home-experts mt-5 pt-5 pb-5 pb-lg-6">
+<section class="home-experts mt-5 pt-5 pb-5 pb-lg-6 px-3">
   <div class="home-experts__inner home-section">
     <div class="text-center position-relative z-1">
       <img src="{{ experts_section.ornament | relative_url }}" alt="" class="home-experts__ornament img-fluid mb-3 m-auto">
-      <h2 class="home-section__title fw-bold mb-0">{{ experts_section.title }}</h2>
+      <h2 class="home-section__title mb-0">{{ experts_section.title }}</h2>
     </div>
 
     <div class="home-experts__grid mt-4 mt-lg-5">
@@ -341,7 +341,7 @@ header_action_active: "__none__"
             </div>
             <div class="home-experts__meta rounded-5 text-center mx-auto">
               <p class="home-experts__role mb-2">{{ item.role }}</p>
-              <h3 class="home-experts__name fw-bold mb-0">{{ item.name }}</h3>
+              <h3 class="home-experts__name fw-normal mb-0">{{ item.name }}</h3>
             </div>
           </div>
         </article>
