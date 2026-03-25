@@ -231,6 +231,7 @@
     color: #233049;
     font-size: clamp(1.55rem, 1.6vw, 2rem);
     line-height: 1.1;
+    font-family: "Paytone One", sans-serif;
   }
 
   &__description {
@@ -238,6 +239,7 @@
     color: #5f687d;
     font-size: 0.96rem;
     line-height: 1.6;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;;
   }
 
   &__cta {
@@ -246,6 +248,7 @@
     background: #c9242c;
     color: #fff;
     font-weight: 700;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 
     &:hover,
     &:focus {
@@ -644,6 +647,7 @@
     background: transparent;
     color: #cf5c00;
     font-weight: 700;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 
     &:hover,
     &:focus {
@@ -971,6 +975,7 @@
     background: #c9242c;
     color: #fff;
     font-weight: 700;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 
     &:hover,
     &:focus {

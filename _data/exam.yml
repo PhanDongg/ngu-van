@@ -140,11 +140,15 @@ questions:
     prompt: "Listen to the word in the picture. Then listen and choose the word with the same beginning sound as the picture."
     picture_emoji: "🚐"
     picture_word: "van"
+    lead_audio_text: "van"
     selection_limit: 2
     options:
       - key: A.
         label: "Speaker 1"
+        audio_text: "van"
       - key: B.
         label: "Speaker 2"
+        audio_text: "van"
       - key: C.
         label: "Speaker 3"
+        audio_text: "fan"

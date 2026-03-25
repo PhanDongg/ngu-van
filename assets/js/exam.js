@@ -32,6 +32,30 @@
   let activeClassifyPointerDrag = null;
   let activeSortPointerDrag = null;
 
+  function stopSpokenAudio() {
+    if (!("speechSynthesis" in window)) return;
+    window.speechSynthesis.cancel();
+  }
+
+  function speakAudioPrompt(text) {
+    if (!text || !("speechSynthesis" in window)) return;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    utterance.rate = 0.9;
+    utterance.pitch = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function animateAudioButton(button) {
+    if (!button) return;
+    button.classList.remove("exam-page__audio-button--pulse");
+    void button.offsetWidth;
+    button.classList.add("exam-page__audio-button--pulse");
+  }
+
   function formatTimer(totalSeconds) {
     const safeSeconds = Math.max(0, totalSeconds);
     const hours = Math.floor(safeSeconds / 3600);
@@ -964,6 +988,7 @@
   function renderAudioChoiceQuestion(question) {
     const state = getQuestionState(question.id);
     const maxSelections = question.selection_limit || 1;
+    const leadAudioText = question.lead_audio_text || question.picture_word;
     visualEl.className = "exam-page__visual exam-page__visual--audio-choice";
     visualEl.innerHTML = "";
 
@@ -974,12 +999,17 @@
       <div class="exam-page__audio-word">${question.picture_word}</div>
     `;
 
-    const leadButton = document.createElement("span");
+    const leadButton = document.createElement("button");
+    leadButton.type = "button";
     leadButton.className = "exam-page__audio-button exam-page__audio-button--lead d-inline-flex align-items-center justify-content-center bg-white";
-    leadButton.setAttribute("aria-hidden", "true");
+    leadButton.setAttribute("aria-label", `Play sound for ${question.picture_word}`);
     leadButton.innerHTML = `
-      <span class="exam-page__audio-button-icon" aria-hidden="true">🔊</span>
+      <span class="exam-page__audio-button-icon" aria-hidden="true">&#128266;</span>
     `;
+    leadButton.addEventListener("click", function () {
+      animateAudioButton(leadButton);
+      speakAudioPrompt(leadAudioText);
+    });
 
     visualEl.append(hero, leadButton);
 
@@ -988,20 +1018,33 @@
     optionsEl.innerHTML = "";
 
     question.options.forEach((option, optionIndex) => {
-      const label = document.createElement("label");
+      const optionId = `question-${question.number}-option-${optionIndex + 1}`;
       const isChecked = state.selectedOptions.includes(optionIndex);
-      label.className = "exam-page__audio-option position-relative d-grid align-items-center";
-      label.htmlFor = `question-${question.number}-option-${optionIndex + 1}`;
-      label.innerHTML = `
-        <input class="exam-page__option-input" type="${maxSelections > 1 ? "checkbox" : "radio"}" name="question-${question.number}" id="question-${question.number}-option-${optionIndex + 1}" ${isChecked ? "checked" : ""}>
-        <span class="exam-page__option-radio" aria-hidden="true"></span>
-        <span class="exam-page__audio-option-key">${option.key}</span>
-        <span class="exam-page__audio-button" aria-hidden="true">
-          <span class="exam-page__audio-button-icon" aria-hidden="true">🔊</span>
-        </span>
+      const optionAudioText = option.audio_text || leadAudioText;
+      const row = document.createElement("div");
+      row.className = "exam-page__audio-option d-grid align-items-center";
+      row.innerHTML = `
+        <label class="exam-page__audio-select position-relative d-grid align-items-center" for="${optionId}">
+          <input class="exam-page__option-input" type="${maxSelections > 1 ? "checkbox" : "radio"}" name="question-${question.number}" id="${optionId}" ${isChecked ? "checked" : ""}>
+          <span class="exam-page__option-radio" aria-hidden="true"></span>
+          <span class="exam-page__audio-option-key">${option.key}</span>
+          <span class="visually-hidden">${option.label}</span>
+        </label>
+        <button class="exam-page__audio-button d-flex align-items-center justify-content-center bg-white" type="button" aria-label="Play sound for ${option.key}">
+          <span class="exam-page__audio-button-icon" aria-hidden="true">&#128266;</span>
+        </button>
       `;
 
-      const input = label.querySelector(".exam-page__option-input");
+      const input = row.querySelector(".exam-page__option-input");
+      const audioButton = row.querySelector(".exam-page__audio-button");
+
+      audioButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        animateAudioButton(audioButton);
+        speakAudioPrompt(optionAudioText);
+      });
+
       input.addEventListener("change", function () {
         if (maxSelections === 1) {
           state.selectedOptions = input.checked ? [optionIndex] : [];
@@ -1027,12 +1070,13 @@
         renderQuestion(question);
       });
 
-      optionsEl.appendChild(label);
+      optionsEl.appendChild(row);
     });
   }
 
   function renderQuestion(question) {
-    questionIndexEl.textContent = `Câu hỏi ${question.number}`;
+    stopSpokenAudio();
+    questionIndexEl.textContent = `C\u00e2u h\u1ecfi ${question.number}`;
     questionPromptEl.textContent = question.prompt;
     questionAuxEl.style.display = "none";
     pagerCurrentEl.textContent = question.number;
@@ -1125,7 +1169,7 @@
   if (resultFinishButton) {
     resultFinishButton.addEventListener("click", function () {
       sessionStorage.removeItem(storageKey);
-      window.location.href = "/vao-thi-trang-nguyen-2023/";
+      window.location.href = "/tracnghiem/vao-thi-trang-nguyen-2023/";
     });
   }
 

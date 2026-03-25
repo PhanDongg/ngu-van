@@ -120,6 +120,7 @@
   &__question-index {
     color: #4b4844;
     font-size: 1rem;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__question-prompt {
@@ -127,6 +128,7 @@
     color: #44403b;
     font-size: 1.05rem;
     line-height: 1.4;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__question-aux {
@@ -199,6 +201,7 @@
     inset: 0;
     opacity: 0;
     cursor: pointer;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__option-radio {
@@ -283,6 +286,7 @@
     color: #494440;
     font-size: 0.95rem;
     line-height: 1.45;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 
     &--secondary {
       margin-top: 0.2rem;
@@ -297,7 +301,6 @@
     &--animal {
       color: #343434;
       font-size: 1.35rem;
-      font-weight: 800;
       line-height: 1.4;
     }
   }
@@ -316,6 +319,7 @@
 
   &__fill-text {
     display: inline-block;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__fill-input {
@@ -463,8 +467,6 @@
     gap: 1rem;
   }
 
-  &__classify-bucket {}
-
   &__classify-bucket-title {
     position: absolute;
     top: -0.9rem;
@@ -477,6 +479,7 @@
     font-size: 1rem;
     font-weight: 700;
     line-height: 1.2;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__classify-dropzone {
@@ -588,12 +591,20 @@
   &__audio-button {
     width: 2.7rem;
     height: 2.7rem;
+    padding: 0;
     border: 1px solid #dedede;
     border-radius: 0.3rem;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transform-origin: center;
 
     &--lead {
       margin-top: 0.2rem;
+    }
+
+    &--pulse {
+      animation: audio-button-pop 180ms ease-out;
     }
   }
 
@@ -609,6 +620,13 @@
   }
 
   &__audio-option {
+    grid-template-columns: auto auto;
+    column-gap: 0.55rem;
+    justify-content: start;
+  }
+
+  &__audio-select {
+    position: relative;
     grid-template-columns: 1.45rem 1.35rem auto;
     column-gap: 0.55rem;
     justify-content: start;
@@ -707,12 +725,14 @@
   &__status-label {
     color: #7a756f;
     font-size: 0.95rem;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__status-time {
     color: #060606;
     font-size: 20px;
     font-weight: 900;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__question-grid {
@@ -747,6 +767,7 @@
     color: #fff;
     font-size: 1.1rem;
     font-weight: 900;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
   }
 
   &__pager {
@@ -765,6 +786,7 @@
     color: #c81d24;
     font-size: 1rem;
     font-weight: 800;
+    font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 
     &--muted {
       border-color: #d2c7c6;
@@ -1330,4 +1352,18 @@
 
 .modal-backdrop.show {
   z-index: 1990;
+}
+
+@keyframes audio-button-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.16);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

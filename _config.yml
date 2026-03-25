@@ -1,8 +1,8 @@
 title: Trang Nguyen Vietnamese Playground
 description: Theme Jekyll demo cho trang vòng thi Trang Nguyên Tiếng Việt.
-# baseurl: "/tracnghiem"
-# url: "http://qwtesthtml.demo1.fgct.net"
-baseurl: ""
-url: ""
+baseurl: "/tracnghiem"
+url: "http://qwtesthtml.demo1.fgct.net"
+# baseurl: ""
+# url: ""
 markdown: kramdown
 permalink: pretty

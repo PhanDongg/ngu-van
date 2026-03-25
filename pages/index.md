@@ -75,7 +75,7 @@ header_action_active: "__none__"
                 <div class="home-products__visual d-flex align-items-end justify-content-center mb-3">
                   <img src="{{ '/assets/images/home/' | append: item.image | relative_url }}" alt="{{ item.title }}" class="img-fluid">
                 </div>
-                <h3 class="home-products__name fw-bold mb-2">{{ item.title }}</h3>
+                <h3 class="home-products__name fw-normal mb-2">{{ item.title }}</h3>
                 <p class="home-products__description mb-4">{{ item.description }}</p>
                 <a href="{{ item.href }}" class="home-products__cta btn rounded-pill px-4 py-2 mt-auto d-inline-flex align-items-center justify-content-center gap-2">
                   <span>{{ products_section.cta_label }}</span>
@@ -317,7 +317,7 @@ header_action_active: "__none__"
     {% for item in partners_section.items %}
       <article class="home-partners__item text-center">
         <div class="home-partners__logo-wrap d-flex align-items-center justify-content-center mb-3 mx-auto">
-          <img src="{{ item.image }}" alt="{{ item.title }}" class="home-partners__logo img-fluid">
+          <img src="{{ item.image | relative_url }}" alt="{{ item.title }}" class="home-partners__logo img-fluid">
         </div>
         <h3 class="home-partners__name fw-normal mb-0">{{ item.title }}</h3>
       </article>
@@ -337,7 +337,7 @@ header_action_active: "__none__"
           <div class="home-experts__card-body d-flex flex-column h-100">
             <p class="home-experts__quote text-center mb-4">{{ item.quote }}</p>
             <div class="home-experts__portrait-wrap mt-auto d-flex align-items-end justify-content-center">
-              <img src="{{ item.image }}" alt="{{ item.name }}" class="home-experts__portrait img-fluid">
+              <img src="{{ item.image | relative_url }}" alt="{{ item.name }}" class="home-experts__portrait img-fluid">
             </div>
             <div class="home-experts__meta rounded-5 text-center mx-auto">
               <p class="home-experts__role mb-2">{{ item.role }}</p>

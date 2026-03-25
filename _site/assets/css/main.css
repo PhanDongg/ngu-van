@@ -791,6 +791,10 @@ a {
   background-color: #cbfdd3;
   border-radius: 8px;
 }
+.header__actions .header__action:nth-child(3):hover {
+  background-color: #FAE7BA;
+  border-radius: 8px;
+}
 .header__actions .header__action:nth-child(4):hover {
   background-color: #ffe5f4;
   border-radius: 8px;
@@ -1056,12 +1060,14 @@ a {
 .exam-page__question-index {
   color: #4b4844;
   font-size: 1rem;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__question-prompt {
   margin-top: 0.4rem;
   color: #44403b;
   font-size: 1.05rem;
   line-height: 1.4;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__question-aux {
   display: none;
@@ -1121,6 +1127,7 @@ a {
   inset: 0;
   opacity: 0;
   cursor: pointer;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__option-radio {
   position: relative;
@@ -1191,6 +1198,7 @@ a {
   color: #494440;
   font-size: 0.95rem;
   line-height: 1.45;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__question-note--secondary {
   margin-top: 0.2rem;
@@ -1203,7 +1211,6 @@ a {
 .exam-page__question-note--animal {
   color: #343434;
   font-size: 1.35rem;
-  font-weight: 800;
   line-height: 1.4;
 }
 .exam-page__fill-list {
@@ -1218,6 +1225,7 @@ a {
 }
 .exam-page__fill-text {
   display: inline-block;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__fill-input {
   width: 5.8rem;
@@ -1351,6 +1359,7 @@ a {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__classify-dropzone {
   min-height: 11rem;
@@ -1447,12 +1456,19 @@ a {
 .exam-page__audio-button {
   width: 2.7rem;
   height: 2.7rem;
+  padding: 0;
   border: 1px solid #dedede;
   border-radius: 0.3rem;
+  background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transform-origin: center;
 }
 .exam-page__audio-button--lead {
   margin-top: 0.2rem;
+}
+.exam-page__audio-button--pulse {
+  animation: audio-button-pop 180ms ease-out;
 }
 .exam-page__audio-button-icon {
   font-size: 1.25rem;
@@ -1464,6 +1480,12 @@ a {
   gap: 1rem;
 }
 .exam-page__audio-option {
+  grid-template-columns: auto auto;
+  column-gap: 0.55rem;
+  justify-content: start;
+}
+.exam-page__audio-select {
+  position: relative;
   grid-template-columns: 1.45rem 1.35rem auto;
   column-gap: 0.55rem;
   justify-content: start;
@@ -1534,11 +1556,13 @@ a {
 .exam-page__status-label {
   color: #7a756f;
   font-size: 0.95rem;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__status-time {
   color: #060606;
   font-size: 20px;
   font-weight: 900;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__question-grid {
   margin-top: 1rem;
@@ -1569,6 +1593,7 @@ a {
   color: #fff;
   font-size: 1.1rem;
   font-weight: 900;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__pager {
   max-width: 1280px;
@@ -1585,6 +1610,7 @@ a {
   color: #c81d24;
   font-size: 1rem;
   font-weight: 800;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
 }
 .exam-page__pager-button--muted {
   border-color: #d2c7c6;
@@ -2042,6 +2068,17 @@ a {
   z-index: 1990;
 }
 
+@keyframes audio-button-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.16);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .competition-page__mobile-heading {
   display: none;
 }
