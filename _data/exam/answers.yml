@@ -1,0 +1,33 @@
+---
+questions:
+  q1:
+    correct_option_keys:
+    - D.
+  q3:
+    correct_option_keys:
+    - D.
+  q5:
+    correct_fill_answers:
+    - '100'
+    - '120'
+    - '20'
+  q6:
+    correct_pairs:
+      '0': 2
+      '1': 3
+      '2': 1
+      '3': 0
+  q7:
+    correct_classify_placements:
+      '0': 1
+      '1': 0
+      '2': 1
+      '3': 0
+      '4': 1
+  q17:
+    correct_option_keys:
+    - B.
+  q23:
+    correct_option_keys:
+    - A.
+    - B.

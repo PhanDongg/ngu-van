@@ -1,0 +1,258 @@
+@media (max-width: 1024px) {
+  .exam-header {
+    padding-top: 20px;
+    &__inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "back profile"
+        "banner banner";
+      align-items: center;
+    }
+
+    &__back {
+      grid-area: back;
+      justify-self: start;
+    }
+
+    &__banner {
+      grid-area: banner;
+    }
+
+    &__profile {
+      grid-area: profile;
+      justify-self: end;
+    }
+  }
+
+  .exam-page {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__status-card {
+      position: static;
+    }
+  }
+
+  .exam-result {
+    &__spark {
+      display: none;
+    }
+
+    &__promo {
+      right: 1rem;
+      bottom: 1rem;
+      transform: scale(0.9);
+      transform-origin: right bottom;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .exam-header {
+    padding: 0.7rem 0.7rem 0;
+
+    &__banner {
+      padding: 0.8rem 1rem 0.7rem;
+    }
+
+    &__eyebrow {
+      font-size: 0.72rem;
+      line-height: 1.35;
+    }
+
+    &__title {
+      font-size: 0.92rem;
+    }
+  }
+
+  .exam-page {
+    padding: 1rem 0.7rem 2rem;
+
+    &__question-card {
+      padding: 1.2rem 1rem 1.1rem;
+      border-radius: 1.4rem;
+    }
+
+    &__visual-item {
+      font-size: 1.65rem;
+    }
+
+    &__options {
+      max-width: none;
+    }
+    &__matching-board {
+      grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
+      gap: 0;
+    }
+
+    &__matching-column {
+      gap: 0.5rem;
+
+      &--left {
+        grid-column: 1;
+      }
+
+      &--right {
+        grid-column: 3;
+      }
+    }
+
+    &__matching-tile {
+      min-height: 2.8rem;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.96rem;
+
+      &--right {
+        padding-left: 0.75rem;
+      }
+    }
+
+    &__classify-source {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: none;
+      padding: 0;
+    }
+
+    &__classify-buckets {
+      grid-template-columns: 1fr;
+    }
+
+    &__classify-dropzone {
+      grid-template-columns: 1fr;
+    }
+
+    &__animal-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    &__animal-option {
+      min-height: 10rem;
+    }
+
+    &__animal-figure {
+      min-height: 10rem;
+      font-size: 7rem;
+    }
+
+    &__audio-picture {
+      min-height: 7rem;
+      font-size: 7rem;
+    }
+
+    &__audio-word {
+      font-size: 3rem;
+    }
+
+    &__pager {
+      gap: 0.8rem;
+    }
+
+    &__pager-button {
+      min-width: 8.8rem;
+      font-size: 0.92rem;
+    }
+  }
+
+  .exam-result {
+    padding: 0.75rem 0.75rem 1.25rem;
+
+    &__toast {
+      top: 0.75rem;
+      right: 0.75rem;
+      left: 0.75rem;
+      min-width: 0;
+    }
+
+    &__center {
+      padding-top: 4.5rem;
+      min-height: auto;
+    }
+
+    &__mascot-face {
+      font-size: 4.8rem;
+    }
+
+    &__mascot-cloud {
+      width: 11rem;
+      height: 3.2rem;
+      box-shadow:
+        -2rem 0.8rem 0 -0.9rem #d8ecff,
+        2rem 0.8rem 0 -0.9rem #d8ecff;
+    }
+
+    &__card {
+      width: 100%;
+      max-width: 19rem;
+      padding-inline: 0.9rem;
+    }
+
+    &__ribbon {
+      min-width: 11.5rem;
+      font-size: 1rem;
+    }
+
+    &__score-box {
+      width: 8.5rem;
+    }
+
+    &__score-value {
+      font-size: 2.45rem;
+    }
+
+    &__finish {
+      min-width: 9.5rem;
+      font-size: 1.05rem;
+    }
+
+    &__promo {
+      position: static;
+      justify-content: center;
+      margin-top: 1rem;
+      transform: none;
+    }
+
+    &__promo-close {
+      margin-bottom: 0.8rem;
+    }
+
+    &__promo-bubble {
+      max-width: 13rem;
+      padding: 0.95rem;
+    }
+
+    &__promo-copy {
+      font-size: 0.85rem;
+    }
+
+    &__promo-robot {
+      font-size: 3.4rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .exam-review-page {
+    &__panel {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    &__meta {
+      grid-template-columns: 1fr;
+    }
+
+    &__result-head {
+      align-items: flex-start;
+    }
+
+    &__result-question {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

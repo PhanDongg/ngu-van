@@ -1,0 +1,92 @@
+@use "tokens" as t;
+
+.page-exam {
+  min-height: 100vh;
+  background: #efefef;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.exam-header {
+  background-color: #fff;
+
+  &__inner {
+    grid-template-columns: 14rem minmax(0, 1fr) 14rem;
+    max-width: 1680px;
+  }
+
+  &__back {
+    gap: 0.45rem;
+    justify-self: start;
+    padding: 0.7rem 1.3rem;
+    border: 2px solid #b3ada7;
+    border-radius: 999px;
+    color: #655f5a;
+  }
+
+  &__banner {
+    padding: 0.9rem 1.5rem 0.75rem;
+    border: 2px solid #f3d8d7;
+    border-radius: 0 0 1.2rem 1.2rem;
+    background: rgba(255, 245, 245, 0.75);
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      width: 2.8rem;
+      height: 2.2rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+  }
+
+  &__eyebrow,
+  &__title {
+    margin: 0;
+  }
+
+  &__eyebrow {
+    color: #686560;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+  }
+
+  &__title {
+    margin-top: 0.25rem;
+    color: #060606;
+    font-size: 1.05rem;
+  }
+
+  &__profile {
+    justify-self: end;
+    gap: 0.65rem;
+    min-height: 3rem;
+    padding: 0 0.85rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  &__avatar {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  &__profile-copy {
+    gap: 0.15rem;
+  }
+
+  &__profile-name {
+    color: #3d3934;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  &__profile-meta {
+    color: #98918a;
+    font-size: 0.78rem;
+    line-height: 1.1;
+  }
+}

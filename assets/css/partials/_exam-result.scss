@@ -1,0 +1,494 @@
+.exam-result {
+  padding: 1rem;
+  background:
+    radial-gradient(circle at center, rgba(255, 205, 37, 0.85) 0, rgba(255, 205, 37, 0.85) 21%, transparent 21.3%, transparent 30%, rgba(255, 205, 37, 0.2) 30.3%, rgba(255, 205, 37, 0.2) 40%, transparent 40.3%, transparent 49%, rgba(255, 205, 37, 0.14) 49.3%, rgba(255, 205, 37, 0.14) 58%, transparent 58.3%),
+    linear-gradient(180deg, #f65818a1 0%, #f7bc0c 100%);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 10% 18%, rgba(255, 211, 64, 0.22) 0 2.8rem, transparent 2.9rem),
+      radial-gradient(circle at 88% 22%, rgba(255, 211, 64, 0.18) 0 2.5rem, transparent 2.6rem),
+      radial-gradient(circle at 18% 78%, rgba(255, 211, 64, 0.16) 0 2.2rem, transparent 2.3rem),
+      radial-gradient(circle at 82% 74%, rgba(255, 211, 64, 0.16) 0 2.2rem, transparent 2.3rem);
+    pointer-events: none;
+  }
+
+  &__toast {
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    min-width: 19rem;
+    gap: 0.7rem;
+    padding: 1.5rem 1.1rem;
+    border-radius: 0.2rem;
+    background: #0bc400;
+    color: #fff;
+    box-shadow: 0 14px 28px rgba(47, 34, 14, 0.22);
+  }
+
+  &__toast-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.22);
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  &__toast-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  &__toast-close {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  &__center {
+    z-index: 1;
+    align-content: center;
+    justify-items: center;
+    gap: 1.35rem;
+  }
+
+  &__spark {
+    position: absolute;
+    top: 50%;
+    color: #ffe68c;
+    font-size: 2.7rem;
+    line-height: 1;
+    transform: translateY(-50%);
+
+    &--left {
+      left: calc(50% - 15rem);
+    }
+
+    &--right {
+      right: calc(50% - 15rem);
+    }
+  }
+
+  &__mascot {
+    margin-bottom: -2.1rem;
+    justify-items: center;
+  }
+
+  &__mascot-cloud {
+    width: 14rem;
+    height: 3.7rem;
+    border-radius: 999px;
+    background: #d8ecff;
+    box-shadow:
+      -2.8rem 0.95rem 0 -1rem #d8ecff,
+      2.8rem 0.95rem 0 -1rem #d8ecff;
+  }
+
+  &__mascot-face {
+    position: absolute;
+    top: -3.4rem;
+    font-size: 6.3rem;
+    line-height: 1;
+  }
+
+  &__card {
+    width: min(100%, 21rem);
+    padding: 2.65rem 1.15rem 1.45rem;
+    border-radius: 2.2rem;
+    background: linear-gradient(180deg, #56aaf2 0%, #3091e4 100%);
+    box-shadow:
+      inset 0 0 0 4px rgba(152, 213, 255, 0.35),
+      0 18px 0 #2f85cd,
+      0 34px 60px rgba(79, 52, 11, 0.28);
+  }
+
+  &__ribbon {
+    position: absolute;
+    top: -1.7rem;
+    left: 50%;
+    min-width: 13.4rem;
+    padding: 0.95rem 1.6rem 0.9rem;
+    border-radius: 2rem 2rem 1.4rem 1.4rem;
+    background: linear-gradient(180deg, #ffd914 0%, #f5c400 100%);
+    font-size: 1.15rem;
+    font-weight: 900;
+    text-shadow: 0 3px 0 rgba(132, 89, 0, 0.45);
+    transform: translateX(-50%);
+    box-shadow: 0 10px 22px rgba(146, 93, 0, 0.22);
+  }
+
+  &__panel {
+    padding: 1.2rem 0.8rem 1.1rem;
+    border-radius: 1.9rem;
+    background: rgba(111, 188, 255, 0.5);
+  }
+
+  &__message {
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  &__score-box {
+    width: 10rem;
+    margin: 1rem auto 0;
+    overflow: hidden;
+    border-radius: 0.7rem;
+    background: #18458a;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.12);
+  }
+
+  &__score-label {
+    padding: 0.6rem 0.7rem;
+    background: #306ec5;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  &__score-value {
+    padding: 0.75rem 0.7rem 0.95rem;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 0 3px 0 rgba(5, 22, 50, 0.48);
+  }
+
+  &__time-pill {
+    width: fit-content;
+    margin: 0.85rem auto 0;
+    padding: 0.7rem 0.95rem;
+    border-radius: 0.7rem;
+    background: rgba(75, 126, 204, 0.95);
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  &__note {
+    margin: 0.85rem 0 0;
+    color: #eaf6ff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  &__finish {
+    min-width: 10.8rem;
+    padding: 0.8rem 1.5rem;
+    border: 3px solid #ffb3b3;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #ff9084 0%, #f4534b 100%);
+    font-size: 1.2rem;
+    font-weight: 900;
+    box-shadow: 0 10px 18px rgba(154, 47, 30, 0.25);
+  }
+
+  &__links {
+    justify-items: center;
+    gap: 0.45rem;
+    padding-top: 20px;
+  }
+
+  &__link {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-underline-offset: 0.14em;
+  }
+
+  &__promo {
+    right: 1.4rem;
+    bottom: 1.2rem;
+    z-index: 1;
+    gap: 0.55rem;
+  }
+
+  &__promo-close {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 1.35rem;
+    border: 2px solid #323232;
+    background: rgba(255, 255, 255, 0.8);
+    color: #111;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  &__promo-bubble {
+    max-width: 17rem;
+    padding: 1.2rem 1.15rem 1rem;
+    border: 6px solid #56aaf2;
+    border-radius: 2rem;
+    background: #fff6dc;
+    box-shadow: 0 16px 30px rgba(93, 58, 10, 0.18);
+    transform: rotate(-8deg);
+  }
+
+  &__promo-copy {
+    color: #9a1925;
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+
+  &__promo-cta {
+    margin-top: 0.7rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: #d6222a;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  &__promo-robot {
+    font-size: 4.4rem;
+    line-height: 1;
+  }
+}
+
+.exam-review-page {
+  min-height: 100vh;
+  padding: 2.5rem 1rem 3rem;
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 117, 0.55), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(123, 201, 255, 0.38), transparent 32%),
+    linear-gradient(180deg, #fff7df 0%, #fefcf6 100%);
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+
+  &__inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #7d261c;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  &__hero {
+    margin-top: 1.25rem;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    color: #b65b24;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0.55rem 0 0;
+    color: #1f2937;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    font-family: "Paytone One", sans-serif;
+  }
+
+  &__summary {
+    max-width: 42rem;
+    margin: 0.85rem 0 0;
+    color: #49566a;
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  &__panel {
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(217, 119, 6, 0.14);
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 22px 55px rgba(120, 92, 48, 0.12);
+  }
+
+  &__meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  &__meta-item {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem 1.05rem;
+    border-radius: 1rem;
+    background: #fff7e7;
+  }
+
+  &__meta-label {
+    color: #8b6b45;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__meta-value {
+    color: #1f2937;
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  &__results {
+    margin-top: 1.25rem;
+  }
+
+  &__results-title {
+    margin: 0;
+    color: #8a2d1f;
+    font-size: 1.2rem;
+  }
+
+  &__result-list {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 0.95rem;
+  }
+
+  &__result-item {
+    padding: 1rem 1.05rem;
+    border: 1px solid #f2e8d8;
+    border-radius: 1rem;
+    background: #fff;
+
+    &--correct {
+      border-color: #b7e4c1;
+      background: #effcf3;
+    }
+
+    &--wrong,
+    &--empty {
+      border-color: #c81d24;
+      background: #c81d24;
+
+      .exam-review-page__result-number,
+      .exam-review-page__result-prompt,
+      .exam-review-page__review-question,
+      .exam-review-page__result-message,
+      .exam-review-page__result-detail,
+      .exam-review-page__result-fact {
+        color: #fff;
+      }
+
+      .exam-review-page__result-facts {
+        background: rgba(255, 255, 255, 0.12);
+      }
+    }
+  }
+
+  &__result-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  &__result-number {
+    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  &__result-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.5rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+    &--correct {
+      background: #d8f5df;
+      color: #1f7a36;
+    }
+
+    &--wrong,
+    &--empty {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+  }
+
+  &__result-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.7rem;
+  }
+
+  &__result-prompt {
+    flex: 1 1 auto;
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  &__review-question {
+    flex: 0 0 auto;
+    color: #2563eb;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__result-message {
+    margin: 0.7rem 0 0;
+    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__result-facts {
+    display: grid;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.68);
+  }
+
+  &__result-fact {
+    margin: 0;
+    color: #1f2937;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  &__result-detail {
+    margin: 0.4rem 0 0;
+    color: #8a2d1f;
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  &__result-empty {
+    margin: 0;
+    padding: 1rem 1.05rem;
+    border-radius: 1rem;
+    background: #f8fafc;
+    color: #5b6775;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+}

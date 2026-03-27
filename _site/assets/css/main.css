@@ -1625,6 +1625,75 @@ a {
   font-weight: 900;
 }
 
+.exam-submit-modal.modal {
+  z-index: 2000;
+}
+.exam-submit-modal__dialog {
+  max-width: 23.75rem;
+}
+.exam-submit-modal__content {
+  border-radius: 1.85rem;
+  box-shadow: 0 24px 48px rgba(40, 28, 22, 0.18);
+}
+.exam-submit-modal__body {
+  padding: 1rem 1.5rem 0.95rem;
+}
+.exam-submit-modal__title {
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.25;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.exam-submit-modal__actions {
+  gap: 0.35rem;
+  margin-top: 40px;
+}
+.exam-submit-modal__button {
+  flex: 1 1 0;
+  min-height: 2.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.exam-submit-modal__button--cancel {
+  border: 2px solid #c81d24;
+  background: #fff;
+  color: #c81d24;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.exam-submit-modal__button--confirm {
+  border: 2px solid #c81d24;
+  background: #c81d24;
+  color: #fff;
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.exam-submit-modal__icon {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+.exam-submit-modal__check {
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.modal-backdrop.show {
+  z-index: 1990;
+}
+
+@keyframes audio-button-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.16);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .exam-result {
   padding: 1rem;
   background: radial-gradient(circle at center, rgba(255, 205, 37, 0.85) 0, rgba(255, 205, 37, 0.85) 21%, transparent 21.3%, transparent 30%, rgba(255, 205, 37, 0.2) 30.3%, rgba(255, 205, 37, 0.2) 40%, transparent 40.3%, transparent 49%, rgba(255, 205, 37, 0.14) 49.3%, rgba(255, 205, 37, 0.14) 58%, transparent 58.3%), linear-gradient(180deg, rgba(246, 88, 24, 0.631372549) 0%, #f7bc0c 100%);
@@ -1833,6 +1902,219 @@ a {
   line-height: 1;
 }
 
+.exam-review-page {
+  min-height: 100vh;
+  padding: 2.5rem 1rem 3rem;
+  background: radial-gradient(circle at top left, rgba(255, 215, 117, 0.55), transparent 30%), radial-gradient(circle at bottom right, rgba(123, 201, 255, 0.38), transparent 32%), linear-gradient(180deg, #fff7df 0%, #fefcf6 100%);
+  font-family: Tahoma, "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.exam-review-page__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.exam-review-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #7d261c;
+  font-weight: 800;
+  text-decoration: none;
+}
+.exam-review-page__hero {
+  margin-top: 1.25rem;
+}
+.exam-review-page__eyebrow {
+  margin: 0;
+  color: #b65b24;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.exam-review-page__title {
+  margin: 0.55rem 0 0;
+  color: #1f2937;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  font-family: "Paytone One", sans-serif;
+}
+.exam-review-page__summary {
+  max-width: 42rem;
+  margin: 0.85rem 0 0;
+  color: #49566a;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.exam-review-page__panel {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(217, 119, 6, 0.14);
+  border-radius: 1.6rem;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 22px 55px rgba(120, 92, 48, 0.12);
+}
+.exam-review-page__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.exam-review-page__meta-item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1rem;
+  background: #fff7e7;
+}
+.exam-review-page__meta-label {
+  color: #8b6b45;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.exam-review-page__meta-value {
+  color: #1f2937;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+.exam-review-page__results {
+  margin-top: 1.25rem;
+}
+.exam-review-page__results-title {
+  margin: 0;
+  color: #8a2d1f;
+  font-size: 1.2rem;
+}
+.exam-review-page__result-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.95rem;
+}
+.exam-review-page__result-item {
+  padding: 1rem 1.05rem;
+  border: 1px solid #f2e8d8;
+  border-radius: 1rem;
+  background: #fff;
+}
+.exam-review-page__result-item--correct {
+  border-color: #b7e4c1;
+  background: #effcf3;
+}
+.exam-review-page__result-item--wrong, .exam-review-page__result-item--empty {
+  border-color: #c81d24;
+  background: #c81d24;
+}
+.exam-review-page__result-item--wrong .exam-review-page__result-number,
+.exam-review-page__result-item--wrong .exam-review-page__result-prompt,
+.exam-review-page__result-item--wrong .exam-review-page__review-question,
+.exam-review-page__result-item--wrong .exam-review-page__result-message,
+.exam-review-page__result-item--wrong .exam-review-page__result-detail,
+.exam-review-page__result-item--wrong .exam-review-page__result-fact, .exam-review-page__result-item--empty .exam-review-page__result-number,
+.exam-review-page__result-item--empty .exam-review-page__result-prompt,
+.exam-review-page__result-item--empty .exam-review-page__review-question,
+.exam-review-page__result-item--empty .exam-review-page__result-message,
+.exam-review-page__result-item--empty .exam-review-page__result-detail,
+.exam-review-page__result-item--empty .exam-review-page__result-fact {
+  color: #fff;
+}
+.exam-review-page__result-item--wrong .exam-review-page__result-facts, .exam-review-page__result-item--empty .exam-review-page__result-facts {
+  background: rgba(255, 255, 255, 0.12);
+}
+.exam-review-page__result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.exam-review-page__result-number {
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.exam-review-page__result-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.5rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.exam-review-page__result-badge--correct {
+  background: #d8f5df;
+  color: #1f7a36;
+}
+.exam-review-page__result-badge--wrong, .exam-review-page__result-badge--empty {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+.exam-review-page__result-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+.exam-review-page__result-prompt {
+  flex: 1 1 auto;
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.exam-review-page__review-question {
+  flex: 0 0 auto;
+  color: #2563eb;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.exam-review-page__review-question:hover {
+  text-decoration: underline;
+}
+.exam-review-page__result-message {
+  margin: 0.7rem 0 0;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.exam-review-page__result-facts {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.68);
+}
+.exam-review-page__result-fact {
+  margin: 0;
+  color: #1f2937;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.exam-review-page__result-detail {
+  margin: 0.4rem 0 0;
+  color: #8a2d1f;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+.exam-review-page__result-empty {
+  margin: 0;
+  padding: 1rem 1.05rem;
+  border-radius: 1rem;
+  background: #f8fafc;
+  color: #5b6775;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
 @media (max-width: 1024px) {
   .exam-header {
     padding-top: 20px;
@@ -2013,70 +2295,23 @@ a {
     font-size: 3.4rem;
   }
 }
-.exam-submit-modal.modal {
-  z-index: 2000;
-}
-.exam-submit-modal__dialog {
-  max-width: 23.75rem;
-}
-.exam-submit-modal__content {
-  border-radius: 1.85rem;
-  box-shadow: 0 24px 48px rgba(40, 28, 22, 0.18);
-}
-.exam-submit-modal__body {
-  padding: 1rem 1.5rem 0.95rem;
-}
-.exam-submit-modal__title {
-  color: #111;
-  font-size: 1.2rem;
-  font-weight: 900;
-  line-height: 1.25;
-}
-.exam-submit-modal__actions {
-  gap: 0.35rem;
-  margin-top: 40px;
-}
-.exam-submit-modal__button {
-  flex: 1 1 0;
-  min-height: 2.5rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  font-weight: 700;
-}
-.exam-submit-modal__button--cancel {
-  border: 2px solid #c81d24;
-  background: #fff;
-  color: #c81d24;
-}
-.exam-submit-modal__button--confirm {
-  border: 2px solid #c81d24;
-  background: #c81d24;
-  color: #fff;
-}
-.exam-submit-modal__icon {
-  width: 1rem;
-  height: 1rem;
-  object-fit: contain;
-}
-.exam-submit-modal__check {
-  font-size: 1.05rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.modal-backdrop.show {
-  z-index: 1990;
-}
-
-@keyframes audio-button-pop {
-  0% {
-    transform: scale(1);
+@media (max-width: 640px) {
+  .exam-review-page__panel {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
-  45% {
-    transform: scale(1.16);
+  .exam-review-page__meta {
+    grid-template-columns: 1fr;
   }
-  100% {
-    transform: scale(1);
+  .exam-review-page__result-head {
+    align-items: flex-start;
+  }
+  .exam-review-page__result-question {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .competition-page__mobile-heading {

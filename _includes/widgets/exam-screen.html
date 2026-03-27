@@ -1,4 +1,4 @@
-{% assign exam = site.data.exam %}
+{% assign exam = site.data.exam.questions %}
 {% assign theme = site.data.theme %}
 <header class="exam-header" data-exam-header>
   <div class="exam-header__inner d-grid align-items-center gap-3 mx-auto">
@@ -131,6 +131,9 @@
         </div>
 
         <div class="exam-result__time-pill text-white">Thời gian 24 : 41</div>
+
+        <button class="exam-result__view-results btn btn-primary text-white mt-3 " type="button">Xem kết quả</button>
+
         <p class="exam-result__note">Làm tốt lắm! Hãy tiếp tục cố gắng nhé</p>
       </div>
 
@@ -155,3 +158,4 @@
 </section>
 
 <script id="exam-data" type="application/json">{{ exam | jsonify }}</script>
+<script id="exam-answers" type="application/json">{{ site.data.exam.answers | jsonify }}</script>
